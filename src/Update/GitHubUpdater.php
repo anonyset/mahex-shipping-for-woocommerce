@@ -47,6 +47,7 @@ final class GitHubUpdater {
                 $transient->no_update = array();
             }
             $transient->no_update[ $plugin ] = $item;
+            if (isset($transient->response[$plugin])) unset($transient->response[$plugin]);
         }
 
         return $transient;
@@ -144,7 +145,7 @@ final class GitHubUpdater {
         return $item;
     }
 
-    private static function manifest(): ?array {
+    public static function manifest(): ?array {
         if ( false === apply_filters( 'hm_mahex_github_updates_enabled', true ) ) {
             return null;
         }
@@ -200,11 +201,12 @@ final class GitHubUpdater {
     private static function safePackageUrl( string $url ): string {
         $url  = esc_url_raw( $url );
         $host = strtolower( (string) wp_parse_url( $url, PHP_URL_HOST ) );
+        if ('https' !== strtolower((string) wp_parse_url($url, PHP_URL_SCHEME))) return '';
         if ( ! in_array( $host, array( 'github.com', 'codeload.github.com', 'raw.githubusercontent.com' ), true ) ) {
             return '';
         }
         $path = (string) wp_parse_url( $url, PHP_URL_PATH );
-        if ( false === strpos( $path, '/anonyset/mahex-shipping-for-woocommerce/' ) ) {
+        if ( 0 !== strpos( $path, '/anonyset/mahex-shipping-for-woocommerce/' ) ) {
             return '';
         }
         return $url;

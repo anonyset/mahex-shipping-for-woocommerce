@@ -1,3 +1,11 @@
+# 3.1.0 — 2026-10-06
+
+- Persian setup with readiness checks, validated CSV/XLSX carrier-reference import, owner-only tracking and optional email templates.
+- Actual shipping costs and profit, RTL printable invoice/Save as PDF, native XLSX, scheduled tariffs and historical rate metadata.
+- Compatibility/checksum update guards and pre-update settings snapshots.
+- Fixed packaging double-counting and prevented simulated refresh of imported carrier statuses.
+- See [upgrade guide](UPGRADE-3.1.0.md) for supported formats and verification limits.
+
 # Changelog
 
 ## 3.0.1 - 2026-10-06

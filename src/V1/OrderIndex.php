@@ -23,14 +23,10 @@ final class OrderIndex {
 		$table = $wpdb->prefix . 'hm_mahex_order_index';
 		$store = new OrderShipmentStore();
 		$shipment = $store->aggregateShipment( $order ) ?: $store->get( $order );
-		$shipping = (float) $order->get_shipping_total();
-		$packaging = 0.0;
-		foreach ( $order->get_items( 'shipping' ) as $item ) {
-			$value = $item->get_meta( 'hm_mahex_packaging', true );
-			if ( is_numeric( $value ) ) $packaging += (float) $value;
-		}
-		$actual = $order->get_meta( '_hm_mahex_actual_carrier_cost', true );
-		$carrier = is_numeric( $actual ) ? max( 0.0, (float) $actual ) : 0.0;
+        $allocation=Reports::allocation($order);
+        $shipping=(float)$allocation['shipping_revenue'];
+        $packaging=(float)$allocation['packaging_revenue'];
+        $carrier=(float)$allocation['carrier_cost'];
 		$created = $order->get_date_created();
 		$data = array(
 			'order_id' => $order->get_id(),
@@ -45,7 +41,7 @@ final class OrderIndex {
 			'shipping_total' => $shipping,
 			'packaging_total' => $packaging,
 			'carrier_cost' => $carrier,
-			'profit' => $shipping + $packaging - $carrier,
+			'profit' => (float) $allocation['profit'],
 			'created_at' => $created ? $created->date( 'Y-m-d H:i:s' ) : null,
 			'updated_at' => current_time( 'mysql', true ),
 		);

@@ -25,6 +25,8 @@ final class LocalShipmentLifecycle {
 	}
 
 	public function refresh( Shipment $shipment, \DateTimeImmutable $now ): Shipment {
+		// Imported carrier statuses must only change through explicit operator input.
+		if (!empty($shipment->package_snapshot['_manual_carrier_reference'])) return $shipment;
 		$flow = array( 'created', 'picked_up', 'in_transit', 'out_for_delivery', 'delivered' );
 		$position = array_search( $shipment->status, $flow, true );
 		if ( false === $position ) return $shipment;

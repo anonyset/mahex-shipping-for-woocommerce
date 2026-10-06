@@ -32,6 +32,9 @@ final class RatePresenter {
 			__( 'بسته‌بندی', 'mahex-shipping-for-woocommerce' ) => (float) ( $meta['hm_mahex_packaging'] ?? 0 ),
 			__( 'بیمه', 'mahex-shipping-for-woocommerce' ) => (float) ( $meta['hm_mahex_insurance'] ?? 0 ),
 		);
+		if (method_exists($method, 'get_cost')) {
+			$rows[__('خدمات / تعدیل', 'mahex-shipping-for-woocommerce')] = (float) $method->get_cost() - array_sum($rows);
+		}
 		$details = '';
 		foreach ( $rows as $name => $amount ) {
 			$details .= sprintf( '<span class="hm-mahex-rate__part"><span>%s</span><b>%s</b></span>', esc_html( $name ), wp_kses_post( wc_price( $amount ) ) );

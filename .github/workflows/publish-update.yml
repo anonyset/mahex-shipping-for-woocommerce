@@ -27,6 +27,7 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
+          extensions: zip, simplexml, dom, mbstring, ctype
       - name: Validate PHP and manifest
         run: |
           set -euo pipefail
@@ -34,6 +35,7 @@ jobs:
           VERSION=$(php -r '$c=file_get_contents("mahex-shipping-for-woocommerce.php"); preg_match("/Version:\\s*([^\\r\\n]+)/",$c,$m); echo trim($m[1]??"");')
           MANIFEST=$(php -r '$j=json_decode(file_get_contents("update.json"),true,512,JSON_THROW_ON_ERROR); echo $j["version"]??"";')
           test "$VERSION" = "$MANIFEST"
+          for TEST in tests/*-test.php; do php "$TEST"; done
           echo "Publishing version $VERSION"
       - name: Build clean plugin zip
         run: |
@@ -44,6 +46,7 @@ jobs:
             --exclude '.git/' \
             --exclude '.github/' \
             --exclude 'docs/' \
+            --exclude 'tests/' \
             --exclude 'build/' \
             --exclude 'update.json' \
             --exclude '.gitignore' \
@@ -85,6 +88,7 @@ jobs:
           
           Author: Hosein Momeni
           EOF
+          if test -f "UPGRADE-$VERSION.md"; then cat "UPGRADE-$VERSION.md" >> build/release-notes.md; fi
           if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
             echo "Preserving existing release $TAG"
           else
@@ -95,7 +99,7 @@ jobs:
           mkdir -p /tmp/mahex-release
           gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern "$ASSET" --dir /tmp/mahex-release
           cp "/tmp/mahex-release/$ASSET" build/mahex-shipping-for-woocommerce.zip
-          php -r '$p="build/update.json"; $j=json_decode(file_get_contents($p),true,512,JSON_THROW_ON_ERROR); $j["download_url"]="https://github.com/".getenv("GITHUB_REPOSITORY")."/releases/download/v".$j["version"]."/mahex-shipping-for-woocommerce-".$j["version"].".zip"; file_put_contents($p,json_encode($j,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE)."\n");'
+          php -r '$p="build/update.json"; $j=json_decode(file_get_contents($p),true,512,JSON_THROW_ON_ERROR); $j["sha256"]=hash_file("sha256","build/mahex-shipping-for-woocommerce.zip"); $j["download_url"]="https://github.com/".getenv("GITHUB_REPOSITORY")."/releases/download/v".$j["version"]."/mahex-shipping-for-woocommerce-".$j["version"].".zip"; file_put_contents($p,json_encode($j,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE)."\n");'
           (cd build && sha256sum mahex-shipping-for-woocommerce.zip > SHA256SUMS.txt)
       - name: Publish dist branch
         env:

@@ -10,7 +10,7 @@ final class PricingSettings {
 	/** @return array<string,mixed> */
 	public static function all(): array {
 		$value = function_exists( 'get_option' ) ? get_option( self::OPTION_NAME, array() ) : array();
-		return is_array( $value ) ? $value : array();
+		return \HoseinMomeni\MahexWoo\V31\FinanceRates::settings( is_array( $value ) ? $value : array() );
 	}
 
 	public static function value( string $key, $default = '' ) {

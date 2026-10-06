@@ -1,4 +1,4 @@
-# Mahex Shipping for WooCommerce 3.0.1
+# Mahex Shipping for WooCommerce 3.1.0
 
 <div align="center">
 
@@ -6,7 +6,7 @@
 
 **سامانه حرفه‌ای مدیریت ارسال ووکامرس — Professional WooCommerce Shipping Operations**
 
-[![Version](https://img.shields.io/badge/version-3.0.1-e31d2f)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-3.1.0-e31d2f)](CHANGELOG.md)
 [![PHP](https://img.shields.io/badge/PHP-8.1%2B-777bb4)](https://www.php.net/)
 [![WordPress](https://img.shields.io/badge/WordPress-7.1%2B-21759b)](https://wordpress.org/)
 [![WooCommerce](https://img.shields.io/badge/WooCommerce-11.0%2B-96588a)](https://woocommerce.com/)
@@ -17,6 +17,12 @@
 </div>
 
 ---
+
+## تازه در نسخه ۳.۱.۰
+
+راه‌اندازی فارسی، ورود گروهی CSV/XLSX، پیگیری مشتری، اعلان قابل تنظیم، صورتحساب و سود واقعی، تعرفه تاریخ‌دار و آپدیت با بررسی صحت فایل.
+
+[راهنمای قابلیت‌ها و ارتقا](UPGRADE-3.1.0.md) · [دانلود نسخه ۳.۱.۰](https://github.com/anonyset/mahex-shipping-for-woocommerce/releases/download/v3.1.0/mahex-shipping-for-woocommerce-3.1.0.zip)
 
 ## فارسی
 

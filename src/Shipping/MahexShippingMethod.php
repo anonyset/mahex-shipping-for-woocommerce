@@ -84,7 +84,7 @@ final class MahexShippingMethod extends \WC_Shipping_Method {
 		$kg_fallback   = PricingSettings::from_store_currency( max( 0.0, (float) wc_format_decimal( $this->get_option( 'cost_per_kg', (string) PricingSettings::to_store_currency( 75000 ) ) ) ) );
 		$base_cost     = PricingSettings::money( 'manual_base_cost', $base_fallback );
 		$cost_per_kg   = PricingSettings::money( 'manual_cost_per_kg', $kg_fallback );
-		$cacheKey = RateCache::key( $package, $this->instance_id, array( 'title'=>$this->title, 'base'=>$base_cost, 'kg'=>$cost_per_kg, 'version'=>HM_MAHEX_VERSION ) );
+		$cacheKey = RateCache::key( $package, $this->instance_id, array( 'title'=>$this->title, 'base'=>$base_cost, 'kg'=>$cost_per_kg, 'version'=>HM_MAHEX_VERSION, 'tariff'=>\HoseinMomeni\MahexWoo\V31\FinanceRates::active(), 'effective_pricing'=>PricingSettings::all() ) );
 		$cached = RateCache::get( $cacheKey );
 		if ( is_array( $cached ) && ! empty( $cached['rates'] ) && is_array( $cached['rates'] ) ) {
 			foreach ( $cached['rates'] as $row ) {
@@ -202,6 +202,8 @@ final class MahexShippingMethod extends \WC_Shipping_Method {
 			'meta_data' => array(
 				'provider' => 'official' === $source ? 'MahexProvider' : 'StoreConfiguredRate',
 				'hm_mahex_source' => $source,
+                'hm_mahex_tariff_id' => (string) ( \HoseinMomeni\MahexWoo\V31\FinanceRates::active()['id'] ?? 'current-settings' ),
+                'hm_mahex_tariff_date' => wp_date('Y-m-d'),
 				'hm_mahex_freight' => $freight_store,
 				'hm_mahex_packaging' => $packaging_store,
 				'hm_mahex_insurance' => $insurance_store,
