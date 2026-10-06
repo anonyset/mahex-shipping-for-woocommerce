@@ -21,3 +21,13 @@ WordPress reads the release manifest from the public `dist` branch. The `dist` b
 ## Why `dist`?
 
 Publishing the manifest and package together prevents WordPress from seeing a new version before its installable ZIP is ready. The operational shipping core remains local-only; only the updater performs public GitHub requests.
+
+## Version archive
+
+Each new version on main automatically creates a GitHub Release tagged vVERSION with mahex-shipping-for-woocommerce-VERSION.zip and its SHA-256 checksum. The ZIP contains one stable plugin directory, ready for WordPress plugin upload. Existing release assets are preserved; publish code changes with a new version number. The dist manifest links to that version's Release asset, and the compatibility ZIP on dist is copied from the same asset.
+
+Download: https://github.com/anonyset/mahex-shipping-for-woocommerce/releases/latest
+
+Archive: https://github.com/anonyset/mahex-shipping-for-woocommerce/releases
+
+Only versions with available source can be published. Historical version numbers mentioned in the changelog are not rebuilt from newer source.
