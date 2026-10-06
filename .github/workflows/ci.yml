@@ -1,0 +1,18 @@
+name: Plugin quality checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  php-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+      - name: Lint PHP
+        run: find . -type f -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l
+      - name: Validate update manifest
+        run: |
+          php -r '$j=json_decode(file_get_contents("update.json"),true,512,JSON_THROW_ON_ERROR); $c=file_get_contents("mahex-shipping-for-woocommerce.php"); preg_match("/Version:\s*([^\r\n]+)/",$c,$m); if(($j["version"]??"")!==trim($m[1]??"")) exit(1); echo "manifest ok\n";' 

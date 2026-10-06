@@ -1,0 +1,20 @@
+:root{--hmx-navy:#062f67;--hmx-red:#e30613;--hmx-line:#dbe6f3;--hmx-soft:#f4f8fd;--hmx-text:#13233a}
+.hm-mahex-rate,.hm-mahex-rate *{box-sizing:border-box}
+.hm-mahex-rate{display:flex;flex-direction:column;width:100%;min-width:0;margin:4px 0;padding:14px;overflow:hidden;border:1px solid var(--hmx-line);border-radius:14px;background:linear-gradient(145deg,#fff 55%,#f5f9fe);box-shadow:0 5px 18px rgba(6,47,103,.08);color:var(--hmx-text);text-align:right}
+.hm-mahex-rate__header{display:flex;width:100%;align-items:center;justify-content:space-between;gap:12px}
+.hm-mahex-rate__logo{display:block;width:104px!important;height:78px!important;max-width:44%;flex:0 0 auto;object-fit:contain;object-position:right center}
+.hm-mahex-rate__badge{display:inline-flex;max-width:48%;align-items:center;justify-content:center;padding:5px 9px;border-radius:999px;font-size:10px;font-weight:700;line-height:1.5;text-align:center}
+.hm-mahex-rate__badge--official{border:1px solid #bcebd1;background:#e7f8ef;color:#087443}.hm-mahex-rate__badge--store{border:1px solid #f1dfa0;background:#fff7d8;color:#855500}
+.hm-mahex-rate__title{display:block;width:100%;min-width:0;margin-top:8px;padding-top:9px;border-top:1px solid #e5edf7;color:var(--hmx-navy);font-size:14px;font-weight:800;line-height:1.8}
+.hm-mahex-rate__title .woocommerce-Price-amount{display:block;width:100%;margin-top:2px;color:var(--hmx-red);font-size:17px;font-weight:900;line-height:1.6;white-space:normal}
+.hm-mahex-rate__breakdown{display:grid;width:100%;min-width:0;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:10px}
+.hm-mahex-rate__part{display:flex;min-width:0;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:7px 4px;border-radius:9px;background:var(--hmx-soft);color:#607089;font-size:10px;line-height:1.45;text-align:center}
+.hm-mahex-rate__part b{display:block;max-width:100%;color:var(--hmx-navy);font-size:10px;font-weight:800;line-height:1.5;overflow-wrap:anywhere}
+#shipping_method li:has(.hm-mahex-rate){display:flex;width:100%;min-width:0;align-items:flex-start;gap:8px;text-align:right}
+#shipping_method li:has(.hm-mahex-rate)>input{width:16px;flex:0 0 16px;margin-top:26px}
+#shipping_method li:has(.hm-mahex-rate)>label{display:block;min-width:0;flex:1 1 auto;margin:0}
+#shipping_method li:has(.hm-mahex-rate)>label>.hm-mahex-rate{width:100%;min-width:0}
+.wc-block-components-radio-control__option:has(.hm-mahex-rate){min-width:0;border:1px solid var(--hmx-line);border-radius:16px;background:#fff}
+.wc-block-components-radio-control__option-checked:has(.hm-mahex-rate){border-color:var(--hmx-red);box-shadow:0 0 0 2px rgba(227,6,19,.08)}
+@media(max-width:768px){.hm-mahex-rate__breakdown{grid-template-columns:1fr}.hm-mahex-rate__part{flex-direction:row;justify-content:space-between;padding:7px 10px;text-align:right}}
+@media(max-width:420px){.hm-mahex-rate{padding:10px;border-radius:12px}.hm-mahex-rate__logo{width:84px!important;height:64px!important}.hm-mahex-rate__badge{padding:4px 7px;font-size:9px}.hm-mahex-rate__title{font-size:12px}.hm-mahex-rate__title .woocommerce-Price-amount{font-size:14px}.hm-mahex-rate__part,.hm-mahex-rate__part b{font-size:10px}}

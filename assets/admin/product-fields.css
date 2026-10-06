@@ -1,0 +1,23 @@
+#hm_mahex_product_data{box-sizing:border-box;padding:18px!important;background:#f4f7fb!important;color:#10233d;font-family:Tahoma,"Segoe UI",sans-serif}
+#hm_mahex_product_data.hm-mahex-product-fields{border-top:0}
+.hm-mahex-product-fields__hero{position:relative;display:flex;align-items:center;gap:16px;overflow:hidden;margin:0 0 16px;padding:17px 20px;border-radius:13px;background:radial-gradient(circle at 82% 18%,#1788da 0,transparent 23%),linear-gradient(112deg,#031d43 0%,#064888 58%,#0c71b5 100%);color:#fff;box-shadow:0 8px 22px #062b6120}
+.hm-mahex-product-fields__hero:after{position:absolute;inset:0;background:linear-gradient(110deg,transparent 56%,#ffffff12 56% 58%,transparent 58% 64%,#ffffff0d 64% 66%,transparent 66%);content:"";pointer-events:none}
+.hm-mahex-product-fields__hero img{z-index:1;box-sizing:border-box;width:74px;height:58px;padding:5px;border-radius:10px;background:#fff;object-fit:contain}
+.hm-mahex-product-fields__hero div{z-index:1}
+.hm-mahex-product-fields__hero span{color:#d9efff;font-size:11px}
+.hm-mahex-product-fields__hero h2{margin:2px 0 3px;color:#fff;font-size:18px}
+.hm-mahex-product-fields__hero p{margin:0;color:#e4f2ff;font-size:12px}
+#hm_mahex_product_data p.form-field{box-sizing:border-box;float:none!important;width:calc(50% - 8px)!important;margin:0 0 12px!important;padding:12px!important;border:1px solid #dbe5f1;border-radius:9px;background:#fff;box-shadow:0 3px 10px #062b6108}
+#hm_mahex_product_data p.form-field:nth-of-type(even){margin-right:0!important}
+#hm_mahex_product_data p.form-field label{float:none!important;display:block;width:auto!important;margin:0 0 6px;color:#243a54;font-weight:700}
+#hm_mahex_product_data p.form-field input[type=text],#hm_mahex_product_data p.form-field input[type=number],#hm_mahex_product_data p.form-field select{box-sizing:border-box;width:100%!important;min-height:38px;margin:0!important;border:1px solid #b8c8dc;border-radius:7px;padding:7px 9px}
+#hm_mahex_product_data p.form-field input[type=checkbox]{margin-left:7px}
+#hm_mahex_product_data p.form-field .description{display:block;margin:5px 0 0;color:#718096}
+#hm_mahex_product_data :focus-visible,.hm-mahex-variation-fields :focus-visible{outline:3px solid #0b55b766;outline-offset:2px}
+.hm-mahex-variation-fields{clear:both;overflow:hidden;margin:12px 0 0;padding:13px;border:1px solid #cbd9e9;border-radius:10px;background:#f4f7fb}
+.hm-mahex-variation-fields>div:first-child{margin:0 0 10px;padding:0 0 9px;border-bottom:1px solid #dbe5f1;color:#062b61}
+.hm-mahex-variation-fields p.form-field{box-sizing:border-box;float:right!important;width:calc(50% - 8px)!important;margin:0 0 10px!important;padding:10px!important;border:1px solid #dbe5f1;border-radius:8px;background:#fff}
+.hm-mahex-variation-fields p.form-field label{float:none!important;display:block;width:auto!important;margin-bottom:5px;font-weight:700}
+.hm-mahex-variation-fields p.form-field input[type=text],.hm-mahex-variation-fields p.form-field input[type=number],.hm-mahex-variation-fields p.form-field select{box-sizing:border-box;width:100%!important;min-height:36px;border:1px solid #b8c8dc;border-radius:7px;padding:6px 8px}
+@media(max-width:782px){#hm_mahex_product_data{padding:12px!important}#hm_mahex_product_data p.form-field,.hm-mahex-variation-fields p.form-field{float:none!important;width:100%!important;margin:0 0 10px!important}.hm-mahex-product-fields__hero{padding:14px}.hm-mahex-product-fields__hero img{width:58px;height:48px}}
+@media(prefers-reduced-motion:reduce){#hm_mahex_product_data *{scroll-behavior:auto!important}}

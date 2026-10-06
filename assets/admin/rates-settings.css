@@ -1,0 +1,104 @@
+.hmx-pricing {
+	max-width: 1180px;
+	margin-inline: auto;
+}
+
+.hmx-pricing > h1 {
+	margin: 22px 0 18px;
+}
+
+.hmx-pricing-status,
+.hmx-pricing-card {
+	margin: 0 0 18px;
+	padding: 22px 24px;
+	border: 1px solid #dcdcde;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0 2px 8px rgb(15 23 42 / 4%);
+}
+
+.hmx-pricing-status {
+	border-inline-start: 4px solid #dba617;
+}
+
+.hmx-pricing-status--available {
+	border-inline-start-color: #00a32a;
+}
+
+.hmx-pricing-status p {
+	margin: 8px 0;
+}
+
+.hmx-pricing-card h2 {
+	margin: 0 0 18px;
+	font-size: 17px;
+}
+
+.hmx-pricing-card > p {
+	color: #646970;
+}
+
+.hmx-pricing-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px 22px;
+}
+
+.hmx-pricing-field {
+	display: flex;
+	min-width: 0;
+	flex-direction: column;
+	gap: 7px;
+	font-weight: 600;
+}
+
+.hmx-pricing-field input,
+.hmx-pricing-field select {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+}
+
+.hmx-pricing-check {
+	align-self: end;
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	min-height: 40px;
+}
+
+.hmx-province-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 14px;
+}
+
+.hmx-pricing .description {
+	margin-top: 14px;
+}
+
+@media (max-width: 900px) {
+	.hmx-province-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 600px) {
+	.hmx-pricing-status,
+	.hmx-pricing-card {
+		padding: 17px;
+	}
+
+	.hmx-pricing-grid,
+	.hmx-province-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 12px;
+	}
+}
+
+@media (max-width: 380px) {
+	.hmx-pricing-grid,
+	.hmx-province-grid {
+		grid-template-columns: 1fr;
+	}
+}

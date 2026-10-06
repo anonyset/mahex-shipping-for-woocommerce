@@ -1,0 +1,54 @@
+/* Small, page-scoped spacing refinements for the rate and destination screens. */
+.hm-mahex:has(input[name="hmx_rate_nonce"]) .hmx-layout {
+	align-items: start;
+	gap: 20px;
+}
+
+.hm-mahex:has(input[name="hmx_rate_nonce"]) .hmx-layout > .hmx-panel {
+	padding: 24px;
+}
+
+.hm-mahex:has(input[name="hmx_rate_nonce"]) .hmx-form-grid {
+	gap: 16px;
+	margin-bottom: 18px;
+}
+
+.hm-mahex:has(input[name="hmx_rate_nonce"]) .hmx-quote {
+	margin: 8px 0 0;
+	padding-top: 16px;
+}
+
+.hm-mahex .hmx-panel:has(.hmx-table) {
+	padding: 24px;
+	overflow: hidden;
+}
+
+.hm-mahex .hmx-panel:has(.hmx-table) .hmx-panel-head {
+	margin-bottom: 18px;
+}
+
+.hm-mahex .hmx-panel:has(.hmx-table) .hmx-panel-head input[type="search"] {
+	box-sizing: border-box;
+	flex: 0 1 280px;
+	width: auto;
+	min-width: 200px;
+}
+
+.hm-mahex .hmx-panel:has(.hmx-table) .hmx-table td,
+.hm-mahex .hmx-panel:has(.hmx-table) .hmx-table th {
+	padding: 13px 14px;
+}
+
+@media (max-width: 700px) {
+	.hm-mahex .hmx-panel:has(.hmx-table) .hmx-panel-head {
+		align-items: stretch;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.hm-mahex .hmx-panel:has(.hmx-table) .hmx-panel-head input[type="search"] {
+		flex-basis: auto;
+		min-width: 0;
+		width: 100%;
+	}
+}

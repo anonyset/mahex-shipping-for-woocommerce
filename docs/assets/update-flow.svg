@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440">
+<rect width="1200" height="440" rx="34" fill="#f6f8fb"/>
+<text x="600" y="58" text-anchor="middle" fill="#071a33" font-size="30" font-family="Tahoma,Arial">بروزرسانی از GitHub — WordPress Update Flow</text>
+<g font-family="Tahoma,Arial" text-anchor="middle">
+<rect x="65" y="125" width="245" height="175" rx="24" fill="#071a33"/><text x="188" y="180" fill="#fff" font-size="21">WordPress</text><text x="188" y="220" fill="#b9c9de" font-size="17">Update Check</text>
+<rect x="355" y="125" width="245" height="175" rx="24" fill="#fff" stroke="#d8e0eb" stroke-width="3"/><text x="478" y="180" fill="#071a33" font-size="21">update.json</text><text x="478" y="220" fill="#5a6678" font-size="17">Version Manifest</text>
+<rect x="645" y="125" width="245" height="175" rx="24" fill="#071a33"/><text x="768" y="180" fill="#fff" font-size="21">GitHub main.zip</text><text x="768" y="220" fill="#b9c9de" font-size="17">Download Package</text>
+<rect x="935" y="125" width="200" height="175" rx="24" fill="#fff" stroke="#d8e0eb" stroke-width="3"/><text x="1035" y="180" fill="#071a33" font-size="21">Update</text><text x="1035" y="220" fill="#e31d2f" font-size="17">One Click</text>
+<path d="M310 212H345M600 212H635M890 212H925" stroke="#e31d2f" stroke-width="8"/>
+</g><text x="600" y="365" text-anchor="middle" fill="#5a6678" font-size="18" font-family="Tahoma,Arial">هسته افزونه Local-only است؛ فقط بررسی و دریافت نسخه جدید از Repository عمومی GitHub انجام می‌شود.</text></svg>

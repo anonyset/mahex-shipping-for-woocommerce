@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+<rect width="1200" height="420" rx="34" fill="#071a33"/>
+<text x="600" y="58" text-anchor="middle" fill="#fff" font-size="30" font-family="Tahoma,Arial">آموزش نصب — Installation Flow</text>
+<g font-family="Tahoma,Arial" font-size="21" text-anchor="middle">
+<g><rect x="55" y="125" width="245" height="155" rx="22" fill="#fff"/><text x="178" y="180" fill="#071a33">۱. نصب ZIP</text><text x="178" y="220" fill="#5a6678" font-size="17">Plugins → Add New</text></g>
+<g><rect x="335" y="125" width="245" height="155" rx="22" fill="#fff"/><text x="458" y="180" fill="#071a33">۲. فعال‌سازی</text><text x="458" y="220" fill="#5a6678" font-size="17">Activate Plugin</text></g>
+<g><rect x="615" y="125" width="245" height="155" rx="22" fill="#fff"/><text x="738" y="180" fill="#071a33">۳. Shipping Zone</text><text x="738" y="220" fill="#5a6678" font-size="17">Add Mahex Shipping</text></g>
+<g><rect x="895" y="125" width="245" height="155" rx="22" fill="#fff"/><text x="1018" y="180" fill="#071a33">۴. تست سفارش</text><text x="1018" y="220" fill="#5a6678" font-size="17">Checkout Test</text></g>
+<path d="M300 202H325" stroke="#e31d2f" stroke-width="7"/><path d="M580 202H605" stroke="#e31d2f" stroke-width="7"/><path d="M860 202H885" stroke="#e31d2f" stroke-width="7"/>
+</g>
+<text x="600" y="355" text-anchor="middle" fill="#c5d5eb" font-size="18" font-family="Tahoma,Arial">پیشنهاد: ابتدا روی Staging نصب و Checkout، نرخ، بسته‌بندی و چاپ را بررسی کنید.</text>
+</svg>

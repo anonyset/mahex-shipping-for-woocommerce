@@ -1,0 +1,24 @@
+.mahex-locations-status {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+	gap: 12px;
+	margin: 16px 0;
+}
+
+.mahex-locations-status__item {
+	padding: 12px;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	background: #fff;
+}
+
+.mahex-locations-status__state--available { border-inline-start: 4px solid #00a32a; }
+.mahex-locations-status__state--unavailable,
+.mahex-locations-status__state--invalid_response { border-inline-start: 4px solid #d63638; }
+.mahex-locations-status__state--awaiting_official_contract,
+.mahex-locations-status__state--never_synced { border-inline-start: 4px solid #dba617; }
+
+.mahex-locations-provenance {
+	color: #646970;
+	font-size: 12px;
+}

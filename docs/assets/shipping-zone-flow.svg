@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+<rect width="1200" height="420" rx="34" fill="#f6f8fb"/>
+<text x="600" y="58" text-anchor="middle" fill="#071a33" font-size="30" font-family="Tahoma,Arial">تنظیم روش ارسال — Shipping Zone Setup</text>
+<g font-family="Tahoma,Arial" text-anchor="middle">
+<rect x="80" y="130" width="300" height="175" rx="24" fill="#071a33"/><text x="230" y="185" fill="#fff" font-size="22">WooCommerce</text><text x="230" y="225" fill="#b9c9de" font-size="18">Settings → Shipping</text><text x="230" y="260" fill="#b9c9de" font-size="18">Shipping Zones</text>
+<rect x="450" y="130" width="300" height="175" rx="24" fill="#fff" stroke="#d8e0eb" stroke-width="3"/><text x="600" y="190" fill="#071a33" font-size="22">Add shipping method</text><text x="600" y="235" fill="#e31d2f" font-size="22">Mahex Shipping</text>
+<rect x="820" y="130" width="300" height="175" rx="24" fill="#071a33"/><text x="970" y="185" fill="#fff" font-size="22">تنظیم نرخ</text><text x="970" y="225" fill="#b9c9de" font-size="18">Rules / Margins</text><text x="970" y="260" fill="#b9c9de" font-size="18">Packaging / Zones</text>
+<path d="M380 217H440" stroke="#e31d2f" stroke-width="8"/><path d="M750 217H810" stroke="#e31d2f" stroke-width="8"/>
+</g></svg>

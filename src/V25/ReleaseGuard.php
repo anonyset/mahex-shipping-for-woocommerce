@@ -1,0 +1,10 @@
+<?php
+
+namespace HoseinMomeni\MahexWoo\V25;
+
+final class ReleaseGuard {
+	public static function checks(): array {$checks=array();$add=static function(string $name,bool $ok,string $details='')use(&$checks):void{$checks[]=array('name'=>$name,'ok'=>$ok,'details'=>$details);};$base=\HoseinMomeni\MahexWoo\V2\ReleaseQualification::run();foreach((array)($base['tests']??array()) as $r)$add('V2: '.(string)($r['name']??'check'),!empty($r['ok']),(string)($r['detail']??''));global $wpdb;foreach(array('hm_mahex_v25_inbox','hm_mahex_v25_ledger','hm_mahex_v25_workflows','hm_mahex_v25_closings','hm_mahex_v25_report_snapshots','hm_mahex_v25_archive') as $s){$t=$wpdb->prefix.$s;$exists = $wpdb->get_var($wpdb->prepare('SHOW TABLES LIKE %s',$wpdb->esc_like($t)));$add('Table '.$s,(bool)$exists);}$conf=Intelligence::ruleConflicts();$add('Rule conflicts manageable',count($conf)<50,count($conf).' conflict(s)');$bad=array_filter(PerformanceBudget::evaluate(),static fn($r)=>!$r['pass']);$add('Performance budget',count($bad)===0,count($bad).' profiler group(s) over budget');$add('External network disabled',self::sourceNetworkFree(),'No wp_remote/curl/register_rest_route in active V25/V2/V1 core');return $checks;}
+	public static function pass(): bool {foreach(self::checks() as $r)if(empty($r['ok']))return false;return true;}
+	public static function criticalPass(): bool {foreach(self::checks() as $r){$name=(string)($r['name']??'');$critical=str_starts_with($name,'Table ')||str_contains($name,'Version constant')||str_contains($name,'PHP >=')||str_contains($name,'External network');if($critical&&empty($r['ok']))return false;}return true;}
+	private static function sourceNetworkFree(): bool {$roots=array(dirname(__DIR__).'/V25',dirname(__DIR__).'/V2',dirname(__DIR__).'/V1');foreach($roots as $root){foreach(glob($root.'/*.php')?:array() as $f){if(realpath($f)===realpath(__FILE__))continue;$s=(string)@file_get_contents($f);if(str_contains($s,'wp_remote_')||str_contains($s,'curl_exec')||str_contains($s,'register_rest_route'))return false;}}return true;}
+}

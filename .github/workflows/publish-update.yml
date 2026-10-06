@@ -1,0 +1,73 @@
+name: Publish WordPress update channel
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mahex-shipping-for-woocommerce.php'
+      - 'src/**'
+      - 'assets/**'
+      - 'readme.txt'
+      - 'CHANGELOG.md'
+      - 'LICENSE'
+      - 'update.json'
+      - '.github/workflows/publish-update.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wordpress-update-channel
+  cancel-in-progress: true
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+      - name: Validate PHP and manifest
+        run: |
+          set -euo pipefail
+          find . -type f -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l >/dev/null
+          VERSION=$(php -r '$c=file_get_contents("mahex-shipping-for-woocommerce.php"); preg_match("/Version:\\s*([^\\r\\n]+)/",$c,$m); echo trim($m[1]??"");')
+          MANIFEST=$(php -r '$j=json_decode(file_get_contents("update.json"),true,512,JSON_THROW_ON_ERROR); echo $j["version"]??"";')
+          test "$VERSION" = "$MANIFEST"
+          echo "Publishing version $VERSION"
+      - name: Build clean plugin zip
+        run: |
+          set -euo pipefail
+          rm -rf build
+          mkdir -p build/mahex-shipping-for-woocommerce
+          rsync -a ./ build/mahex-shipping-for-woocommerce/ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude 'docs/' \
+            --exclude 'build/' \
+            --exclude 'update.json' \
+            --exclude '.gitignore' \
+            --exclude 'CONTRIBUTING.md' \
+            --exclude 'SECURITY.md' \
+            --exclude 'RELEASING.md' \
+            --exclude '*.zip' \
+            --exclude 'vendor/' \
+            --exclude 'node_modules/'
+          cd build
+          zip -qr mahex-shipping-for-woocommerce.zip mahex-shipping-for-woocommerce
+          cp ../update.json .
+          sha256sum mahex-shipping-for-woocommerce.zip > SHA256SUMS.txt
+      - name: Publish dist branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          cp -a build /tmp/mahex-dist
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan dist-publish
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a /tmp/mahex-dist/. .
+          git add mahex-shipping-for-woocommerce.zip update.json SHA256SUMS.txt
+          git commit -m "Publish WordPress update package"
+          git push --force origin HEAD:dist

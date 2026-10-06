@@ -1,0 +1,26 @@
+.hm-mahex-packaging{max-width:1280px;color:#10233d;font-family:Tahoma,"Segoe UI",sans-serif}
+.hm-mahex-packaging__hero{margin:18px 0 16px}
+.hm-mahex-packaging__hero .hmx-reference-brand{padding-left:250px}
+.hm-mahex-packaging__intro{margin:0 2px 14px}
+.hm-mahex-packaging__intro h1{margin:0 0 4px;color:#062b61;font-size:21px}
+.hm-mahex-packaging__intro p{margin:0;color:#60738a}
+.hm-mahex-packaging__layout{display:grid;grid-template-columns:minmax(300px,.85fr) minmax(0,1.5fr);gap:16px;align-items:start}
+.hm-mahex-card{min-width:0;background:#fff;border:1px solid #dbe5f1;border-radius:15px;padding:22px;box-shadow:0 5px 18px #062b610c}
+.hm-mahex-card h2{margin:0 0 16px;color:#062b61;font-size:17px}
+.hm-mahex-card>p{color:#60738a;line-height:1.8}
+.hm-mahex-card label span{display:block;font-weight:700;margin-bottom:6px;color:#243a54}
+.hm-mahex-card input[type=text],.hm-mahex-card input[type=number]{box-sizing:border-box;width:100%;min-height:42px;border:1px solid #b8c8dc;border-radius:8px;padding:8px 10px}
+.hm-mahex-card input:focus-visible,.hm-mahex-card button:focus-visible,.hm-mahex-card a:focus-visible{outline:3px solid #0b55b766;outline-offset:2px}
+.hm-mahex-card .button-primary{background:linear-gradient(100deg,#0968dc,#064aa1);border-color:#064aa1;border-radius:7px;font-weight:700}
+.hm-mahex-profile{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:16px 0;border-bottom:1px solid #e9eef5}
+.hm-mahex-profile:first-of-type{padding-top:0}
+.hm-mahex-profile:last-child{border-bottom:0;padding-bottom:0}
+.hm-mahex-profile form:first-child{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end}
+.hm-mahex-profile form:first-child p{min-width:0;margin:0}
+.hm-mahex-profile form:first-child p:first-of-type{grid-column:1/-1}
+.hm-mahex-profile form:first-child .button{grid-column:1/-1;justify-self:start}
+.hm-mahex-delete{align-self:end}
+.hm-mahex-delete .button{border-radius:7px}
+@media(max-width:1100px){.hm-mahex-packaging__layout{grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr)}.hm-mahex-packaging__hero .hmx-reference-brand{padding-left:210px}.hm-mahex-packaging__hero .hmx-feature-badge{left:18px;padding:11px 16px}}
+@media(max-width:782px){.hm-mahex-packaging__layout{grid-template-columns:1fr}.hm-mahex-profile{grid-template-columns:1fr}.hm-mahex-profile form:first-child{grid-template-columns:repeat(2,minmax(0,1fr))}.hm-mahex-delete{justify-self:start}}
+@media(max-width:560px){.hm-mahex-packaging__hero .hmx-reference-brand{padding:20px 16px 10px}.hm-mahex-packaging__hero .hmx-feature-badge{margin-right:16px}.hm-mahex-profile form:first-child{grid-template-columns:1fr}.hm-mahex-profile form:first-child p:first-of-type,.hm-mahex-profile form:first-child .button{grid-column:auto}.hm-mahex-card{padding:17px}}

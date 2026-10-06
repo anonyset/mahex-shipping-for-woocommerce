@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+<rect width="1200" height="520" rx="34" fill="#071a33"/>
+<text x="600" y="58" text-anchor="middle" fill="#fff" font-size="30" font-family="Tahoma,Arial">نقشه پنل — Control Center Map</text>
+<g font-family="Tahoma,Arial" text-anchor="middle" font-size="18">
+<g fill="#fff"><rect x="60" y="120" width="240" height="110" rx="20"/><rect x="340" y="120" width="240" height="110" rx="20"/><rect x="620" y="120" width="240" height="110" rx="20"/><rect x="900" y="120" width="240" height="110" rx="20"/>
+<rect x="60" y="275" width="240" height="110" rx="20"/><rect x="340" y="275" width="240" height="110" rx="20"/><rect x="620" y="275" width="240" height="110" rx="20"/><rect x="900" y="275" width="240" height="110" rx="20"/></g>
+<text x="180" y="170" fill="#071a33">Dashboard</text><text x="180" y="200" fill="#5a6678" font-size="15">KPI / Profit / Alerts</text>
+<text x="460" y="170" fill="#071a33">Rules</text><text x="460" y="200" fill="#5a6678" font-size="15">Rates / Margin / Simulator</text>
+<text x="740" y="170" fill="#071a33">Packaging</text><text x="740" y="200" fill="#5a6678" font-size="15">Profiles / Stock / Packing</text>
+<text x="1020" y="170" fill="#071a33">Operations</text><text x="1020" y="200" fill="#5a6678" font-size="15">Pick / Pack / QC / Tasks</text>
+<text x="180" y="325" fill="#071a33">Branches</text><text x="180" y="355" fill="#5a6678" font-size="15">Warehouse / Transfers</text>
+<text x="460" y="325" fill="#071a33">Documents</text><text x="460" y="355" fill="#5a6678" font-size="15">Labels / A4 / Thermal</text>
+<text x="740" y="325" fill="#071a33">Analytics</text><text x="740" y="355" fill="#5a6678" font-size="15">P&amp;L / Intelligence</text>
+<text x="1020" y="325" fill="#071a33">Tools</text><text x="1020" y="355" fill="#5a6678" font-size="15">Backup / Health / Repair</text>
+</g><text x="600" y="455" text-anchor="middle" fill="#c5d5eb" font-size="18" font-family="Tahoma,Arial">ماهکس 3.0.1 — یک مرکز عملیات ارسال داخل WooCommerce</text></svg>
