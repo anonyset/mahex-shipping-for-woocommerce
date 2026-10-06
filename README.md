@@ -124,3 +124,9 @@ The shipping core remains local-only; only version checks and update downloads c
 GPL-2.0-or-later. See [LICENSE](LICENSE).
 
 **Author:** Hosein Momeni — https://postyekrooz.ir/plugins
+
+## دریافت نسخه نصب
+
+[دانلود بسته نصب از کانال آپدیت](https://raw.githubusercontent.com/anonyset/mahex-shipping-for-woocommerce/dist/mahex-shipping-for-woocommerce.zip)
+
+بسته دانلود پس از اجرای موفق گردش‌کار Publish WordPress update channel ساخته می‌شود. فایل ZIP بخش Code برای نصب مستقیم در وردپرس توصیه نمی‌شود.
