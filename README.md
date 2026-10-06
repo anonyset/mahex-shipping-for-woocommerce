@@ -125,7 +125,20 @@ GPL-2.0-or-later. See [LICENSE](LICENSE).
 
 **Author:** Hosein Momeni — https://postyekrooz.ir/plugins
 
-## دریافت نسخه نصب
+## دانلود و نصب آسان
+
+**[دانلود آخرین نسخه قابل نصب](https://github.com/anonyset/mahex-shipping-for-woocommerce/releases/latest)** · **[آرشیو همه نسخه‌ها](https://github.com/anonyset/mahex-shipping-for-woocommerce/releases)**
+
+برای هر نسخه، فایل مستقل `mahex-shipping-for-woocommerce-VERSION.zip` در بخش **Assets** همان Release موجود است.
+
+1. فایل ZIP نسخه دلخواه را از Assets دانلود کنید.
+2. وردپرس ← افزونه‌ها ← افزودن افزونه ← بارگذاری افزونه.
+3. ZIP را انتخاب کنید، نصب و سپس فعال کنید.
+
+فایل‌های **Source code** برای دریافت کد پروژه هستند؛ فایل نصب با نام افزونه و شماره نسخه را انتخاب کنید.
+نسخه‌های منتشرشده حفظ می‌شوند. برای تغییر کد قابل نصب، شماره نسخه جدید منتشر می‌شود.
+
+## کانال آپدیت وردپرس
 
 [دانلود بسته نصب از کانال آپدیت](https://raw.githubusercontent.com/anonyset/mahex-shipping-for-woocommerce/dist/mahex-shipping-for-woocommerce.zip)
 
