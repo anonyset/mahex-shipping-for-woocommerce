@@ -1,3 +1,12 @@
+# 3.2.0 — 2026-10-07
+
+- Per-user draggable workspace and persisted order preparation board with operators, audit history and undo.
+- Thermal/A4 label designer using real order data, barcode, logo and saved printable layout.
+- Validated manual packing with trusted weights, capacities, unit assignment and print integration.
+- Visual rule editor using the live rate engine, preview, guarded saves and shipping-session cache invalidation.
+- Fixed premature rewrite endpoint initialization; included label layout in update settings snapshots.
+- See [upgrade guide](UPGRADE-3.2.0.md) for usage and verification limits.
+
 # 3.1.0 — 2026-10-06
 
 - Persian setup with readiness checks, validated CSV/XLSX carrier-reference import, owner-only tracking and optional email templates.

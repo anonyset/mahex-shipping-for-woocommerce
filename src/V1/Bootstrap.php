@@ -10,7 +10,7 @@ final class Bootstrap {
 		SafeMode::register();
 		try { MigrationManager::maybeMigrate(); } catch ( \Throwable $e ) { /* rollback already performed; Safe Mode keeps checkout alive */ }
 		Schema::maybeInstall();
-		CustomerExperience::rewriteEndpoint();
+		// CustomerExperience registers rewrite endpoints on init, after WP_Rewrite exists.
 		Roles::install();
 		OrderIndex::register();
 		PrintManager::register();

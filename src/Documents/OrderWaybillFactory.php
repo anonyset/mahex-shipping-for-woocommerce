@@ -80,6 +80,11 @@ final class OrderWaybillFactory {
 			$weight_label .= ' (قابل پرداخت)';
 		}
 		$dimension_label = array() !== $dimensions ? implode( ' | ', array_slice( array_values( array_unique( $dimensions ) ), 0, 3 ) ) : '—';
+        $manualPacking=\HoseinMomeni\MahexWoo\V32\Packing::snapshot($order);
+        if($manualPacking){
+            $weight_label=count($manualPacking['boxes']).' بسته؛ واقعی '.wc_format_decimal($manualPacking['actual_weight_g']/1000,3).' kg؛ حجمی '.wc_format_decimal($manualPacking['volumetric_weight_g']/1000,3).' kg (طرح دستی)';
+            $dimension_label=implode(' | ',array_map(static fn(array $box):string=>implode('×',$box['dimensions_mm']).' mm',$manualPacking['boxes']));
+        }
 		$packaging = (float) $this->shipping_meta( $order, 'hm_mahex_packaging', 0 );
 		$packaging_label = wp_strip_all_tags( wc_price( $packaging, array( 'currency' => $order->get_currency() ) ) );
 

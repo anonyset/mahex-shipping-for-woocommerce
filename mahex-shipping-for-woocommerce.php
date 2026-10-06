@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Mahex Shipping for WooCommerce
  * Description: سامانه محلی و حرفه‌ای مدیریت ارسال ووکامرس با نرخ‌گذاری، بسته‌بندی، انبار، بارنامه، عملیات، گزارش و رهگیری داخلی.
- * Version: 3.1.0
+ * Version: 3.2.0
  * Author: Hosein Momeni
  * Author URI: https://postyekrooz.ir/plugins
  * Text Domain: mahex-shipping-for-woocommerce
@@ -14,7 +14,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'HM_MAHEX_VERSION', '3.1.0' );
+define( 'HM_MAHEX_VERSION', '3.2.0' );
 define( 'HM_MAHEX_FILE', __FILE__ );
 
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
@@ -76,6 +76,11 @@ add_action(
 		\HoseinMomeni\MahexWoo\V31\Operations::register();
 		\HoseinMomeni\MahexWoo\V31\Finance::register();
 		\HoseinMomeni\MahexWoo\V31\FinanceRates::register();
+		\HoseinMomeni\MahexWoo\V32\Workspace::register();
+		\HoseinMomeni\MahexWoo\V32\Rules::register();
+		\HoseinMomeni\MahexWoo\V32\Board::register();
+		\HoseinMomeni\MahexWoo\V32\Designer::register();
+		\HoseinMomeni\MahexWoo\V32\Packing::register();
 		( new \HoseinMomeni\MahexWoo\Privacy\WordPressPrivacyIntegration( new \HoseinMomeni\MahexWoo\Privacy\WooCommercePersonalDataRepository() ) )->register();
 	}
 );
