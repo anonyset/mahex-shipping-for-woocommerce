@@ -25,4 +25,5 @@ $overlap=P::defaults();$overlap['weekend']=[];$overlap['breaks']=[['12:00','13:0
 rejects(fn()=>P::transition($s,'override',['note'=>'invalid','deadline'=>'','created_at'=>$now],$now,1,$p));
 $zero=$overlap;$zero['effort_minutes']=0;ck(P::effort('2026-10-07T12:15:00+03:30',$zero)['start']==='2026-10-07T14:00:00+03:30','zero work still waits admission');
 $seconds=P::defaults();$seconds['weekend']=[];$seconds['breaks']=[];$seconds['effort_minutes']=0;$work=P::effort('2026-10-07T08:00:31+03:30',$seconds);ck($work['start']==='2026-10-07T08:01:00+03:30','admission never before actual order seconds');
+rejects(fn()=>P::localTimestamp('2026-02-30T12:00','Asia/Tehran'));rejects(fn()=>P::localTimestamp('2026-10-07T25:30','Asia/Tehran'));ck(P::localTimestamp('2026-10-07T12:00','Asia/Tehran')===strtotime('2026-10-07T12:00:00+03:30'),'typed local time timezone');
 echo "V34 service policies: minute calendars, frozen commitments, pause/override, incident workflows and exposure passed\n";
