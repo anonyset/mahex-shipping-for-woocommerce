@@ -11,9 +11,10 @@ final class WooCommercePersonalDataRepository implements PersonalDataRepository 
 		$orders = $this->orders( $email, $page, $page_size );
 		$data   = array();
 		foreach ( $orders as $order ) {
-            foreach (['_hm_mahex_v35_handover'=>'Local manifest membership and custody record','_hm_mahex_v35_quality'=>'Order quality review record','_hm_mahex_v34_dispatch'=>'Dispatch review record','_hm_mahex_v34_service_case'=>'Local service promise/incident record','_hm_mahex_v33_return'=>'Return/claim record','_hm_mahex_v33_station'=>'Packing/handover record','_hm_mahex_v33_sms_consent'=>'SMS consent'] as $key=>$label) {
+            foreach (['_hm_mahex_v36_waves'=>'Offline dispatch wave record','_hm_mahex_v35_handover'=>'Local manifest membership and custody record','_hm_mahex_v35_quality'=>'Order quality review record','_hm_mahex_v34_dispatch'=>'Dispatch review record','_hm_mahex_v34_service_case'=>'Local service promise/incident record','_hm_mahex_v33_return'=>'Return/claim record','_hm_mahex_v33_station'=>'Packing/handover record','_hm_mahex_v33_sms_consent'=>'SMS consent'] as $key=>$label) {
                 $value=$order->get_meta($key,true);
                 if ($key === '_hm_mahex_v35_handover' && is_array($value) && $value && class_exists(\HoseinMomeni\MahexWoo\V35\LocalHandover::class)) $value = \HoseinMomeni\MahexWoo\V35\LocalHandover::privacy($order);
+                if ($key === '_hm_mahex_v36_waves' && is_array($value) && $value && class_exists(\HoseinMomeni\MahexWoo\V36\OfflineDispatchWaves::class)) $value = \HoseinMomeni\MahexWoo\V36\OfflineDispatchWaves::privacy($order);
                 if ($value!=='' && $value!==[]) $data[]=array('name'=>$label.' #'.$order->get_id(),'value'=>wp_json_encode($value,JSON_UNESCAPED_UNICODE));
             }
 			$shipments = $order->get_meta( OrderShipmentStore::MULTI_META, true );
@@ -45,6 +46,11 @@ final class WooCommercePersonalDataRepository implements PersonalDataRepository 
 				$data[] = array( 'name' => 'Non-delivery reason', 'value' => sanitize_text_field( (string) $ndr['reason'] ) );
 			}
 		}
+		$user = function_exists( 'get_user_by' ) ? get_user_by( 'email', $email ) : false;
+		if ( $user && class_exists( \HoseinMomeni\MahexWoo\V36\QualitySampling::class ) ) {
+			$quality = \HoseinMomeni\MahexWoo\V36\QualitySampling::privacyForUser( (int) $user->ID );
+			if ( $quality ) $data[] = array( 'name' => 'Packaging quality sampling actor records', 'value' => wp_json_encode( $quality, JSON_UNESCAPED_UNICODE ) );
+		}
 		return $data;
 	}
 
@@ -55,6 +61,7 @@ final class WooCommercePersonalDataRepository implements PersonalDataRepository 
 		foreach ( $orders as $order ) {
 			$order_ids[] = $order->get_id();
             if (class_exists(\HoseinMomeni\MahexWoo\V35\LocalHandover::class)) \HoseinMomeni\MahexWoo\V35\LocalHandover::eraseOrder($order->get_id());
+            if (class_exists(\HoseinMomeni\MahexWoo\V36\OfflineDispatchWaves::class)) \HoseinMomeni\MahexWoo\V36\OfflineDispatchWaves::eraseOrder($order->get_id());
 			$keys = array(
 				OrderShipmentStore::SHIPMENT_META,
 				OrderShipmentStore::MULTI_META,
@@ -75,6 +82,7 @@ final class WooCommercePersonalDataRepository implements PersonalDataRepository 
                 '_hm_mahex_v34_service_case',
                 '_hm_mahex_v35_handover',
                 '_hm_mahex_v35_quality',
+                '_hm_mahex_v36_waves',
 			);
 			$hasData = false;
 			foreach ( $keys as $key ) {
@@ -86,6 +94,8 @@ final class WooCommercePersonalDataRepository implements PersonalDataRepository 
 				++$removed;
 			}
 		}
+		$user = function_exists( 'get_user_by' ) ? get_user_by( 'email', $email ) : false;
+		if ( $user && class_exists( \HoseinMomeni\MahexWoo\V36\QualitySampling::class ) ) $removed += \HoseinMomeni\MahexWoo\V36\QualitySampling::eraseUser( (int) $user->ID );
 		if ( $order_ids ) {
             \HoseinMomeni\MahexWoo\V33\NotificationCenter::erase($order_ids);
 			global $wpdb;
