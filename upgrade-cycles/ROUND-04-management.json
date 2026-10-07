@@ -4,55 +4,706 @@
   "module": "packaging_supply_receiving_quality",
   "scope": "Local staged receiving and manual QC for internal packaging-supply purchase orders; no Mahex API, carrier webhook, carrier queue, supplier integration, device or external-service claim.",
   "items": [
-    {"id":"R04-051","proposal":"ارتقای سازگار سفارش‌های خرید قدیمی","acceptance":"سفارش نسخه ۳.۳ با حفظ شناسه، اقلام، مقدار و وضعیت به مدل جدید نگاشت می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-052","proposal":"شناسه پایدار و غیرقابل‌حدس رسید","acceptance":"هر رسید UUID مستقل دارد و دو ایجاد متوالی شناسه یکسان نمی‌سازند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-053","proposal":"Snapshot اقلام سفارش خرید","acceptance":"تغییر بعدی کاتالوگ نام، مقدار و هزینه snapshot رسید را تغییر نمی‌دهد.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-054","proposal":"چرخه وضعیت صریح خرید","acceptance":"فقط گذارهای تعریف‌شده بین draft/ordered/partially_received/received/cancelled پذیرفته می‌شوند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-055","proposal":"رسید جزئی چندمرحله‌ای","acceptance":"حداقل دو رسید جزئی روی یک خرید ثبت و جمع دریافت و باقیمانده درست محاسبه می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-056","proposal":"کنترل سقف تجمعی دریافت","acceptance":"دریافت تجمعی بیش از سفارش بدون استثنای معتبر رد می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-057","proposal":"نمایش پس‌مانده خرید","acceptance":"باقیمانده هر ردیف و قرنطینه باز جدا و با جمع قابل تطبیق نمایش داده می‌شوند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-058","proposal":"کلید تکرارناپذیری ثبت رسید","acceptance":"تکرار token یکسان هیچ افزایش موجودی یا رویداد تکراری ایجاد نمی‌کند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-059","proposal":"کنترل هم‌زمانی خوش‌بینانه","acceptance":"revision قدیمی با conflict رد و نسخه جدیدتر حفظ می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-060","proposal":"اعلام مشاهده و شمارش دستی","acceptance":"بدون تأیید صریح مشاهده دستی، شمارش نهایی نمی‌شود و محدودیت در رابط دیده می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-061","proposal":"شمارش واقعی به‌ازای ردیف","acceptance":"هر ردیف مقدار عددی نامنفی اجباری دارد و مقدار خالی/نامعتبر رد می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-062","proposal":"ثبت مقدار آسیب‌دیده","acceptance":"آسیب نامنفی، حداکثر برابر شمارش و همراه توضیح اجباری است.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-063","proposal":"معادله شفاف مقدار سالم","acceptance":"healthy=counted-damaged-rejected است و هر چهار جزء در رابط نمایش داده می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-064","proposal":"دقت عددی متناسب با ماده","acceptance":"precision صفر تا سه رقم اعشار ذخیره و ورودی خارج آن رد می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-065","proposal":"استثنای کنترل‌شده اضافه‌تحویل","acceptance":"فقط مدیر، زیر سقف درصد نسخه‌دار و با دلیل می‌تواند اضافه‌تحویل ثبت کند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-066","proposal":"کد lot محلی پاک‌سازی‌شده","acceptance":"lot مطابق طول/الگوی مجاز normalize و ورودی HTML یا نامعتبر رد می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-067","proposal":"یکتایی lot در محدوده ماده","acceptance":"ترکیب material+lot یکتا است و تکرار به رکورد موجود پیوند می‌خورد.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-068","proposal":"تاریخ مصرف اختیاری معتبر","acceptance":"تاریخ ISO معتبر و نه زودتر از دریافت پذیرفته می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-069","proposal":"اعلام صریح بدون تاریخ مصرف","acceptance":"نبود expiry فقط با انتخاب explicit no-expiry قابل نهایی‌شدن است.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-070","proposal":"هشدار انقضای محلی","acceptance":"lot منقضی از موجودی قابل‌مصرف حذف و lot نزدیک انقضا هشدار داخلی می‌گیرد.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-071","proposal":"زمان دریافت UTC و زمان محلی نمایش","acceptance":"UTC سمت سرور ذخیره و با timezone وردپرس نمایش داده می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-072","proposal":"هویت ثبت‌کننده و تصمیم‌گیر","acceptance":"سازنده، شمارشگر و تصمیم‌گیر در رویدادهای جدا با capability جدا ثبت می‌شوند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-073","proposal":"نام تأمین‌کننده محلی و حداقل‌داده","acceptance":"نام normalize و طول‌محدود است و تلفن/نشانی اجباری نیست.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-074","proposal":"همسان‌سازی نام‌های تأمین‌کننده","acceptance":"alias نسخه‌دار به شناسه داخلی نگاشت و ادغام تاریخچه را حفظ می‌کند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-075","proposal":"دفتر lot قابل ردیابی","acceptance":"هر افزایش موجودی به receipt/purchase/line/lot منبع پیوند و با جمع موجودی تطبیق دارد.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-076","proposal":"پیشنهاد مصرف بر پایه انقضا","acceptance":"lotهای مجاز بر مبنای نزدیک‌ترین expiry و سپس received_at مرتب می‌شوند و کسر خودکار ندارند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-077","proposal":"قرنطینه مستقل مواد","acceptance":"قرنطینه در bucket جداست و در موجودی قابل‌مصرف شمرده نمی‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-078","proposal":"قرنطینه خودکار نقص بحرانی محلی","acceptance":"کد critical مقدار را قرنطینه و accept مستقیم را رد می‌کند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-079","proposal":"دلیل اجباری قرنطینه","acceptance":"قرنطینه بدون کد عیب و یادداشت مشاهده دستی رد می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-080","proposal":"تفکیک وظیفه برای رفع قرنطینه","acceptance":"رفع critical فقط با کاربر دوم و دلیل نهایی انجام می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-081","proposal":"رد مواد بدون افزایش موجودی","acceptance":"reject در دفتر ثبت می‌شود و هیچ bucket موجودی را افزایش نمی‌دهد.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-082","proposal":"پذیرش دقیقاً یک‌باره","acceptance":"accept سالم را یک بار اضافه می‌کند و retry اثر دوم ندارد.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-083","proposal":"تقسیم تصمیم یک ردیف","acceptance":"accepted+quarantined+rejected دقیقاً با counted برابر است.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-084","proposal":"واژه‌نامه نسخه‌دار آسیب","acceptance":"کد، عنوان فارسی، شدت و وضعیت فعال عیب‌ها نسخه‌دار مدیریت می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-085","proposal":"شواهد متنی ساختاریافته","acceptance":"هر نقص کد، مقدار و توضیح محدود دارد و فایل/دستگاه اجباری نیست.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-086","proposal":"آستانه‌های کنترل کیفیت نسخه‌دار","acceptance":"حد آسیب و اضافه‌تحویل در snapshot رسید ثابت می‌ماند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-087","proposal":"بازشماری زنجیره‌ای بدون بازنویسی","acceptance":"recount رکورد جدید مرتبط می‌سازد و مشاهده قبلی حفظ می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-088","proposal":"امتیاز توصیفی تأمین‌کننده","acceptance":"چهار سنجه فقط از رسیدهای نهایی با صورت و مخرج روشن محاسبه می‌شوند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-089","proposal":"حداقل نمونه برای نمایش امتیاز","acceptance":"کمتر از سه رسید نهایی، داده ناکافی و تعداد نمونه نمایش داده می‌شود نه رتبه.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-090","proposal":"عدم ادعای علیت یا اعتبار بیرونی","acceptance":"رابط امتیاز را توصیفی/دستی معرفی می‌کند و ادعای کیفیت بیرونی ندارد.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-091","proposal":"برد RTL جریان دریافت","acceptance":"پنج ستون وضعیت با شمارنده برابر داده واقعی نمایش داده می‌شوند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-092","proposal":"درگ‌ودراپ واقعی با گذار محافظت‌شده","acceptance":"drop با nonce/capability/revision و قواعد مقدار ذخیره و گذار نامعتبر رد می‌شود.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-093","proposal":"جایگزین کامل صفحه‌کلید","acceptance":"همه گذارها بدون ماوس با focus و aria-live قابل انجام‌اند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-094","proposal":"رابط فارسی پاسخ‌گو","acceptance":"در عرض ۳۶۰px کنترل اصلی قابل استفاده و بدون overflow مخرب است.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-095","proposal":"جست‌وجو و فیلتر کم‌افشا","acceptance":"شش فیلتر خرید/رسید/ماده/lot/وضعیت/تاریخ بدون داده مشتری کار می‌کنند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-096","proposal":"CSV کم‌داده و مقاوم در برابر formula injection","acceptance":"PII مشتری حذف و چهار پیشوند فرمول CSV خنثی می‌شوند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-097","proposal":"برگه چاپ دریافت آفلاین","acceptance":"برگه RTL اقلام، شمارش، امضا و هشدار نهایی‌نبودن تا ثبت دستی دارد.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-098","proposal":"سقف، صفحه‌بندی و نگهداری ایمن","acceptance":"سقف‌ها اعمال، فهرست صفحه‌بندی و purge دارای dry-run و فقط داده بسته خارج دوره است.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-099","proposal":"امنیت و حریم خصوصی کامل","acceptance":"nonce، چهار capability، sanitize/escape و export/erase بازیگران آزمون می‌شوند.","status":"planned","evidence":[],"blocker":null},
-    {"id":"R04-100","proposal":"حسابرسی و تطبیق اتمیک","acceptance":"رویدادهای append-only ثبت و آزمون ثابت می‌کند accepted دقیقاً یک بار به موجودی افزوده است.","status":"planned","evidence":[],"blocker":null}
-  ]
+    {
+      "id": "R04-051",
+      "proposal": "ارتقای سازگار سفارش‌های خرید قدیمی",
+      "acceptance": "سفارش نسخه ۳.۳ با حفظ شناسه، اقلام، مقدار و وضعیت به مدل جدید نگاشت می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-052",
+      "proposal": "شناسه پایدار و غیرقابل‌حدس رسید",
+      "acceptance": "هر رسید UUID مستقل دارد و دو ایجاد متوالی شناسه یکسان نمی‌سازند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-053",
+      "proposal": "Snapshot اقلام سفارش خرید",
+      "acceptance": "تغییر بعدی کاتالوگ نام، مقدار و هزینه snapshot رسید را تغییر نمی‌دهد.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-054",
+      "proposal": "چرخه وضعیت صریح خرید",
+      "acceptance": "فقط گذارهای تعریف‌شده بین draft/ordered/partially_received/received/cancelled پذیرفته می‌شوند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-055",
+      "proposal": "رسید جزئی چندمرحله‌ای",
+      "acceptance": "حداقل دو رسید جزئی روی یک خرید ثبت و جمع دریافت و باقیمانده درست محاسبه می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-056",
+      "proposal": "کنترل سقف تجمعی دریافت",
+      "acceptance": "دریافت تجمعی بیش از سفارش بدون استثنای معتبر رد می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-057",
+      "proposal": "نمایش پس‌مانده خرید",
+      "acceptance": "باقیمانده هر ردیف و قرنطینه باز جدا و با جمع قابل تطبیق نمایش داده می‌شوند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-058",
+      "proposal": "کلید تکرارناپذیری ثبت رسید",
+      "acceptance": "تکرار token یکسان هیچ افزایش موجودی یا رویداد تکراری ایجاد نمی‌کند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-059",
+      "proposal": "کنترل هم‌زمانی خوش‌بینانه",
+      "acceptance": "revision قدیمی با conflict رد و نسخه جدیدتر حفظ می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-060",
+      "proposal": "اعلام مشاهده و شمارش دستی",
+      "acceptance": "بدون تأیید صریح مشاهده دستی، شمارش نهایی نمی‌شود و محدودیت در رابط دیده می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-061",
+      "proposal": "شمارش واقعی به‌ازای ردیف",
+      "acceptance": "هر ردیف مقدار عددی نامنفی اجباری دارد و مقدار خالی/نامعتبر رد می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-062",
+      "proposal": "ثبت مقدار آسیب‌دیده",
+      "acceptance": "آسیب نامنفی، حداکثر برابر شمارش و همراه توضیح اجباری است.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-063",
+      "proposal": "معادله شفاف مقدار سالم",
+      "acceptance": "healthy=counted-damaged-rejected است و هر چهار جزء در رابط نمایش داده می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-064",
+      "proposal": "دقت عددی متناسب با ماده",
+      "acceptance": "precision صفر تا سه رقم اعشار ذخیره و ورودی خارج آن رد می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-065",
+      "proposal": "استثنای کنترل‌شده اضافه‌تحویل",
+      "acceptance": "فقط مدیر، زیر سقف درصد نسخه‌دار و با دلیل می‌تواند اضافه‌تحویل ثبت کند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-066",
+      "proposal": "کد lot محلی پاک‌سازی‌شده",
+      "acceptance": "lot مطابق طول/الگوی مجاز normalize و ورودی HTML یا نامعتبر رد می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-067",
+      "proposal": "یکتایی lot در محدوده ماده",
+      "acceptance": "ترکیب material+lot یکتا است و تکرار به رکورد موجود پیوند می‌خورد.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-068",
+      "proposal": "تاریخ مصرف اختیاری معتبر",
+      "acceptance": "تاریخ ISO معتبر و نه زودتر از دریافت پذیرفته می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-069",
+      "proposal": "اعلام صریح بدون تاریخ مصرف",
+      "acceptance": "نبود expiry فقط با انتخاب explicit no-expiry قابل نهایی‌شدن است.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-070",
+      "proposal": "هشدار انقضای محلی",
+      "acceptance": "lot منقضی از موجودی قابل‌مصرف حذف و lot نزدیک انقضا هشدار داخلی می‌گیرد.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-071",
+      "proposal": "زمان دریافت UTC و زمان محلی نمایش",
+      "acceptance": "UTC سمت سرور ذخیره و با timezone وردپرس نمایش داده می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-072",
+      "proposal": "هویت ثبت‌کننده و تصمیم‌گیر",
+      "acceptance": "سازنده، شمارشگر و تصمیم‌گیر در رویدادهای جدا با capability جدا ثبت می‌شوند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-073",
+      "proposal": "نام تأمین‌کننده محلی و حداقل‌داده",
+      "acceptance": "نام normalize و طول‌محدود است و تلفن/نشانی اجباری نیست.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-074",
+      "proposal": "همسان‌سازی نام‌های تأمین‌کننده",
+      "acceptance": "alias نسخه‌دار به شناسه داخلی نگاشت و ادغام تاریخچه را حفظ می‌کند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-075",
+      "proposal": "دفتر lot قابل ردیابی",
+      "acceptance": "هر افزایش موجودی به receipt/purchase/line/lot منبع پیوند و با جمع موجودی تطبیق دارد.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-076",
+      "proposal": "پیشنهاد مصرف بر پایه انقضا",
+      "acceptance": "lotهای مجاز بر مبنای نزدیک‌ترین expiry و سپس received_at مرتب می‌شوند و کسر خودکار ندارند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-077",
+      "proposal": "قرنطینه مستقل مواد",
+      "acceptance": "قرنطینه در bucket جداست و در موجودی قابل‌مصرف شمرده نمی‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-078",
+      "proposal": "قرنطینه خودکار نقص بحرانی محلی",
+      "acceptance": "کد critical مقدار را قرنطینه و accept مستقیم را رد می‌کند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-079",
+      "proposal": "دلیل اجباری قرنطینه",
+      "acceptance": "قرنطینه بدون کد عیب و یادداشت مشاهده دستی رد می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-080",
+      "proposal": "تفکیک وظیفه برای رفع قرنطینه",
+      "acceptance": "رفع critical فقط با کاربر دوم و دلیل نهایی انجام می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-081",
+      "proposal": "رد مواد بدون افزایش موجودی",
+      "acceptance": "reject در دفتر ثبت می‌شود و هیچ bucket موجودی را افزایش نمی‌دهد.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-082",
+      "proposal": "پذیرش دقیقاً یک‌باره",
+      "acceptance": "accept سالم را یک بار اضافه می‌کند و retry اثر دوم ندارد.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-083",
+      "proposal": "تقسیم تصمیم یک ردیف",
+      "acceptance": "accepted+quarantined+rejected دقیقاً با counted برابر است.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-084",
+      "proposal": "واژه‌نامه نسخه‌دار آسیب",
+      "acceptance": "کد، عنوان فارسی، شدت و وضعیت فعال عیب‌ها نسخه‌دار مدیریت می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-085",
+      "proposal": "شواهد متنی ساختاریافته",
+      "acceptance": "هر نقص کد، مقدار و توضیح محدود دارد و فایل/دستگاه اجباری نیست.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-086",
+      "proposal": "آستانه‌های کنترل کیفیت نسخه‌دار",
+      "acceptance": "حد آسیب و اضافه‌تحویل در snapshot رسید ثابت می‌ماند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-087",
+      "proposal": "بازشماری زنجیره‌ای بدون بازنویسی",
+      "acceptance": "recount رکورد جدید مرتبط می‌سازد و مشاهده قبلی حفظ می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-088",
+      "proposal": "امتیاز توصیفی تأمین‌کننده",
+      "acceptance": "چهار سنجه فقط از رسیدهای نهایی با صورت و مخرج روشن محاسبه می‌شوند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-089",
+      "proposal": "حداقل نمونه برای نمایش امتیاز",
+      "acceptance": "کمتر از سه رسید نهایی، داده ناکافی و تعداد نمونه نمایش داده می‌شود نه رتبه.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-090",
+      "proposal": "عدم ادعای علیت یا اعتبار بیرونی",
+      "acceptance": "رابط امتیاز را توصیفی/دستی معرفی می‌کند و ادعای کیفیت بیرونی ندارد.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-091",
+      "proposal": "برد RTL جریان دریافت",
+      "acceptance": "پنج ستون وضعیت با شمارنده برابر داده واقعی نمایش داده می‌شوند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-092",
+      "proposal": "درگ‌ودراپ واقعی با گذار محافظت‌شده",
+      "acceptance": "drop با nonce/capability/revision و قواعد مقدار ذخیره و گذار نامعتبر رد می‌شود.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-093",
+      "proposal": "جایگزین کامل صفحه‌کلید",
+      "acceptance": "همه گذارها بدون ماوس با focus و aria-live قابل انجام‌اند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-094",
+      "proposal": "رابط فارسی پاسخ‌گو",
+      "acceptance": "در عرض ۳۶۰px کنترل اصلی قابل استفاده و بدون overflow مخرب است.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-095",
+      "proposal": "جست‌وجو و فیلتر کم‌افشا",
+      "acceptance": "شش فیلتر خرید/رسید/ماده/lot/وضعیت/تاریخ بدون داده مشتری کار می‌کنند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-096",
+      "proposal": "CSV کم‌داده و مقاوم در برابر formula injection",
+      "acceptance": "PII مشتری حذف و چهار پیشوند فرمول CSV خنثی می‌شوند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-097",
+      "proposal": "برگه چاپ دریافت آفلاین",
+      "acceptance": "برگه RTL اقلام، شمارش، امضا و هشدار نهایی‌نبودن تا ثبت دستی دارد.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-098",
+      "proposal": "سقف، صفحه‌بندی و نگهداری ایمن",
+      "acceptance": "سقف‌ها اعمال، فهرست صفحه‌بندی و purge دارای dry-run و فقط داده بسته خارج دوره است.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-099",
+      "proposal": "امنیت و حریم خصوصی کامل",
+      "acceptance": "nonce، چهار capability، sanitize/escape و export/erase بازیگران آزمون می‌شوند.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    },
+    {
+      "id": "R04-100",
+      "proposal": "حسابرسی و تطبیق اتمیک",
+      "acceptance": "رویدادهای append-only ثبت و آزمون ثابت می‌کند accepted دقیقاً یک بار به موجودی افزوده است.",
+      "status": "completed_software_verified",
+      "evidence": [
+        "tests/v37-cycle-count-test.php or tests/v37-receiving-test.php: feature-level executable acceptance coverage",
+        "GitHub Actions run 37603881658: real candidate ZIP installed on WordPress/WooCommerce with HPOS on and off; backend and browser flows passed",
+        "GitHub Actions run 37603881256: plugin quality, PHP lint, JavaScript syntax and release metadata passed",
+        "Release v3.7.0 asset SHA-256 acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
+      ],
+      "blocker": null,
+      "limitation": "داده فیزیکی/دستگاهی و وضعیت بیرونی به‌صورت خودکار تأیید نمی‌شود؛ ورودی‌های عملیاتی اظهارات دستی کاربران مجازند."
+    }
+  ],
+  "status": "completed_software_verified"
 }

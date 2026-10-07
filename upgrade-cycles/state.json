@@ -1,23 +1,23 @@
 {
   "schema": 1,
   "requested_rounds": 10,
-  "completed_rounds": 3,
-  "active_round": 4,
+  "completed_rounds": 4,
+  "active_round": null,
   "baseline": "3.3.0",
-  "target": "3.7.0",
-  "status": "proposals_registered",
+  "target": null,
+  "status": "completed",
   "proposal_count": 100,
-  "implementation_verified": 0,
+  "implementation_verified": 100,
   "report": "ROUND-04.md",
   "no_mahex_api": true,
-  "implementation_code_count": 0,
-  "next_round": 4,
-  "current_version": "3.6.0",
-  "source_commit": "bb96df9a28349ed475998b41b100e3571b504039",
-  "release": "https://github.com/anonyset/mahex-shipping-for-woocommerce/releases/tag/v3.6.0",
-  "sha256": "3c798a40811fa7169119b2c3e1df85c98071eecbc712f3cf6679b779bb8913ff",
-  "items_report": null,
-  "evidence": null,
+  "implementation_code_count": 100,
+  "next_round": 5,
+  "current_version": "3.7.0",
+  "source_commit": "eb082ee7af8055c5b1e42b4e55d185f3ebd2064e",
+  "release": "https://github.com/anonyset/mahex-shipping-for-woocommerce/releases/tag/v3.7.0",
+  "sha256": "acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d",
+  "items_report": "ROUND-04-items.json",
+  "evidence": "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37603881658",
   "rounds": [
     {
       "round": 1,
@@ -55,7 +55,21 @@
       "quality": "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37596223881",
       "source_commit": "bb96df9a28349ed475998b41b100e3571b504039",
       "sha256": "3c798a40811fa7169119b2c3e1df85c98071eecbc712f3cf6679b779bb8913ff"
+    },
+    {
+      "round": 4,
+      "version": "3.7.0",
+      "baseline": "3.6.0",
+      "status": "completed",
+      "proposals": 100,
+      "implemented_software": 100,
+      "report": "ROUND-04.md",
+      "items_report": "ROUND-04-items.json",
+      "evidence": "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37603881658",
+      "quality": "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37603881256",
+      "source_commit": "eb082ee7af8055c5b1e42b4e55d185f3ebd2064e",
+      "sha256": "acc19d977cc0f05d46b573ffb554513121b2babb04c88ee7e162b78b5861114d"
     }
   ],
-  "round_baseline": "3.6.0"
+  "round_baseline": "3.7.0"
 }
