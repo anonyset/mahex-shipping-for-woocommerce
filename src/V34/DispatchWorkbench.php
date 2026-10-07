@@ -20,7 +20,7 @@ final class DispatchWorkbench {
  public static function data($order): array {$d=$order->get_meta(self::META,true);return array_merge(['revision'=>0,'hold'=>null,'priority'=>'normal','priority_reason'=>'','bin'=>'','packing_instruction'=>'','contact_instruction'=>'','recipient_only'=>false,'do_not_bend'=>false,'checks'=>[],'verification'=>null,'history'=>[],'undo'=>null],is_array($d)?$d:[]);}
  public static function address($order): array {
   $out=[];$source=[];$shipping=trim((string)$order->get_shipping_address_1())!=='';
-  foreach(['first_name','last_name','country','state','city','address_1','address_2','postcode','phone'] as $key){$get='get_shipping_'.$key;$ship=method_exists($order,$get)?(string)$order->$get():'';$bill='get_billing_'.$key;$billing=(string)$order->$bill();$pre=($shipping&&trim($ship)!=='')?'shipping':'billing';$out[$key]=$pre==='shipping'?$ship:$billing;$source[$key]=$pre;}
+  foreach(['first_name','last_name','country','state','city','address_1','address_2','postcode','phone'] as $key){$get='get_shipping_'.$key;$ship=method_exists($order,$get)?(string)$order->$get():'';$bill='get_billing_'.$key;$billing=(string)$order->$bill();$pre=($shipping&&(trim($ship)!==''||trim($billing)===''))?'shipping':'billing';$out[$key]=$pre==='shipping'?$ship:$billing;$source[$key]=$pre;}
   return ['fields'=>$out,'source'=>$source,'shipping_used'=>$shipping,'shipping_phone'=>method_exists($order,'get_shipping_phone')?(string)$order->get_shipping_phone():'','billing_phone'=>(string)$order->get_billing_phone()];
  }
  public static function fingerprint(array $address): string {return hash('sha256',json_encode(['fields'=>$address['fields'],'source'=>$address['source']],JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES));}
