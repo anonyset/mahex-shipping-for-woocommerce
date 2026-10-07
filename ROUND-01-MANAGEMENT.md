@@ -1,53 +1,62 @@
-# دور ۱ — پیشنهادهای مدیریت M01 تا M50
-وضعیت اولیه: پیشنهاد ثبت شده؛ تکمیل و شواهد پس از آزمون ثبت می‌شوند. پیش‌نیازهای قدیمی مانند تعطیلات، SLA استان و شهر، مجوزها و nonce به عنوان پیشنهاد جدید شمرده نشده‌اند. هیچ اتصال حامل وجود ندارد.
+# دور ۱ — ارتقای مدیریت M01 تا M50
+این فهرست اولیه پیش از تکمیل توسعه گسترده ثبت شد؛ نمونه اولیه محلی پیش از ثبت فهرست وجود داشت. تقویم ساده، روزهای SLA، nonce و مجوزها پیش‌نیاز موجود هستند و پیشنهاد جدید شمرده نشده‌اند.
+وضعیت توسعه: ۵۰ قابلیت نرم‌افزاری پیاده‌سازی شده؛ آزمون مستقل PHP و syntax پاس شده؛ آزمون نصب واقعی/HPOS/مرورگر و انتشار در اختیار آزمون نهایی دور است و هنوز در این گزارش ادعای موفقیت آنها نشده است.
 
-1. **M01 — Minute-based preparation effort independent of transit days** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-2. **M02 — Weekday-specific shift opening** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-3. **M03 — Weekday-specific shift closing** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-4. **M04 — Lunch-break exclusion from preparation** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-5. **M05 — Split-shift preparation carryover** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-6. **M06 — Date-specific exceptional opening** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-7. **M07 — Date-specific exceptional closing** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-8. **M08 — Date-specific closure override** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-9. **M09 — Holiday exceptional reopening** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-10. **M10 — Preparation crossing multiple working days** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-11. **M11 — Minute-exact preparation completion evidence** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-12. **M12 — Frozen promise based on actual order creation** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-13. **M13 — Frozen destination routing evidence** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-14. **M14 — Frozen policy fingerprint** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-15. **M15 — Detect policy drift on frozen promise** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-16. **M16 — Retain prior frozen promises** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-17. **M17 — Manual deadline override with reason** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-18. **M18 — Reject override before order creation** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-19. **M19 — Pause promise clock with timestamp** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-20. **M20 — Resume promise clock with elapsed extension** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-21. **M21 — Record accumulated pause duration** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-22. **M22 — Preserve original deadline through overrides** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-23. **M23 — Reforecast future promise without changing original** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-24. **M24 — Explain accepted preparation window** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-25. **M25 — Expose preparation hours in preview** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-26. **M26 — Structured typed incident linked to real order** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-27. **M27 — Four-level incident severity** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-28. **M28 — Explicit acknowledgement state** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-29. **M29 — Acknowledgement timestamp** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-30. **M30 — Explicit resolution state** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-31. **M31 — Resolution outcome note** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-32. **M32 — Reopen closed incident with reason** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-33. **M33 — Assign incident to authorized operator** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-34. **M34 — Individual incident due date** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-35. **M35 — Incident overdue indicator** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-36. **M36 — Incident age indicator** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-37. **M37 — Time to acknowledgement measure** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-38. **M38 — Time to resolution measure** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-39. **M39 — Critical unresolved count** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-40. **M40 — Unresolved incident count** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-41. **M41 — Incident root-cause classification** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-42. **M42 — Corrective action record** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-43. **M43 — Preventive action record** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-44. **M44 — Customer-contact outcome record** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-45. **M45 — Resolution category classification** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-46. **M46 — Incident loss amount ledger** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-47. **M47 — Incident recovery amount ledger** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-48. **M48 — Net exception exposure summary** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-49. **M49 — Search incidents within selected order** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
-50. **M50 — Download private case evidence JSON** — معیار پذیرش: داده یا خروجی مستقل این قابلیت در ServicePolicies و آزمون مرتبط قابل مشاهده و ارزیابی باشد. وضعیت: پیشنهاد ثبت‌شده.
+| شناسه | پیشنهاد تازه | معیار پذیرش | محل کد / شاهد | وضعیت |
+|---|---|---|---|---|
+| M01 | آماده‌سازی دقیقه‌ای مستقل از روز حمل | ۱۲۰ دقیقه کار از ۱۱:۳۰ با استراحت ۱۲ تا ۱۳ در ۱۴:۳۰ پایان می‌یابد | ServicePolicies::effort/working؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M02 | شروع متفاوت شیفت هر روز هفته | شیفت چهارشنبه ۱۰ تا ۱۱ از ساعت ۱۰ پذیرش دارد | ServicePolicies::effort/working؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M03 | پایان متفاوت شیفت هر روز هفته | ۶۰ دقیقه مانده شیفت چهارشنبه به پنجشنبه منتقل می‌شود | ServicePolicies::effort/working؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M04 | حذف زمان استراحت از آماده‌سازی | دقیقه‌های بازه استراحت در daily_minutes شمرده نمی‌شوند | ServicePolicies::effort/working؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M05 | انتقال مانده آماده‌سازی به شیفت بعد | کار بیشتر از بازه نخست روز بعد ادامه می‌یابد | ServicePolicies::effort/working؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M06 | شروع زودهنگام استثنایی یک تاریخ | استثنای ۶ صبح، سفارش ۶ صبح را همان روز می‌پذیرد | ServicePolicies::effort/working؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M07 | پایان دیرهنگام استثنایی یک تاریخ | استثنای پایان ۲۰، سفارش ساعت ۱۷ را به فردا نمی‌برد | ServicePolicies::effort/working؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M08 | بستن شیفت در تاریخ خاص | مقدار closed روز را برای کار آماده‌سازی بسته می‌کند | ServicePolicies::effort/working؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M09 | بازگشایی روز تعطیل با شیفت استثنایی | شیفت تاریخ بر holidays اولویت دارد | ServicePolicies::effort/working؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M10 | آماده‌سازی چندروزه با صورت ریز روزها | daily_minutes مصرف هر روز را جدا ثبت می‌کند | ServicePolicies::effort/working؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M11 | ثبت زمان دقیق پایان آماده‌سازی | completed مقدار ISO با دقیقه صحیح دارد | ServicePolicies::effort/working؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M12 | ثبت تعهد ثابت از زمان واقعی سفارش | promise با تاریخ ایجاد WC_Order تولید و ذخیره می‌شود | ServicePolicies::deadline/transition/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M13 | ثبت مقصد ثابت همراه تعهد | province و city در promise ثبت می‌شوند | ServicePolicies::deadline/transition/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M14 | اثر انگشت سیاست همراه تعهد | policy_hash طول ۶۴ دارد | ServicePolicies::deadline/transition/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M15 | هشدار تغییر سیاست پس از ثبت تعهد | تفاوت fingerprint فعلی و ثابت هشدار می‌دهد | ServicePolicies::deadline/transition/page؛ آزمون یکپارچه/مرورگر نهایی دور مورد نیاز است | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M16 | نگهداری نسخه‌های قبلی تعهد | اصلاح قبلی در promise_history تا ۵۰ نسخه حفظ می‌شود | ServicePolicies::deadline/transition/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M17 | اصلاح دستی مهلت با دلیل | override بدون note رد می‌شود | ServicePolicies::deadline/transition/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M18 | رد اصلاح مهلت قبل از ایجاد سفارش | override پیش از created_at رد می‌شود | ServicePolicies::deadline/transition/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M19 | توقف ساعت تعهد با زمان شروع | hold زمان paused_at را ذخیره می‌کند | ServicePolicies::deadline/transition/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M20 | ادامه ساعت تعهد و تمدید به اندازه توقف | resume بعد از ۳۶۰۰ ثانیه مهلت را ۳۶۰۰ ثانیه می‌افزاید | ServicePolicies::deadline/transition/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M21 | جمع زمان توقف سفارش | pause_seconds بین توقف‌های متعدد جمع می‌شود | ServicePolicies::deadline/transition/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M22 | حفظ مهلت اصلی پس از اصلاح | original_deadline پس از override و resume ثابت می‌ماند | ServicePolicies::deadline/transition/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M23 | برآورد مجدد مستقل از تعهد ثابت | forecast جای promise را نمی‌گیرد | ServicePolicies::deadline/transition/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M24 | نمایش شروع بازه پذیرش مؤثر | accepted_at شروع واقعی شیفت قابل کار را دارد | ServicePolicies::deadline/transition/page؛ آزمون یکپارچه/مرورگر نهایی دور مورد نیاز است | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M25 | نمایش دقیقه و پایان آماده‌سازی | صفحه minutes و completed را نمایش می‌دهد | ServicePolicies::deadline/transition/page؛ آزمون یکپارچه/مرورگر نهایی دور مورد نیاز است | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M26 | پرونده ساختاریافته آسیب و اختلال سفارش | open نوع معتبر و شناسه یکتا را ثبت می‌کند | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M27 | شدت چهارسطحی پرونده | low/medium/high/critical ثبت می‌شود | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M28 | پذیرش صریح رسیدگی پرونده | ack فقط پرونده open را acknowledged می‌کند | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M29 | ثبت زمان پذیرش پرونده | ack_at زمان واقعی عملیات است | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M30 | بستن صریح پرونده پس از رسیدگی | resolve پرونده را closed می‌کند | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M31 | نتیجه الزامی بستن پرونده | resolve بدون نتیجه با سیاست پیش‌فرض رد می‌شود | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M32 | بازگشایی پرونده با دلیل | reopen فقط از closed و با note ممکن است | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M33 | سپردن پرونده به مسئول مجاز | assign فقط کاربر دارای مجوز عملیات را می‌پذیرد | ServicePolicies::transition/summary/page؛ آزمون یکپارچه/مرورگر نهایی دور مورد نیاز است | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M34 | مهلت مستقل رسیدگی پرونده | due تاریخ محلی فرم را به epoch تبدیل و تا ۹۰ روز اعتبارسنجی می‌کند | ServicePolicies::transition/summary/page؛ آزمون یکپارچه/مرورگر نهایی دور مورد نیاز است | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M35 | نشانگر پرونده گذشته از مهلت | due گذشته و پرونده بسته‌نشده نشانگر معوق دارند | ServicePolicies::transition/summary/page؛ آزمون یکپارچه/مرورگر نهایی دور مورد نیاز است | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M36 | سن پرونده به ساعت | اختلاف اکنون و created_at به ساعت نمایش داده می‌شود | ServicePolicies::transition/summary/page؛ آزمون یکپارچه/مرورگر نهایی دور مورد نیاز است | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M37 | زمان سپری‌شده تا پذیرش | اختلاف ack_at و created_at نمایش داده می‌شود | ServicePolicies::transition/summary/page؛ آزمون یکپارچه/مرورگر نهایی دور مورد نیاز است | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M38 | زمان سپری‌شده تا حل | اختلاف resolved_at و created_at نمایش داده می‌شود | ServicePolicies::transition/summary/page؛ آزمون یکپارچه/مرورگر نهایی دور مورد نیاز است | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M39 | شمار پرونده بحرانی حل‌نشده | summary critical تنها برای بسته‌نشده‌ها می‌شمارد | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M40 | شمار همه پرونده‌های باز | summary open فقط بسته‌نشده‌ها را می‌شمارد | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M41 | ثبت علت ریشه‌ای پرونده | root_cause مستقل ثبت و نمایش می‌شود | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M42 | ثبت اقدام اصلاحی پرونده | corrective مستقل ثبت و نمایش می‌شود | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M43 | ثبت اقدام پیشگیرانه پرونده | preventive مستقل ثبت و نمایش می‌شود | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M44 | ثبت نتیجه تماس با مشتری | contact مستقل ثبت و نمایش می‌شود؛ پیام خودکار ارسال نمی‌شود | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M45 | طبقه‌بندی نتیجه رسیدگی | resolution مستقل ثبت و نمایش می‌شود | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M46 | ثبت هزینه زیان پرونده با مجوز مالی | cost عدد محدود است و مجوز finance لازم دارد | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M47 | ثبت مبلغ بازیافت با مجوز مالی | recovery عدد محدود است و مجوز finance لازم دارد | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M48 | گزارش خالص زیان پرونده‌ها | summary net برابر loss منهای recovery است | ServicePolicies::transition/summary/page؛ tests/v34-policies-test.php | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M49 | جست‌وجوی پرونده در سفارش انتخابی | ورودی جست‌وجو کارت‌های نامرتبط را پنهان می‌کند | ServicePolicies::v34-policies.js؛ آزمون یکپارچه/مرورگر نهایی دور مورد نیاز است | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+| M50 | دریافت خصوصی پرونده بدون افشای مبلغ به اپراتور | export مجوز، nonce و سفارش را بررسی و مبلغ را برای اپراتور غیرمالی حذف می‌کند | ServicePolicies::export؛ آزمون یکپارچه/مرورگر نهایی دور مورد نیاز است | پیاده‌سازی؛ انتظار تأیید یکپارچه |
+
+محدودیت‌ها: تعهد صرفاً برنامه داخلی فروشگاه است، خبر زنده یا تعهد شرکت حمل نیست. پنجره‌های شیفت درون یک روز هستند؛ شیفت شبانه باید به دو روز تفکیک شود. استراحت مشترک برای همه روزهاست. ویرایش شیفت‌ها، تاریخ‌های استثنایی و استراحت با جدول فارسی و ورودی ساعت/تاریخ انجام می‌شود. پرونده‌ها حداکثر ۲۰۰ مورد و تاریخچه حداکثر ۲۰۰ رخداد در هر سفارش دارند. واحد هزینه همان واحد پول سفارش انتخاب‌شده است و کنار مقادیر نمایش داده می‌شود؛ بازیافت صرفاً ثبت حسابداری است و پرداخت یا بازپرداخت واقعی انجام نمی‌دهد. تماس صرفاً ثبت نتیجه اپراتور است و پیام ارسال نمی‌کند. برآورد مستقل باید با فرم ثبت شود و خودکار تعهد ثابت را تغییر نمی‌دهد. هیچ سخت‌افزار، سرویس خارجی یا API ماهکس دخیل نیست.
+
+شاهد تکمیلی توسعه: آزمون مستقل `tests/v34-policies-test.php` در ۲۰۲۶-۱۰-۰۷ پس از اصلاح محاسبه بازه‌ای پاس شد؛ علاوه بر معیارهای جدول، آماده‌سازی ۱۴۴۰۰ دقیقه‌ای در ۲۴۰ شیفت، استراحت‌های هم‌پوشان، تقویم کاملاً مسدود، آماده‌سازی صفر، پذیرش ساعت ۶ و پایان شیفت ساعت ۲۰ بررسی شدند. افق محاسبه ۱۰۹۶ روز است؛ پیمایش دقیقه‌به‌دقیقه حذف شد. lint PHP و بررسی syntax جاوااسکریپت پاس شدند. این شاهد جایگزین آزمون نصب واقعی و مرورگر نهایی دور نیست.
+
+زمان ایجاد دارای ثانیه به دقیقه بعد گرد می‌شود تا پذیرش پیش از ثبت واقعی سفارش رخ ندهد. برآورد مستقل همچنان از زمان ایجاد سفارش و سیاست فعلی محاسبه می‌شود؛ برآورد از اکنون نیست.

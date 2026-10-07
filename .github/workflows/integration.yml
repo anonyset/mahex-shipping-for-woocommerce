@@ -55,6 +55,7 @@ jobs:
           wp plugin activate mahex-shipping-for-woocommerce --path="$MAHEX_WP_ROOT"
           wp eval-file tests/integration/seed.php --path="$MAHEX_WP_ROOT"
           wp eval-file tests/integration/backend.php --path="$MAHEX_WP_ROOT"
+          wp eval-file tests/integration/v34-backend.php --path="$MAHEX_WP_ROOT"
       - name: Install browser runtime
         run: |
           npm install --no-save --no-audit --no-fund playwright@1.62.1

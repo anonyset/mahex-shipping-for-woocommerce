@@ -1,5 +1,11 @@
 # 3.3.0 — 2026-10-07
 
+## 3.4.0 — 2026-10-07
+
+- Controlled historical-order address remediation, dispatch holds and bin workbench.
+- Minute-resolution local preparation calendars, frozen promises and structured service cases.
+- First 100-proposal upgrade cycle with scoped access and conflict protection; no carrier API.
+
 - Local scan/measure packing station, feasible geometry preview, confirmed material inventory, purchase drafts, parcel tracking and signed handover.
 - Batch labels, printer calibration, branch templates and direct RTL PDF with locked bundled runtime.
 - Customer returns, damage claims, protected official documents and opt-in notification queue/transport hook.

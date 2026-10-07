@@ -4,7 +4,7 @@ Tags: woocommerce, shipping, iran, persian, rtl, packaging, warehouse
 Requires at least: 7.1
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 3.3.0
+Stable tag: 3.4.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,12 @@ Mahex Shipping for WooCommerce 3.0.1 یک پروژه مستقل برای مدی�
 Large Store Mode و جدول Order Index برای جلوگیری از اسکن سنگین متادیتای تمام سفارش‌ها در گزارش‌ها و جست‌وجو اضافه شده‌اند. با این حال هر فروشگاه بزرگ باید نسخه را ابتدا روی Staging و با داده واقعی خودش تست کند.
 
 == Changelog ==
+
+= 3.4.0 =
+* Historical address remediation with selected-field preview, conflict-aware undo and recipient verification.
+* Internal dispatch holds, bin workbench, controlled bulk actions and dispatch instructions.
+* Minute-level work calendars, frozen local promises and structured incident cases.
+* No carrier API; independently gated WordPress installation and browser tests.
 
 = 3.3.0 =
 * Local scanning and measured parcels, inventory, batch RTL PDF, returns and claims.

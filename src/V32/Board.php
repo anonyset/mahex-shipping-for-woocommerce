@@ -38,7 +38,7 @@ final class Board {
   try {
    \HoseinMomeni\MahexWoo\V33\BoardTools::guardOtherEditor($id);$order=wc_get_order($id);if(!$order)throw new \RuntimeException('سفارش پیدا نشد.');$order->read_meta_data(true);
    $state=self::state($order);
-   if(($stage==='ready'||($undo&&($state['history'][count($state['history'])-1]['from']??'')==='ready'))){$errors=\HoseinMomeni\MahexWoo\V31\OperationsValidation::errors($order);if($errors)throw new \RuntimeException(implode(' / ',$errors));}
+   if(($stage==='ready'||($undo&&($state['history'][count($state['history'])-1]['from']??'')==='ready'))){if(class_exists(\HoseinMomeni\MahexWoo\V34\DispatchWorkbench::class))\HoseinMomeni\MahexWoo\V34\DispatchWorkbench::assertReady($order);$errors=\HoseinMomeni\MahexWoo\V31\OperationsValidation::errors($order);if($errors)throw new \RuntimeException(implode(' / ',$errors));}
    $next=self::transition($state,$revision,$stage,$operator,get_current_user_id(),$undo);
    if($next!==$state){$order->update_meta_data(self::META,$next);$order->save_meta_data();$order->add_order_note('عملیات داخلی ماهکس: '.self::STAGES[$next['stage']].'؛ مسئول #'.$next['operator'].'؛ ویرایش '.$next['revision']);}
    return $next;

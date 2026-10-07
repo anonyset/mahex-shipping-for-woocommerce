@@ -1,26 +1,26 @@
 {
-  "name": "Mahex Shipping for WooCommerce",
-  "slug": "mahex-shipping-for-woocommerce",
-  "version": "3.3.0",
-  "download_url": "https://github.com/anonyset/mahex-shipping-for-woocommerce/releases/download/v3.3.0/mahex-shipping-for-woocommerce-3.3.0.zip",
-  "homepage": "https://github.com/anonyset/mahex-shipping-for-woocommerce",
-  "docs": "https://anonyset.github.io/mahex-shipping-for-woocommerce/",
-  "requires": "7.1",
-  "tested": "7.1",
-  "requires_php": "8.1",
-  "requires_wc": "11.0",
-  "last_updated": "2026-10-07 03:45:23+03:30",
-  "sections": {
-    "description": "<p>مدیریت محلی ارسال ووکامرس بدون API ماهکس. نسخه ۳.۳.۰: اسکن و وزن واقعی، موجودی ایستگاه، چاپ گروهی و PDF فارسی، مرجوعی و خسارت، تطبیق هزینه حمل، نسخه‌بندی قوانین و دسترسی تیم.</p>",
-    "installation": "<ol><li>افزونه را نصب و فعال کنید.</li><li>روش Mahex Shipping را به Shipping Zone موردنظر اضافه کنید.</li><li>نرخ‌ها، بسته‌بندی و عملیات را از منوی ماهکس تنظیم کنید.</li><li>برای بروزرسانی‌های بعدی، پیشخوان وردپرس به‌صورت دوره‌ای Manifest عمومی GitHub را بررسی می‌کند.</li></ol>",
-    "changelog": "<h4>3.3.0</h4><ul><li>ایستگاه اسکن، وزن و ابعاد، عکس، مواد و موجودی با ثبت یک‌باره.</li><li>چاپ گروهی، کالیبراسیون، قالب شعب و PDF مستقیم فارسی.</li><li>مرجوعی، خسارت، فایل رسمی و صف اعلان قابل اتصال.</li><li>تطبیق صورتحساب، سود تفکیکی، نسخه‌بندی قوانین و انتقال تنظیمات.</li><li>قفل ویرایش، برد زنده و آزمون ایزوله MySQL/HPOS/مرورگر.</li></ul><h4>3.2.0</h4><ul><li>داشبورد شخصی، برد درگ و دراپ سفارش، ذخیره و برگشت.</li><li>طراح برچسب حرارتی و A4 با اطلاعات واقعی سفارش.</li><li>بسته‌بندی دستی با کنترل ظرفیت و اتصال به چاپ.</li><li>قانون‌ساز تصویری با آزمایش موتور نرخ و کنترل هم‌زمانی.</li><li>رفع خطای شروع افزونه و ذخیره چیدمان در پشتیبان آپدیت.</li></ul><h4>3.1.0</h4><ul><li>راه‌اندازی فارسی، ورود گروهی بارنامه، پیگیری مشتری و اعلان‌های قابل تنظیم.</li><li>ریز هزینه، صورتحساب راست‌چین، خروجی اکسل و گزارش سود واقعی ارسال.</li><li>کنترل اطلاعات ناقص و تعرفه‌های تاریخ‌دار با حفظ اطلاعات سفارش.</li><li>بررسی سازگاری آپدیت، صحت ZIP و راهنمای بازیابی.</li></ul><h4>3.0.1</h4><ul><li>GitHub updater استاندارد برای نمایش بروزرسانی در WordPress.</li><li>صفحه اطلاعات افزونه و لینک مستندات/GitHub.</li><li>مستندات دو‌زبانه و GitHub Pages آماده انتشار.</li></ul><h4>3.0.0</h4><ul><li>Multi-Store & Control Center، شعب، QC، Wallet/Credit و Network Analytics.</li></ul>"
-  },
-  "banners": {
-    "low": "https://raw.githubusercontent.com/anonyset/mahex-shipping-for-woocommerce/main/docs/assets/banner-772x250.svg",
-    "high": "https://raw.githubusercontent.com/anonyset/mahex-shipping-for-woocommerce/main/docs/assets/banner-1544x500.svg"
-  },
-  "icons": {
-    "1x": "https://raw.githubusercontent.com/anonyset/mahex-shipping-for-woocommerce/main/docs/assets/icon-128.svg",
-    "2x": "https://raw.githubusercontent.com/anonyset/mahex-shipping-for-woocommerce/main/docs/assets/icon-256.svg"
-  }
+    "name": "Mahex Shipping for WooCommerce",
+    "slug": "mahex-shipping-for-woocommerce",
+    "version": "3.4.0",
+    "download_url": "https://github.com/anonyset/mahex-shipping-for-woocommerce/releases/download/v3.4.0/mahex-shipping-for-woocommerce-3.4.0.zip",
+    "homepage": "https://github.com/anonyset/mahex-shipping-for-woocommerce",
+    "docs": "https://anonyset.github.io/mahex-shipping-for-woocommerce/",
+    "requires": "7.1",
+    "tested": "7.1",
+    "requires_php": "8.1",
+    "requires_wc": "11.0",
+    "last_updated": "2026-10-07",
+    "sections": {
+        "description": "<p>مدیریت محلی ارسال بدون API ماهکس؛ نسخه ۳.۴.۰ با کارگاه اصلاح سفارش، تقویم دقیقه‌ای و پرونده استثنا.</p>",
+        "installation": "<ol><li>افزونه را نصب و فعال کنید.</li><li>روش Mahex Shipping را به Shipping Zone موردنظر اضافه کنید.</li><li>نرخ‌ها، بسته‌بندی و عملیات را از منوی ماهکس تنظیم کنید.</li><li>برای بروزرسانی‌های بعدی، پیشخوان وردپرس به‌صورت دوره‌ای Manifest عمومی GitHub را بررسی می‌کند.</li></ol>",
+        "changelog": "<h4>3.4.0</h4><ul><li>کارگاه اصلاح انتخابی نشانی، پیش‌نمایش و برگردانی کنترل‌شده.</li><li>توقف اعزام، قفسه، دستور داخلی و چک‌لیست وابسته به مقصد.</li><li>تقویم دقیقه‌ای، تعهد ثابت سفارش و پرونده استثنا.</li></ul><h4>3.3.0</h4><ul><li>ایستگاه اسکن، وزن و ابعاد، عکس، مواد و موجودی با ثبت یک‌باره.</li><li>چاپ گروهی، کالیبراسیون، قالب شعب و PDF مستقیم فارسی.</li><li>مرجوعی، خسارت، فایل رسمی و صف اعلان قابل اتصال.</li><li>تطبیق صورتحساب، سود تفکیکی، نسخه‌بندی قوانین و انتقال تنظیمات.</li><li>قفل ویرایش، برد زنده و آزمون ایزوله MySQL/HPOS/مرورگر.</li></ul><h4>3.2.0</h4><ul><li>داشبورد شخصی، برد درگ و دراپ سفارش، ذخیره و برگشت.</li><li>طراح برچسب حرارتی و A4 با اطلاعات واقعی سفارش.</li><li>بسته‌بندی دستی با کنترل ظرفیت و اتصال به چاپ.</li><li>قانون‌ساز تصویری با آزمایش موتور نرخ و کنترل هم‌زمانی.</li><li>رفع خطای شروع افزونه و ذخیره چیدمان در پشتیبان آپدیت.</li></ul><h4>3.1.0</h4><ul><li>راه‌اندازی فارسی، ورود گروهی بارنامه، پیگیری مشتری و اعلان‌های قابل تنظیم.</li><li>ریز هزینه، صورتحساب راست‌چین، خروجی اکسل و گزارش سود واقعی ارسال.</li><li>کنترل اطلاعات ناقص و تعرفه‌های تاریخ‌دار با حفظ اطلاعات سفارش.</li><li>بررسی سازگاری آپدیت، صحت ZIP و راهنمای بازیابی.</li></ul><h4>3.0.1</h4><ul><li>GitHub updater استاندارد برای نمایش بروزرسانی در WordPress.</li><li>صفحه اطلاعات افزونه و لینک مستندات/GitHub.</li><li>مستندات دو‌زبانه و GitHub Pages آماده انتشار.</li></ul><h4>3.0.0</h4><ul><li>Multi-Store & Control Center، شعب، QC، Wallet/Credit و Network Analytics.</li></ul>"
+    },
+    "banners": {
+        "low": "https://raw.githubusercontent.com/anonyset/mahex-shipping-for-woocommerce/main/docs/assets/banner-772x250.svg",
+        "high": "https://raw.githubusercontent.com/anonyset/mahex-shipping-for-woocommerce/main/docs/assets/banner-1544x500.svg"
+    },
+    "icons": {
+        "1x": "https://raw.githubusercontent.com/anonyset/mahex-shipping-for-woocommerce/main/docs/assets/icon-128.svg",
+        "2x": "https://raw.githubusercontent.com/anonyset/mahex-shipping-for-woocommerce/main/docs/assets/icon-256.svg"
+    }
 }

@@ -11,7 +11,7 @@ final class WooCommercePersonalDataRepository implements PersonalDataRepository 
 		$orders = $this->orders( $email, $page, $page_size );
 		$data   = array();
 		foreach ( $orders as $order ) {
-            foreach (['_hm_mahex_v33_return'=>'Return/claim record','_hm_mahex_v33_station'=>'Packing/handover record','_hm_mahex_v33_sms_consent'=>'SMS consent'] as $key=>$label) {
+            foreach (['_hm_mahex_v34_dispatch'=>'Dispatch review record','_hm_mahex_v34_service_case'=>'Local service promise/incident record','_hm_mahex_v33_return'=>'Return/claim record','_hm_mahex_v33_station'=>'Packing/handover record','_hm_mahex_v33_sms_consent'=>'SMS consent'] as $key=>$label) {
                 $value=$order->get_meta($key,true);
                 if ($value!=='' && $value!==[]) $data[]=array('name'=>$label.' #'.$order->get_id(),'value'=>wp_json_encode($value,JSON_UNESCAPED_UNICODE));
             }
@@ -69,6 +69,8 @@ final class WooCommercePersonalDataRepository implements PersonalDataRepository 
                 '_hm_mahex_v33_official_documents',
                 '_hm_mahex_v33_station',
                 '_hm_mahex_v33_sms_consent',
+                '_hm_mahex_v34_dispatch',
+                '_hm_mahex_v34_service_case',
 			);
 			$hasData = false;
 			foreach ( $keys as $key ) {
