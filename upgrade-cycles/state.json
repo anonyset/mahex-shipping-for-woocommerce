@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "requested_rounds": 10,
+  "completed_rounds": 0,
+  "active_round": 1,
+  "baseline": "3.3.0",
+  "target": "3.4.0",
+  "status": "proposal_and_implementation",
+  "proposal_count": 100,
+  "implementation_verified": 0,
+  "report": "ROUND-01.md",
+  "no_mahex_api": true
+}
