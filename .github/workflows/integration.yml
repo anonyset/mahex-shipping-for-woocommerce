@@ -25,9 +25,9 @@ jobs:
           --health-interval=10s --health-timeout=5s --health-retries=10
     env:
       MAHEX_EXPECT_HPOS: ${{ matrix.hpos }}
-      MAHEX_WP_ROOT: ${{ runner.temp }}/mahex-wordpress
-      MAHEX_FIXTURES: ${{ runner.temp }}/mahex-reports/fixtures.json
-      MAHEX_REPORT_DIR: ${{ runner.temp }}/mahex-reports
+      MAHEX_WP_ROOT: /tmp/mahex-wordpress
+      MAHEX_FIXTURES: /tmp/mahex-reports/fixtures.json
+      MAHEX_REPORT_DIR: /tmp/mahex-reports
       MAHEX_BASE_URL: http://127.0.0.1:8092
     steps:
       - uses: actions/checkout@v4
@@ -72,4 +72,4 @@ jobs:
         if: always()
         with:
           name: isolated-hpos-${{ matrix.hpos }}
-          path: ${{ runner.temp }}/mahex-reports
+          path: /tmp/mahex-reports

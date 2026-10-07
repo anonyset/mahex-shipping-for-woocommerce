@@ -13,6 +13,8 @@ on:
       - 'composer.json'
       - 'composer.lock'
       - '.github/workflows/publish-update.yml'
+      - '.github/workflows/integration.yml'
+      - 'tests/**'
   workflow_dispatch:
 permissions:
   contents: write
