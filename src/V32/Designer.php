@@ -11,7 +11,7 @@ final class Designer {
   add_action('admin_menu',[self::class,'menu']);add_action('admin_enqueue_scripts',[self::class,'enqueue']);
   add_action('admin_post_hm_mahex_v32_label_save',[self::class,'save']);add_action('admin_post_hm_mahex_v32_label_print',[self::class,'printDocument']);
  }
- public static function menu(): void {add_submenu_page('hm-mahex','طراح برچسب','طراح برچسب','manage_woocommerce','hm-mahex-label-designer',[self::class,'page']);}
+ public static function menu(): void {add_submenu_page('hm-mahex','طراح برچسب','طراح برچسب',\HoseinMomeni\MahexWoo\V33\Access::SETTINGS,'hm-mahex-label-designer',[self::class,'page']);}
  public static function enqueue(): void {
   if(!in_array(sanitize_key($_GET['page']??''),['hm-mahex-label-designer','hm-mahex-manual-packing'],true))return;
   wp_enqueue_style('hm-mahex-v32-designer',plugins_url('assets/admin/v32-designer.css',HM_MAHEX_FILE),[],HM_MAHEX_VERSION);
@@ -40,7 +40,7 @@ final class Designer {
   $html='<div class="mhx-label-paper mhx-label-paper--'.esc_attr($layout['format']).'" dir="rtl">';foreach($layout['fields'] as $id=>$f){if(!$f['enabled']&&!$editing)continue;$style='left:'.$f['x'].'mm;top:'.$f['y'].'mm;width:'.$f['w'].'mm;height:'.$f['h'].'mm;font-size:'.$f['font'].'px;';$value=(string)($values[$id]??'');$content=$id==='logo'?'<img src="'.esc_url(plugins_url('assets/brand/mahex-reference.png',HM_MAHEX_FILE)).'" alt="ماهکس" draggable="false">':($id==='barcode'?(new Code128CBarcodeRenderer())->render_svg($value):esc_html($value));$html.='<div class="mhx-label-field'.(!$f['enabled']?' is-disabled':'').'" data-field="'.esc_attr($id).'" style="'.esc_attr($style).'"'.($editing?' tabindex="0" aria-label="'.esc_attr(self::fields()[$id]).'"':'').'>'.$content.'</div>';}$html.='</div>';return $html;
  }
  public static function page(): void {
-  if(!current_user_can('manage_woocommerce'))return;$id=absint($_GET['order_id']??0);$order=$id?wc_get_order($id):null;if($order&&!current_user_can('edit_shop_order',$id))wp_die('دسترسی سفارش مجاز نیست.','',['response'=>403]);$layout=self::layout();
+  if(!\HoseinMomeni\MahexWoo\V33\Access::can('settings'))return;$id=absint($_GET['order_id']??0);$order=$id?wc_get_order($id):null;if($order&&!current_user_can('edit_shop_order',$id))wp_die('دسترسی سفارش مجاز نیست.','',['response'=>403]);$layout=self::layout();
   echo '<div class="wrap mhx-v32" dir="rtl"><h1>طراح برچسب ماهکس</h1><p>فیلد را بکشید یا با کلیدهای جهت جابه‌جا کنید. تنظیم عددی و نمایش/پنهان‌کردن فیلدها در کنار برگه در دسترس است. اندازه‌ها به میلی‌متر هستند.</p><form method="get"><input type="hidden" name="page" value="hm-mahex-label-designer"><label>شماره داخلی سفارش <input type="number" min="1" name="order_id" value="'.esc_attr($id?:'').'"></label> <button class="button">نمایش سفارش</button></form>';
   if($id&&!$order)echo '<p role="alert">سفارش پیدا نشد؛ داده نمونه نمایش داده می‌شود.</p>';
   echo '<form method="post" action="'.esc_url(admin_url('admin-post.php')).'" data-label-designer><input type="hidden" name="action" value="hm_mahex_v32_label_save"><input type="hidden" name="order_id" value="'.esc_attr($id).'"><input type="hidden" name="revision" value="'.esc_attr($layout['revision']).'">';wp_nonce_field('hm_mahex_v32_label_save');echo '<div class="mhx-design-tools"><label>قطع چاپ <select name="format" data-label-format><option value="thermal" '.selected($layout['format'],'thermal',false).'>حرارتی ۱۰۰×۱۵۰</option><option value="a4" '.selected($layout['format'],'a4',false).'>A4</option></select></label><button class="button button-primary" name="intent" value="save">ذخیره چیدمان</button><button class="button" name="intent" value="undo">بازگردانی آخرین چیدمان ذخیره‌شده</button>';
@@ -50,7 +50,7 @@ final class Designer {
   echo '</aside></div><p aria-live="polite" data-design-status></p></form></div>';
  }
  public static function save(): void {
-  if(!current_user_can('manage_woocommerce'))wp_die('دسترسی مجاز نیست.','',['response'=>403]);check_admin_referer('hm_mahex_v32_label_save');
+  if(!\HoseinMomeni\MahexWoo\V33\Access::can('settings'))wp_die('دسترسی مجاز نیست.','',['response'=>403]);check_admin_referer('hm_mahex_v32_label_save');
   $lock=new \HoseinMomeni\MahexWoo\Shipments\OptionOperationLock();$key=-32001;
   if(!$lock->acquire($key)){if(isset($_POST['ajax']))wp_send_json_error(['message'=>'چیدمان هم‌اکنون در حال ذخیره است؛ دوباره تلاش کنید.'],409);wp_die('چیدمان هم‌اکنون در حال ذخیره است.');}
   $error=null;
@@ -64,7 +64,7 @@ final class Designer {
   if(isset($_POST['ajax']))wp_send_json_success(['revision'=>$next['revision'],'message'=>'چیدمان ذخیره شد.']);wp_safe_redirect(add_query_arg(['page'=>'hm-mahex-label-designer','order_id'=>absint($_POST['order_id']??0)],admin_url('admin.php')));exit;
  }
  public static function printDocument(): void {
-  $id=absint($_GET['order_id']??0);if(!current_user_can('manage_woocommerce')||!current_user_can('edit_shop_order',$id))wp_die('دسترسی مجاز نیست.','',['response'=>403]);check_admin_referer('hm_mahex_v32_label_print_'.$id);$order=wc_get_order($id);if(!$order)wp_die('سفارش پیدا نشد.');$layout=self::layout();nocache_headers();header('Content-Type: text/html; charset=UTF-8');$size=$layout['format']==='a4'?'A4':'100mm 150mm';
+  $id=absint($_GET['order_id']??0);if(!\HoseinMomeni\MahexWoo\V33\Access::can('print')||!current_user_can('edit_shop_order',$id))wp_die('دسترسی مجاز نیست.','',['response'=>403]);check_admin_referer('hm_mahex_v32_label_print_'.$id);$order=wc_get_order($id);if(!$order)wp_die('سفارش پیدا نشد.');$layout=self::layout();nocache_headers();header('Content-Type: text/html; charset=UTF-8');$size=$layout['format']==='a4'?'A4':'100mm 150mm';
   echo '<!doctype html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"><title>برچسب ماهکس</title><link rel="stylesheet" href="'.esc_url(plugins_url('assets/admin/v32-designer.css',HM_MAHEX_FILE)).'"><style>@page{size:'.$size.';margin:0}body{margin:0;background:white}.mhx-label-paper{border:0;box-shadow:none}@media print{.mhx-print-tools{display:none}}</style></head><body><div class="mhx-print-tools"><button onclick="window.print()">چاپ / ذخیره PDF</button><p>مقیاس چاپ را ۱۰۰٪ و حاشیه را صفر قرار دهید.</p></div>'.self::canvas($layout,self::values($order)).'</body></html>';do_action('hm_mahex_document_printed',$id,'label',1);exit;
  }
 }

@@ -1,0 +1,11 @@
+<?php
+require __DIR__.'/../src/V33/Support.php';require __DIR__.'/../src/V33/PrintCenter.php';require __DIR__.'/../src/V33/Returns.php';require __DIR__.'/../src/V33/NotificationCenter.php';require __DIR__.'/../src/V33/UpgradeSandbox.php';
+function sanitize_text_field($v){return strip_tags($v);}function check($ok,$message){if(!$ok)throw new RuntimeException($message);}function fails(callable $run){try{$run();return false;}catch(Throwable $e){return true;}}
+use HoseinMomeni\MahexWoo\V33\PrintCenter;use HoseinMomeni\MahexWoo\V33\Returns;use HoseinMomeni\MahexWoo\V33\NotificationCenter;use HoseinMomeni\MahexWoo\V33\UpgradeSandbox;
+check(PrintCenter::ids('11,12 11')===[11,12],'Batch IDs deduplicate');foreach(['','-1','1 OR 1=1',str_repeat('1,',101)] as $value)check(fails(fn()=>PrintCenter::ids($value)),'Bad/overlimit print IDs rejected');
+check(PrintCenter::printer(['name'=>'Printer','x'=>-3,'y'=>2,'scale'=>102])['x']===-3.0,'Negative calibration valid');check(fails(fn()=>PrintCenter::printer(['x'=>INF])),'Nonfinite printer coordinate rejected');
+check(Returns::quantities(['1'=>'2','2'=>'0'],[1=>2,2=>3])===[1=>2],'Actual return line quantity');foreach([['1'=>3],['99'=>1],['1'=>'-1'],['1'=>0]] as $qty)check(fails(fn()=>Returns::quantities($qty,[1=>2])),'Return cannot exceed order quantities');check(Returns::transition('requested','approved')&&!Returns::transition('requested','closed')&&!Returns::transition('rejected','approved'),'Return state transitions');
+$owner=new class{function get_customer_id(){return 4;}};check(Returns::owns($owner,4)&&!Returns::owns($owner,0)&&!Returns::owns($owner,8),'Customer ownership checks');
+check(NotificationCenter::fingerprint(11,'parcel','delivered','email','X')!==NotificationCenter::fingerprint(11,'parcel','delivered','sms','X'),'Channel idempotency');check(NotificationCenter::nextAttempt(1,100)===220&&NotificationCenter::nextAttempt(30,100)<=86500,'Retry backoff bounded');
+$temp=tempnam(sys_get_temp_dir(),'mahex-sandbox-');$z=new ZipArchive();$z->open($temp,ZipArchive::OVERWRITE);$z->addFromString('mahex-shipping-for-woocommerce/../../evil.php','<?php echo 1;');$z->close();check(fails(fn()=>UpgradeSandbox::inspect($temp)),'Traversal rejected without extraction');unlink($temp);
+echo "Print calibration, return ownership/state, notification idempotence/backoff and sandbox traversal tests passed\n";

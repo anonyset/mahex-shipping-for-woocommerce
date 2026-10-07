@@ -37,7 +37,7 @@ final class UpdateSafety {
         }
         $options = [];
         // Settings only; order data and the full database require the site's backup system.
-        foreach (['hm_mahex_settings','hm_mahex_pricing_settings','hm_mahex_rate_rules','hm_mahex_packaging_profiles','hm_mahex_pro_settings','hm_mahex_v31_operations','hm_mahex_v31_tariffs','hm_mahex_v31_invoice_brand','hm_mahex_v1_settings','hm_mahex_v1_rules','hm_mahex_v2_settings','hm_mahex_v25_settings','hm_mahex_v3_settings','hm_mahex_v32_label_layout'] as $key) {
+        foreach (['hm_mahex_settings','hm_mahex_pricing_settings','hm_mahex_rate_rules','hm_mahex_packaging_profiles','hm_mahex_pro_settings','hm_mahex_v31_operations','hm_mahex_v31_tariffs','hm_mahex_v31_invoice_brand','hm_mahex_v1_settings','hm_mahex_v1_rules','hm_mahex_v2_settings','hm_mahex_v25_settings','hm_mahex_v3_settings','hm_mahex_v32_label_layout','hm_mahex_v33_print_settings','hm_mahex_v33_notification_settings','hm_mahex_v33_rule_versions','hm_mahex_v33_board_settings'] as $key) {
             $options[$key] = get_option($key, []);
         }
         $history = get_option('hm_mahex_update_backups', []);

@@ -8,8 +8,8 @@ use HoseinMomeni\MahexWoo\Shipping\PricingSettings;
 final class Packing {
  const META='_hm_mahex_v32_manual_packing';
  public static function register(): void {add_action('admin_menu',[self::class,'menu']);add_action('admin_post_hm_mahex_v32_packing_save',[self::class,'save']);add_action('woocommerce_admin_order_data_after_shipping_address',[self::class,'orderLink']);}
- public static function menu(): void {add_submenu_page('hm-mahex','چیدمان دستی بسته‌ها','چیدمان دستی بسته‌ها','manage_woocommerce','hm-mahex-manual-packing',[self::class,'page']);}
- public static function orderLink($order): void {if(!current_user_can('manage_woocommerce'))return;echo '<p><a class="button" href="'.esc_url(add_query_arg(['page'=>'hm-mahex-manual-packing','order_id'=>$order->get_id()],admin_url('admin.php'))).'">چیدمان دستی بسته‌ها</a></p>';}
+ public static function menu(): void {add_submenu_page('hm-mahex','چیدمان دستی بسته‌ها','چیدمان دستی بسته‌ها',\HoseinMomeni\MahexWoo\V33\Access::PACK,'hm-mahex-manual-packing',[self::class,'page']);}
+ public static function orderLink($order): void {if(!\HoseinMomeni\MahexWoo\V33\Access::can('packing'))return;echo '<p><a class="button" href="'.esc_url(add_query_arg(['page'=>'hm-mahex-manual-packing','order_id'=>$order->get_id()],admin_url('admin.php'))).'">چیدمان دستی بسته‌ها</a></p>';}
  public static function units($order): array {
   $units=[];foreach($order->get_items() as $lineId=>$line){$p=$line->get_product();if(!$p||$p->is_virtual())continue;$parent=$p->is_type('variation')?wc_get_product($p->get_parent_id()):null;
    $meta=static function($key)use($p,$parent){$v=$p->get_meta($key,true);return $v===''&&$parent?$parent->get_meta($key,true):$v;};
@@ -33,7 +33,7 @@ final class Packing {
   if(count($seen)!==count($units))throw new \InvalidArgumentException('تمام واحدهای سفارش باید دقیقاً یک بار در بسته قرار بگیرند.');return ['boxes'=>$boxes,'actual_weight_g'=>$actual,'volumetric_weight_g'=>$vol,'chargeable_weight_g'=>$chargeable,'cost_irr'=>$cost,'fingerprint'=>self::fingerprint($units)];
  }
  public static function page(): void {
-  if(!current_user_can('manage_woocommerce'))return;$id=absint($_GET['order_id']??0);$order=$id?wc_get_order($id):null;echo '<div class="wrap mhx-v32" dir="rtl"><h1>چیدمان دستی بسته‌های سفارش</h1><form method="get"><input type="hidden" name="page" value="hm-mahex-manual-packing"><label>شماره داخلی سفارش <input type="number" min="1" name="order_id" value="'.esc_attr($id?:'').'"></label> <button class="button">باز کردن سفارش</button></form>';if(!$order){echo '<p>برای شروع شماره سفارش را وارد کنید.</p></div>';return;}
+  if(!\HoseinMomeni\MahexWoo\V33\Access::can('packing'))return;$id=absint($_GET['order_id']??0);$order=$id?wc_get_order($id):null;echo '<div class="wrap mhx-v32" dir="rtl"><h1>چیدمان دستی بسته‌های سفارش</h1><form method="get"><input type="hidden" name="page" value="hm-mahex-manual-packing"><label>شماره داخلی سفارش <input type="number" min="1" name="order_id" value="'.esc_attr($id?:'').'"></label> <button class="button">باز کردن سفارش</button></form>';if(!$order){echo '<p>برای شروع شماره سفارش را وارد کنید.</p></div>';return;}
   if(!current_user_can('edit_shop_order',$id)){echo '<p>دسترسی سفارش مجاز نیست.</p></div>';return;}try{$units=self::units($order);}catch(\InvalidArgumentException $e){echo '<p>'.esc_html($e->getMessage()).'</p></div>';return;}$profiles=PackagingProfiles::all();$saved=$order->get_meta(self::META,true);$saved=is_array($saved)?$saved:[];$plan=self::snapshot($order);$boxes=$plan['boxes']??[];
   echo '<p>هر واحد کالا را داخل بسته بکشید یا از منوی انتقال استفاده کنید. ظرفیت، وزن، حجم و ممنوعیت اختلاط روی سرور کنترل می‌شوند. این برنامه بسته‌بندی، کرایه سفارش یا موجودی انبار را خودکار تغییر نمی‌دهد. کنترل حجم به معنی تضمین چیدمان هندسی نیست؛ بسته را هنگام آماده‌سازی بررسی کنید.</p>';
   if($saved&&!$plan)echo '<p role="alert">اطلاعات کالا تغییر کرده؛ طرح قبلی معتبر نیست و باید دوباره چیدمان شود.</p>';
@@ -42,13 +42,13 @@ final class Packing {
   echo '<script type="application/json" data-packing-data>'.wp_json_encode(['units'=>$units,'profiles'=>$profiles,'boxes'=>$boxes],JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT).'</script></div>';
  }
  public static function save(): void {
-  $id=absint($_POST['order_id']??0);if(!current_user_can('manage_woocommerce')||!current_user_can('edit_shop_order',$id))wp_die('دسترسی مجاز نیست.','',['response'=>403]);check_admin_referer('hm_mahex_v32_packing_save_'.$id);
+  $id=absint($_POST['order_id']??0);if(!\HoseinMomeni\MahexWoo\V33\Access::can('packing')||!current_user_can('edit_shop_order',$id))wp_die('دسترسی مجاز نیست.','',['response'=>403]);check_admin_referer('hm_mahex_v32_packing_save_'.$id);
   $lock=new \HoseinMomeni\MahexWoo\Shipments\OptionOperationLock();
   if(!$lock->acquire($id)){if(isset($_POST['ajax']))wp_send_json_error(['message'=>'عملیات دیگری روی سفارش در حال اجراست.'],409);wp_die('عملیات دیگری روی سفارش در حال اجراست.');}
   $error=null;
   try {
    // Load the order inside the shared operations lock, never compare a cached pre-lock revision.
-   $order=wc_get_order($id);if(!$order)throw new \InvalidArgumentException('سفارش پیدا نشد.');$order->read_meta_data(true);
+   $order=wc_get_order($id);if(!$order)throw new \InvalidArgumentException('سفارش پیدا نشد.');$order->read_meta_data(true);\HoseinMomeni\MahexWoo\V33\BoardTools::guardOtherEditor($id);\HoseinMomeni\MahexWoo\V33\Station::guardPlanMutation($id);
    $old=$order->get_meta(self::META,true);$old=is_array($old)?$old:[];if(absint($_POST['revision']??0)!==(int)($old['revision']??0))throw new \InvalidArgumentException('طرح در صفحه دیگری تغییر کرده؛ صفحه را تازه کنید.');
    $units=self::units($order);$input=($_POST['intent']??'')==='undo'?($old['previous']['boxes']??[]):json_decode(wp_unslash($_POST['assignments']??''),true);if(!is_array($input))throw new \InvalidArgumentException('چیدمان نامعتبر است.');
    $plan=self::validate($input,$units,PackagingProfiles::all(),PricingSettings::int_value('volumetric_divisor',5000,1000,50000));

@@ -115,6 +115,7 @@ final class OrderPanel {
 	}
 
 	private static function financials( \WC_Order $order ): void {
+		if (!\HoseinMomeni\MahexWoo\V33\Access::can('finance', $order->get_id())) return;
 		$shipping = (float) $order->get_shipping_total();
 		$actual = $order->get_meta( '_hm_mahex_actual_carrier_cost', true );
 		$percent = \HoseinMomeni\MahexWoo\Pro\FeatureSettings::float( 'carrier_cost_percent', 80, 0, 100 );

@@ -1,0 +1,1 @@
+(()=>{'use strict';document.querySelectorAll('.mhx-v33 form').forEach(form=>form.addEventListener('submit',()=>{form.querySelectorAll('button[type=submit],input[type=submit]').forEach(button=>{button.disabled=true;});}));})();

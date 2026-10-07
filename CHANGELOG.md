@@ -1,3 +1,13 @@
+# 3.3.0 — 2026-10-07
+
+- Local scan/measure packing station, feasible geometry preview, confirmed material inventory, purchase drafts, parcel tracking and signed handover.
+- Batch labels, printer calibration, branch templates and direct RTL PDF with locked bundled runtime.
+- Customer returns, damage claims, protected official documents and opt-in notification queue/transport hook.
+- Carrier CSV reconciliation, grouped confirmed profit, scheduled/diffable rule versions, scoped team access and safe settings transfer.
+- Isolated candidate ZIP inspection and release-gating MySQL/HPOS/browser workflow.
+- No Mahex carrier API, webhook or API dispatch queue. Hardware and external notification delivery require their own configured devices/providers.
+- See [usage and limits](UPGRADE-3.3.0.md).
+
 # 3.2.0 — 2026-10-07
 
 - Per-user draggable workspace and persisted order preparation board with operators, audit history and undo.

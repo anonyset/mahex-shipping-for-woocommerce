@@ -1,4 +1,4 @@
-# Mahex Shipping for WooCommerce 3.2.0
+# Mahex Shipping for WooCommerce 3.3.0
 
 <div align="center">
 
@@ -6,7 +6,7 @@
 
 **سامانه حرفه‌ای مدیریت ارسال ووکامرس — Professional WooCommerce Shipping Operations**
 
-[![Version](https://img.shields.io/badge/version-3.2.0-e31d2f)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-3.3.0-e31d2f)](CHANGELOG.md)
 [![PHP](https://img.shields.io/badge/PHP-8.1%2B-777bb4)](https://www.php.net/)
 [![WordPress](https://img.shields.io/badge/WordPress-7.1%2B-21759b)](https://wordpress.org/)
 [![WooCommerce](https://img.shields.io/badge/WooCommerce-11.0%2B-96588a)](https://woocommerce.com/)
@@ -18,11 +18,11 @@
 
 ---
 
-## تازه در نسخه ۳.۲.۰
+## تازه در نسخه ۳.۳.۰
 
-مرکز کار قابل جابه‌جایی، برد سفارش واقعی، طراح برچسب حرارتی و A4، چیدمان دستی بسته‌ها و قانون‌ساز تصویری با ذخیره و بازگردانی.
+اسکن و وزن واقعی، موجودی ایستگاه، چاپ گروهی و PDF فارسی، مرجوعی و خسارت، تطبیق صورتحساب، نسخه‌بندی قوانین و دسترسی تیم؛ بدون API ماهکس.
 
-[راهنمای قابلیت‌ها و ارتقا](UPGRADE-3.2.0.md) · [دانلود نسخه ۳.۲.۰](https://github.com/anonyset/mahex-shipping-for-woocommerce/releases/download/v3.2.0/mahex-shipping-for-woocommerce-3.2.0.zip)
+[راهنمای قابلیت‌ها و ارتقا](UPGRADE-3.3.0.md) · [دانلود نسخه ۳.۳.۰](https://github.com/anonyset/mahex-shipping-for-woocommerce/releases/download/v3.3.0/mahex-shipping-for-woocommerce-3.3.0.zip)
 
 ## فارسی
 

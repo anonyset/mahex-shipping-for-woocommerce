@@ -1,0 +1,75 @@
+name: Isolated WordPress MySQL HPOS and browser tests
+on:
+  workflow_call:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        hpos: ['yes','no']
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: mahex-integration
+          MYSQL_ROOT_HOST: '%'
+          MYSQL_DATABASE: mahex_test
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -pmahex-integration"
+          --health-interval=10s --health-timeout=5s --health-retries=10
+    env:
+      MAHEX_EXPECT_HPOS: ${{ matrix.hpos }}
+      MAHEX_WP_ROOT: ${{ runner.temp }}/mahex-wordpress
+      MAHEX_FIXTURES: ${{ runner.temp }}/mahex-reports/fixtures.json
+      MAHEX_REPORT_DIR: ${{ runner.temp }}/mahex-reports
+      MAHEX_BASE_URL: http://127.0.0.1:8092
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: curl, gd, mysqli, zip, simplexml, dom, mbstring, ctype
+          tools: wp-cli, composer
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare isolated WordPress and install candidate plugin
+        run: |
+          set -euo pipefail
+          composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
+          mkdir -p "$MAHEX_WP_ROOT" "$MAHEX_REPORT_DIR"
+          wp core download --version=7.1.3 --path="$MAHEX_WP_ROOT"
+          wp config create --path="$MAHEX_WP_ROOT" --dbname=mahex_test --dbuser=root --dbpass=mahex-integration --dbhost=127.0.0.1:3306 --skip-check
+          wp config set DISABLE_WP_CRON true --raw --path="$MAHEX_WP_ROOT"
+          wp core install --path="$MAHEX_WP_ROOT" --url="$MAHEX_BASE_URL" --title='Mahex isolated integration' --admin_user=mahex-admin --admin_password=mahex-local-test-password --admin_email=admin@example.test --skip-email
+          wp plugin install woocommerce --version=11.1.2 --activate --path="$MAHEX_WP_ROOT"
+          wp option update woocommerce_custom_orders_table_enabled '${{ matrix.hpos }}' --path="$MAHEX_WP_ROOT"
+          mkdir -p "$MAHEX_WP_ROOT/wp-content/plugins/mahex-shipping-for-woocommerce"
+          rsync -a ./ "$MAHEX_WP_ROOT/wp-content/plugins/mahex-shipping-for-woocommerce/" --exclude '.git/' --exclude '.github/' --exclude 'node_modules/'
+          wp plugin activate mahex-shipping-for-woocommerce --path="$MAHEX_WP_ROOT"
+          wp eval-file tests/integration/seed.php --path="$MAHEX_WP_ROOT"
+          wp eval-file tests/integration/backend.php --path="$MAHEX_WP_ROOT"
+      - name: Install browser runtime
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Run real browser workflow
+        run: |
+          set -euo pipefail
+          php -S 127.0.0.1:8092 -t "$MAHEX_WP_ROOT" >"$MAHEX_REPORT_DIR/php-server.log" 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" || true' EXIT
+          for ATTEMPT in $(seq 1 30); do if curl -fsS "$MAHEX_BASE_URL/wp-login.php" >/dev/null; then break; fi; sleep 1; done
+          node tests/integration/browser.cjs
+          wp eval-file tests/integration/post-browser.php --path="$MAHEX_WP_ROOT"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: isolated-hpos-${{ matrix.hpos }}
+          path: ${{ runner.temp }}/mahex-reports

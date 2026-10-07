@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__.'/../src/V32/Board.php';
+require_once __DIR__.'/../src/V33/Access.php';
 use HoseinMomeni\MahexWoo\V32\Board;
 function assertBoard($ok,$message){if(!$ok)throw new RuntimeException($message);}
 $initial=['stage'=>'review','revision'=>0,'operator'=>0,'history'=>[]];

@@ -10,6 +10,8 @@ on:
       - 'CHANGELOG.md'
       - 'LICENSE'
       - 'update.json'
+      - 'composer.json'
+      - 'composer.lock'
       - '.github/workflows/publish-update.yml'
   workflow_dispatch:
 permissions:
@@ -18,7 +20,10 @@ concurrency:
   group: wordpress-update-channel
   cancel-in-progress: true
 jobs:
+  integration:
+    uses: ./.github/workflows/integration.yml
   publish:
+    needs: integration
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,7 +32,9 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
-          extensions: zip, simplexml, dom, mbstring, ctype
+          extensions: zip, simplexml, dom, mbstring, ctype, curl, gd
+      - name: Install locked PDF runtime
+        run: composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
       - name: Validate PHP and manifest
         run: |
           set -euo pipefail
@@ -54,7 +61,6 @@ jobs:
             --exclude 'SECURITY.md' \
             --exclude 'RELEASING.md' \
             --exclude '*.zip' \
-            --exclude 'vendor/' \
             --exclude 'node_modules/'
           cd build
           zip -qr mahex-shipping-for-woocommerce.zip mahex-shipping-for-woocommerce

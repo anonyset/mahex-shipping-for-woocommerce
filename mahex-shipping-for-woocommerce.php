@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Mahex Shipping for WooCommerce
  * Description: سامانه محلی و حرفه‌ای مدیریت ارسال ووکامرس با نرخ‌گذاری، بسته‌بندی، انبار، بارنامه، عملیات، گزارش و رهگیری داخلی.
- * Version: 3.2.0
+ * Version: 3.3.0
  * Author: Hosein Momeni
  * Author URI: https://postyekrooz.ir/plugins
  * Text Domain: mahex-shipping-for-woocommerce
@@ -14,7 +14,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'HM_MAHEX_VERSION', '3.2.0' );
+define( 'HM_MAHEX_VERSION', '3.3.0' );
 define( 'HM_MAHEX_FILE', __FILE__ );
 
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
@@ -81,6 +81,16 @@ add_action(
 		\HoseinMomeni\MahexWoo\V32\Board::register();
 		\HoseinMomeni\MahexWoo\V32\Designer::register();
 		\HoseinMomeni\MahexWoo\V32\Packing::register();
+		\HoseinMomeni\MahexWoo\V33\Access::register();
+		\HoseinMomeni\MahexWoo\V33\RuleVersions::register();
+		\HoseinMomeni\MahexWoo\V33\Management::register();
+		\HoseinMomeni\MahexWoo\V33\Station::register();
+		\HoseinMomeni\MahexWoo\V33\BoardTools::register();
+		\HoseinMomeni\MahexWoo\V33\PrintCenter::register();
+		\HoseinMomeni\MahexWoo\V33\Returns::register();
+		\HoseinMomeni\MahexWoo\V33\NotificationCenter::register();
+		\HoseinMomeni\MahexWoo\V33\UpgradeSandbox::register();
+
 		( new \HoseinMomeni\MahexWoo\Privacy\WordPressPrivacyIntegration( new \HoseinMomeni\MahexWoo\Privacy\WooCommercePersonalDataRepository() ) )->register();
 	}
 );

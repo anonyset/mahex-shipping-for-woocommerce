@@ -1,0 +1,8 @@
+{
+ "name":"hosein-momeni/mahex-shipping-for-woocommerce",
+ "description":"Local WooCommerce shipping operations with RTL PDF printing",
+ "license":"GPL-2.0-or-later",
+ "require":{"php":">=8.1","tecnickcom/tcpdf":"6.11.4"},
+ "autoload":{"psr-4":{"HoseinMomeni\\MahexWoo\\":"src/"}},
+ "config":{"allow-plugins":false,"sort-packages":true}
+}

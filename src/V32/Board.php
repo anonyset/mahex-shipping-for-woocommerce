@@ -11,7 +11,7 @@ final class Board {
   add_action('wp_ajax_hm_mahex_v32_board',[self::class,'ajax']);
   add_action('admin_post_hm_mahex_v32_board',[self::class,'post']);
  }
- public static function menu(): void {add_submenu_page('hm-mahex','تابلوی عملیات ارسال','تابلوی عملیات','manage_woocommerce','hm-mahex-v32-board',[self::class,'page']);}
+ public static function menu(): void {add_submenu_page('hm-mahex','تابلوی عملیات ارسال','تابلوی عملیات',\HoseinMomeni\MahexWoo\V33\Access::OPERATIONS,'hm-mahex-v32-board',[self::class,'page']);}
  public static function assets(string $hook): void {
   if(strpos($hook,'hm-mahex-v32-board')===false)return;
   wp_enqueue_style('hm-mahex-v32-board',plugins_url('assets/admin/v32-board.css',HM_MAHEX_FILE),[],HM_MAHEX_VERSION);
@@ -32,11 +32,11 @@ final class Board {
   $state['history']=array_slice($state['history'],-30);$state['stage']=$stage;$state['operator']=$operator;$state['revision']++;return $state;
  }
  public static function update(int $id,int $revision,string $stage,int $operator,bool $undo=false): array {
-  if(!current_user_can('manage_woocommerce')||!current_user_can('edit_shop_order',$id))throw new \RuntimeException('اجازه ویرایش این سفارش را ندارید.');
-  if($operator&&!user_can($operator,'manage_woocommerce'))throw new \InvalidArgumentException('مسئول باید دسترسی مدیریت ووکامرس داشته باشد.');
+  if(!\HoseinMomeni\MahexWoo\V33\Access::can('operations',$id))throw new \RuntimeException('اجازه ویرایش این سفارش را ندارید.');
+  if($operator&&!(user_can($operator,'manage_woocommerce')||user_can($operator,\HoseinMomeni\MahexWoo\V33\Access::PACK)||user_can($operator,\HoseinMomeni\MahexWoo\V33\Access::OPERATIONS)))throw new \InvalidArgumentException('مسئول باید دسترسی مدیریت ووکامرس داشته باشد.');
   $lock=new \HoseinMomeni\MahexWoo\Shipments\OptionOperationLock();if(!$lock->acquire($id))throw new \RuntimeException('سفارش در حال ویرایش است؛ دوباره تلاش کنید.');
   try {
-   $order=wc_get_order($id);if(!$order)throw new \RuntimeException('سفارش پیدا نشد.');
+   \HoseinMomeni\MahexWoo\V33\BoardTools::guardOtherEditor($id);$order=wc_get_order($id);if(!$order)throw new \RuntimeException('سفارش پیدا نشد.');$order->read_meta_data(true);
    $state=self::state($order);
    if(($stage==='ready'||($undo&&($state['history'][count($state['history'])-1]['from']??'')==='ready'))){$errors=\HoseinMomeni\MahexWoo\V31\OperationsValidation::errors($order);if($errors)throw new \RuntimeException(implode(' / ',$errors));}
    $next=self::transition($state,$revision,$stage,$operator,get_current_user_id(),$undo);
@@ -46,11 +46,11 @@ final class Board {
  }
  private static function value(string $key): string {return isset($_POST[$key])&&is_string($_POST[$key])?wp_unslash($_POST[$key]):'';}
  public static function ajax(): void {
-  if(!current_user_can('manage_woocommerce')||!check_ajax_referer('hm_mahex_v32_board','nonce',false))wp_send_json_error(['message'=>'درخواست معتبر نیست.'],403);
+  if(!\HoseinMomeni\MahexWoo\V33\Access::can('operations')||!check_ajax_referer('hm_mahex_v32_board','nonce',false))wp_send_json_error(['message'=>'درخواست معتبر نیست.'],403);
   try{$next=self::update(absint(self::value('order_id')),absint(self::value('revision')),sanitize_key(self::value('stage')),absint(self::value('operator')),self::value('undo')==='1');wp_send_json_success($next);}catch(\Throwable $e){wp_send_json_error(['message'=>$e->getMessage()],409);}
  }
  public static function post(): void {
-  if(!current_user_can('manage_woocommerce'))wp_die('دسترسی کافی ندارید.','',['response'=>403]);check_admin_referer('hm_mahex_v32_board');
+  if(!\HoseinMomeni\MahexWoo\V33\Access::can('operations'))wp_die('دسترسی کافی ندارید.','',['response'=>403]);check_admin_referer('hm_mahex_v32_board');
   $rows=isset($_POST['orders'])&&is_array($_POST['orders'])?$_POST['orders']:[];$selected=isset($_POST['selected'])&&is_array($_POST['selected'])?array_map('absint',$_POST['selected']):[];
   $undoId=absint(self::value('undo_order'));$single=$undoId?:absint(self::value('single'));if($single)$selected=[$single];$results=[];
   if(count($selected)>50)wp_die('حداکثر ۵۰ سفارش مجاز است.');
@@ -58,10 +58,10 @@ final class Board {
   set_transient('hm_mahex_v32_board_result_'.get_current_user_id(),implode(' | ',$results)?:'سفارشی انتخاب نشد.',600);wp_safe_redirect(admin_url('admin.php?page=hm-mahex-v32-board'));exit;
  }
  public static function page(): void {
-  if(!current_user_can('manage_woocommerce'))return;
+  if(!\HoseinMomeni\MahexWoo\V33\Access::can('operations'))return;
   $page=isset($_GET['paged'])&&is_scalar($_GET['paged'])?max(1,absint($_GET['paged'])):1;
   $result=wc_get_orders(['limit'=>50,'page'=>$page,'paginate'=>true,'status'=>['processing','on-hold','pending'],'orderby'=>'date','order'=>'DESC']);
-  $users=get_users(['capability'=>'manage_woocommerce','number'=>100]);$operators=[0=>'بدون مسئول'];foreach($users as $user)$operators[$user->ID]=$user->display_name;
+  $users=get_users(['capability__in'=>['manage_woocommerce',\HoseinMomeni\MahexWoo\V33\Access::PACK,\HoseinMomeni\MahexWoo\V33\Access::OPERATIONS],'number'=>100]);$operators=[0=>'بدون مسئول'];foreach($users as $user)$operators[$user->ID]=$user->display_name;
   $groups=array_fill_keys(array_keys(self::STAGES),[]);foreach($result->orders as $order)if(current_user_can('edit_shop_order',$order->get_id()))$groups[self::state($order)['stage']][]=$order;
   echo '<div class="wrap hmx-board" dir="rtl"><h1>تابلوی عملیات داخلی ارسال</h1><p>کارت را جابه‌جا کنید یا از انتخاب مرحله استفاده کنید. این مراحل وضعیت رسمی ماهکس را تغییر نمی‌دهند. سفارش‌های در انتظار، در حال انجام و معلق؛ ۵۰ سفارش در هر صفحه.</p><p id="hmx-board-message" role="status" aria-live="polite"></p>';
   $notice=get_transient('hm_mahex_v32_board_result_'.get_current_user_id());if($notice){echo '<div class="notice notice-info"><p>'.esc_html($notice).'</p></div>';delete_transient('hm_mahex_v32_board_result_'.get_current_user_id());}
