@@ -51,6 +51,14 @@ final class WooCommercePersonalDataRepository implements PersonalDataRepository 
 			$quality = \HoseinMomeni\MahexWoo\V36\QualitySampling::privacyForUser( (int) $user->ID );
 			if ( $quality ) $data[] = array( 'name' => 'Packaging quality sampling actor records', 'value' => wp_json_encode( $quality, JSON_UNESCAPED_UNICODE ) );
 		}
+		if ( $user && class_exists( \HoseinMomeni\MahexWoo\V37\InventoryCycleCounts::class ) ) {
+			$records = \HoseinMomeni\MahexWoo\V37\InventoryCycleCounts::privacyForUser( (int) $user->ID );
+			if ( $records ) $data[] = array( 'name' => 'Packaging inventory cycle-count actor records', 'value' => wp_json_encode( $records, JSON_UNESCAPED_UNICODE ) );
+		}
+		if ( $user && class_exists( \HoseinMomeni\MahexWoo\V37\SupplyReceiving::class ) ) {
+			$records = \HoseinMomeni\MahexWoo\V37\SupplyReceiving::privacyForUser( (int) $user->ID );
+			if ( $records ) $data[] = array( 'name' => 'Packaging supply-receiving actor records', 'value' => wp_json_encode( $records, JSON_UNESCAPED_UNICODE ) );
+		}
 		return $data;
 	}
 
@@ -96,6 +104,8 @@ final class WooCommercePersonalDataRepository implements PersonalDataRepository 
 		}
 		$user = function_exists( 'get_user_by' ) ? get_user_by( 'email', $email ) : false;
 		if ( $user && class_exists( \HoseinMomeni\MahexWoo\V36\QualitySampling::class ) ) $removed += \HoseinMomeni\MahexWoo\V36\QualitySampling::eraseUser( (int) $user->ID );
+		if ( $user && class_exists( \HoseinMomeni\MahexWoo\V37\InventoryCycleCounts::class ) ) $removed += \HoseinMomeni\MahexWoo\V37\InventoryCycleCounts::eraseUser( (int) $user->ID );
+		if ( $user && class_exists( \HoseinMomeni\MahexWoo\V37\SupplyReceiving::class ) ) $removed += \HoseinMomeni\MahexWoo\V37\SupplyReceiving::eraseUser( (int) $user->ID );
 		if ( $order_ids ) {
             \HoseinMomeni\MahexWoo\V33\NotificationCenter::erase($order_ids);
 			global $wpdb;

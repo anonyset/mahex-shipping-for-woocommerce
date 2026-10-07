@@ -4,7 +4,7 @@ Tags: woocommerce, shipping, iran, persian, rtl, packaging, warehouse
 Requires at least: 7.1
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 3.6.0
+Stable tag: 3.7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Mahex Shipping for WooCommerce 3.0.1 یک پروژه مستقل برای مدیریت عملیات ارسال داخل وردپرس و ووکامرس است. هسته نسخه 3.0.1 به‌صورت Local-only طراحی شده و برای محاسبه نرخ، ثبت گردش داخلی مرسوله، بسته‌بندی، چاپ، رهگیری داخلی و گزارش‌ها به سرویس خارجی وابسته نیست.
 
-قابلیت‌های تازه ۳.۶.۰: برنامه‌ریز آفلاین موج‌های ارسال با ظرفیت و snapshot، و کمپین نمونه‌برداری کیفیت بسته‌بندی با قرنطینه و بازبینی دوم. بدون API ماهکس.
+قابلیت‌های تازه ۳.۷.۰: شمارش دوره‌ای کور و کنترل‌شده موجودی بسته‌بندی، و دریافت مرحله‌ای سفارش خرید با قرنطینه، lot/expiry و ثبت دقیقاً یک‌باره موجودی. بدون API ماهکس.
 
 قابلیت‌های شاخص:
 
@@ -63,6 +63,12 @@ Mahex Shipping for WooCommerce 3.0.1 یک پروژه مستقل برای مدی�
 Large Store Mode و جدول Order Index برای جلوگیری از اسکن سنگین متادیتای تمام سفارش‌ها در گزارش‌ها و جست‌وجو اضافه شده‌اند. با این حال هر فروشگاه بزرگ باید نسخه را ابتدا روی Staging و با داده واقعی خودش تست کند.
 
 == Changelog ==
+
+= 3.7.0 =
+* Blind packaging-inventory cycle counts with independent recount, reconciliation, dual approval, drift/rebase and idempotent posting.
+* Staged purchase receiving with manual inspection, lot/expiry, quarantine, second review, FEFO ledger and exactly-once stock posting.
+* Responsive RTL drag-and-drop boards, keyboard alternatives, privacy export/erase and formula-safe low-data CSV.
+* No Mahex/carrier API, webhook, carrier queue, supplier connection or device claim.
 
 = 3.6.0 =
 * Offline dispatch waves using real WooCommerce orders, capacity controls, deterministic sequencing, snapshots, drift checks and drag-and-drop.

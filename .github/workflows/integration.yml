@@ -59,6 +59,7 @@ jobs:
           wp eval-file tests/integration/v34-backend.php --path="$MAHEX_WP_ROOT"
           wp eval-file tests/integration/v35-backend.php --path="$MAHEX_WP_ROOT"
           wp eval-file tests/integration/v36-backend.php --path="$MAHEX_WP_ROOT"
+          wp eval-file tests/integration/v37-backend.php --path="$MAHEX_WP_ROOT"
       - name: Install browser runtime
         run: |
           npm install --no-save --no-audit --no-fund playwright@1.62.1
@@ -73,6 +74,7 @@ jobs:
           node tests/integration/browser.cjs
           node tests/integration/v35-browser.cjs
           node tests/integration/v36-browser.cjs
+          node tests/integration/v37-browser.cjs
           wp eval-file tests/integration/post-browser.php --path="$MAHEX_WP_ROOT"
       - uses: actions/upload-artifact@v4
         if: always()
