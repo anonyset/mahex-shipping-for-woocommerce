@@ -1,23 +1,23 @@
 {
   "schema": 1,
   "requested_rounds": 10,
-  "completed_rounds": 1,
-  "active_round": 2,
+  "completed_rounds": 2,
+  "active_round": null,
   "baseline": "3.3.0",
   "target": "3.5.0",
-  "status": "implemented_pending_integration",
+  "status": "completed",
   "proposal_count": 100,
-  "implementation_verified": 0,
+  "implementation_verified": 100,
   "report": "ROUND-02.md",
   "no_mahex_api": true,
   "implementation_code_count": 100,
-  "next_round": 2,
-  "current_version": "3.4.0",
-  "source_commit": "2173c0b2e7a57221d7c937202b440ef762b0d847",
-  "release": "https://github.com/anonyset/mahex-shipping-for-woocommerce/releases/tag/v3.4.0",
-  "sha256": "6d31849ae406f9862f0b1fd734a2c1a1ced921b8d9146cc032ffae204c07e06a",
+  "next_round": 3,
+  "current_version": "3.5.0",
+  "source_commit": "8d9648e7ec67d10e9aa2dfb55dc7897812b4f15a",
+  "release": "https://github.com/anonyset/mahex-shipping-for-woocommerce/releases/tag/v3.5.0",
+  "sha256": "bf8d6e74e6137170df1ad896bd57a2cfa9434e788f82bcad88508467725ff2d0",
   "items_report": "ROUND-02-items.json",
-  "evidence": "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37569129245",
+  "evidence": "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
   "rounds": [
     {
       "round": 1,
@@ -27,6 +27,21 @@
       "implemented_software": 100,
       "report": "ROUND-01.md",
       "evidence": "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37569129245"
+    },
+    {
+      "round": 2,
+      "version": "3.5.0",
+      "baseline": "3.4.0",
+      "status": "completed",
+      "proposals": 100,
+      "implemented_software": 100,
+      "report": "ROUND-02.md",
+      "items_report": "ROUND-02-items.json",
+      "evidence": "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+      "quality": "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574494809",
+      "source_commit": "8d9648e7ec67d10e9aa2dfb55dc7897812b4f15a",
+      "sha256": "bf8d6e74e6137170df1ad896bd57a2cfa9434e788f82bcad88508467725ff2d0"
     }
-  ]
+  ],
+  "round_baseline": "3.4.0"
 }

@@ -7,658 +7,1158 @@
       "id": "R2-M01",
       "proposal": "کشف سفارش بدون اقلام فیزیکی",
       "acceptance": "سفارش فقط مجازی یا بدون کالا finding no_physical می‌گیرد",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M02",
       "proposal": "کشف محصول حذف‌شده در سفارش",
       "acceptance": "شناسه محصول بدون محصول قابل بازیابی orphan_product ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M03",
       "proposal": "کشف تعداد غیرمثبت",
       "acceptance": "تعداد صفر یا منفی quantity_invalid ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M04",
       "proposal": "کشف تعداد کسری کالای شمارشی",
       "acceptance": "تعداد غیرصحیح quantity_fraction ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M05",
       "proposal": "کشف SKU تکراری بین محصولات سفارش",
       "acceptance": "SKU یکسان برای شناسه‌های متفاوت sku_collision ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M06",
       "proposal": "کشف SKU خالی در کالای فیزیکی",
       "acceptance": "missing_sku با شناسه قلم بدون خود SKU ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M07",
       "proposal": "کشف fingerprint طرح دستی منسوخ",
       "acceptance": "packing_drift وقتی fingerprint طرح با واحدهای واقعی متفاوت است",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M08",
       "proposal": "کشف مصرف انبار روی اقلام تغییرکرده",
       "acceptance": "commit_items_drift وقتی committed_fingerprint متفاوت است",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M09",
       "proposal": "کشف تغییر طرح پس از مصرف انبار",
       "acceptance": "commit_plan_drift وقتی hash boxes با committed_plan_hash متفاوت است",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M10",
       "proposal": "کشف اسکن ایستگاه روی واحد حذف‌شده",
       "acceptance": "orphan_scan برای شناسه scan خارج واحدهای سفارش ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M11",
       "proposal": "کشف نبود روش ارسال کالای فیزیکی",
       "acceptance": "no_shipping_method ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M12",
       "proposal": "کشف چند روش ارسال بالقوه مبهم",
       "acceptance": "بیش از یک ردیف روش ارسال multiple_shipping ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M13",
       "proposal": "کشف روش ارسال فاقد شناسه",
       "acceptance": "empty_shipping_method ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M14",
       "proposal": "کشف روش پرداخت حذف‌شده",
       "acceptance": "missing_payment_method برای سفارش غیررایگان ثبت می‌شود؛ فقط مجوز مالی",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M15",
       "proposal": "کشف جمع منفی سفارش",
       "acceptance": "negative_total فقط برای مجوز مالی ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M16",
       "proposal": "کشف بازپرداخت بیش از جمع",
       "acceptance": "over_refunded فقط با مجوز مالی ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M17",
       "proposal": "کشف هزینه ارسال منفی",
       "acceptance": "negative_shipping فقط با مجوز مالی ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M18",
       "proposal": "کشف کد ارز خالی",
       "acceptance": "empty_currency فقط با مجوز مالی ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M19",
       "proposal": "کشف مبلغ نامتناهی قلم",
       "acceptance": "nonfinite_item فقط با مجوز مالی ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M20",
       "proposal": "کشف مهلت پرداخت‌شده پیش از ایجاد",
       "acceptance": "paid_before_created اختلاف ناممکن را کشف می‌کند",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M21",
       "proposal": "کشف تاریخ تکمیل پیش از ایجاد",
       "acceptance": "completed_before_created ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M22",
       "proposal": "کشف سفارش دارای تاریخ ایجاد آینده",
       "acceptance": "future_created با تلورانس پنج دقیقه ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M23",
       "proposal": "کشف شناسه مشتری حذف‌شده",
       "acceptance": "missing_customer بدون افشای ایمیل ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M24",
       "proposal": "کشف اندازه‌گیری بسته حذف‌شده",
       "acceptance": "orphan_parcel برای index اندازه‌گیری خارج boxes فعلی ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M25",
       "proposal": "کشف نتیجه بازپرداخت با وضعیت فعال",
       "acceptance": "refunded_active در سفارش processing دارای بازپرداخت کامل ثبت می‌شود؛ مالی",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:analyze/snapshot",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M26",
       "proposal": "شناسنامه نسخه‌دار ممیزی",
       "acceptance": "scan شامل engine_version و زمانUTC است",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M27",
       "proposal": "اثر انگشت شواهد مستقل هر مغایرت",
       "acceptance": "fingerprint هر finding از کد و شواهد مشتق می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M28",
       "proposal": "شناسه پایدار مغایرت",
       "acceptance": "id از کد و قلم مستقل است و اجرای دوباره ثابت می‌ماند",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M29",
       "proposal": "شدت اولویت‌بندی ممیزی",
       "acceptance": "critical/warning/info و توضیح فارسی برای هر finding",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M30",
       "proposal": "نمایش شواهد حداقلی غیرشخصی",
       "acceptance": "شواهد فقط شناسه قلم/محصول/کد شرایط و بدون نام/آدرس/شماره هستند",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M31",
       "proposal": "ممیزی خواندنی بدون اصلاح داده سفارش",
       "acceptance": "scan هیچ save یا setter روی داده سفارش اجرا نمی‌کند",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M32",
       "proposal": "ثبت تأیید مغایرت واقعی",
       "acceptance": "review با verdict confirmed و توضیح غیرخالی ذخیره می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M33",
       "proposal": "ثبت مثبت کاذب مستدل",
       "acceptance": "dismissed با توضیح غیرخالی و actor ثبت می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M34",
       "proposal": "اعتبارسنجی مجدد تأیید با تغییر شواهد",
       "acceptance": "اثر انگشت جدید review قدیمی را stale می‌کند",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M35",
       "proposal": "بازنشانی تصمیم ممیزی بدون حذف سابقه",
       "acceptance": "reset review جاری را حذف و تاریخچه محدود را حفظ می‌کند",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M36",
       "proposal": "بازخوانی سفارش تحت قفل مشترک",
       "acceptance": "save بررسی قبل نوشتن read_meta_data true و lock سفارش دارد",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M37",
       "proposal": "حفاظت تصمیم در برابر خروجی قدیمی",
       "acceptance": "fingerprint درخواست متفاوت با finding فعلی رد می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M38",
       "proposal": "شمارش دقیق مغایرت باز و تأییدشده",
       "acceptance": "summary open/confirmed/dismissed/stale دقیق محاسبه می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M39",
       "proposal": "فیلتر شدت یافته‌ها",
       "acceptance": "فیلتر کارت‌ها بر اساس critical/warning/info",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
         "PHP lint passed; JS node --check passed",
-        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending"
+        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M40",
       "proposal": "فیلتر وضعیت تصمیم یافته‌ها",
       "acceptance": "فیلتر open/confirmed/dismissed/stale",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
         "PHP lint passed; JS node --check passed",
-        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending"
+        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M41",
       "proposal": "جست‌وجوی عنوان و شناسه قلم",
       "acceptance": "جست‌وجوی صفحه بدون ارسال شبکه اقلام نامرتبط را پنهان می‌کند",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
         "PHP lint passed; JS node --check passed",
-        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending"
+        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M42",
       "proposal": "نمای پرونده کیفیت سفارش با پیوند ویرایش",
       "acceptance": "شناسه سفارش واقعی و لینک امن ویرایش در UI",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
         "PHP lint passed; JS node --check passed",
-        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending"
+        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M43",
       "proposal": "بازه ممیزی محدود با صفحه‌بندی صریح",
       "acceptance": "فقط ۵۰ سفارش صفحه حاضر با شمارش و صفحه بعد بررسی می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
         "PHP lint passed; JS node --check passed",
-        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending"
+        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M44",
       "proposal": "نمای کم‌داده پرونده‌های دارای یافته",
       "acceptance": "سفارش بی‌یافته کارت سلامت جدا با شمارش zero دارد",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
         "PHP lint passed; JS node --check passed",
-        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending"
+        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M45",
       "proposal": "خروجی خصوصی JSON ممیزی جاری",
       "acceptance": "nonce/مجوز عملیات و مجوز هر سفارش بررسی؛ خروجی فاقد داده مشتری",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M46",
       "proposal": "حذف تصمیم‌های ممیزی در حق فراموشی",
       "acceptance": "erase helper فقط meta این ماژول را حذف و نتیجه برمی‌گرداند",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M47",
       "proposal": "صدور داده شخصی تصمیم اپراتور در privacy",
       "acceptance": "privacy helper meta تصمیم‌ها را به export استاندارد می‌دهد",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M48",
       "proposal": "تفکیک یافته‌های مالی برای اپراتور",
       "acceptance": "finance false detector مالی را اجرا نمی‌کند و تاریخچه مالی صادر نمی‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M49",
       "proposal": "دسترس‌پذیری و موبایل صفحه ممیزی",
       "acceptance": "label/aria-live و RTL layout منعطف بدون عرض ثابت",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
         "PHP lint passed; JS node --check passed",
-        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending"
+        "assets/v35-quality.js and assets/v35-quality.css; browser verification pending",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     },
     {
       "id": "R2-M50",
       "proposal": "تاریخچه تصمیم محدود و قابل حسابرسی",
       "acceptance": "آخرین۵۰ رویداد verdict/fingerprint/actor/time/reason حفظ می‌شود",
-      "status": "implemented_unit_tested_pending_integration",
+      "status": "completed_software_verified",
       "evidence": [
         "src/V35/OrderQuality.php:scan/transition/review/page/exportData/privacy/erase",
         "tests/v35-quality-test.php:passed PHP 8.3",
-        "PHP lint passed; JS node --check passed"
+        "PHP lint passed; JS node --check passed",
+        "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37574495101",
+        "tests/integration/v35-backend.php",
+        "tests/integration/v35-browser.cjs",
+        "tests/integration/post-browser.php"
       ],
       "blocker": null,
-      "limitation": "ممیزی محلی غیرخودکار است. خطا نشانه بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه۵۰ سفارش؛ تطبیق واحدها سقف۵۰۰ واحد موتور چیدمان موجود دارد. نصب واقعی و مرورگر در بررسی یکپارچه دور ثبت خواهد شد."
+      "limitation": "ممیزی محلی و غیرخودکار؛ نیاز به بررسی انسانی، نه اثبات خطای حمل. محدوده صفحه ۵۰ سفارش و تطبیق واحدها سقف ۵۰۰ واحد موتور چیدمان موجود دارد. آزمون مرورگر جریان‌های اصلی ماژول را پوشش می‌دهد، نه ۵۰ آزمون مستقل برای این ۵۰ معیار.",
+      "verification": {
+        "criterion_code_review": true,
+        "regression_file": "tests/v35-quality-test.php",
+        "integration": "Real WordPress ZIP installation / WooCommerce CRUD / HPOS and classic / core browser flows",
+        "independent_browser_test_per_criterion": false
+      }
     }
   ]
 }
