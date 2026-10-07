@@ -1,0 +1,411 @@
+{
+  "round": 4,
+  "source_version": "3.6.0",
+  "target_version": "3.7.0",
+  "module": "packaging_cycle_count",
+  "status": "proposal_registered",
+  "scope": "Local periodic cycle counting and reconciliation for packaging-supply inventory; manual human input only; no Mahex API, carrier webhook, carrier queue, device, or external-service claim.",
+  "items": [
+    {
+      "id": "R04-001",
+      "proposal": "شناسه پایدار نشست شمارش",
+      "acceptance": "ایجاد نشست یک UUID داخلی و کد نمایشی یکتای CC37 تولید کند و برخورد شناسه رد شود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-002",
+      "proposal": "عنوان و دامنه کنترل‌شده",
+      "acceptance": "عنوان ۳ تا ۱۲۰ نویسه و توضیح دامنه حداکثر ۵۰۰ نویسه پاک‌سازی و در سربرگ نشست نمایش داده شود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-003",
+      "proposal": "چرخه وضعیت محدود نشست",
+      "acceptance": "فقط گذارهای draft→counting→reconciliation→approval→posted و لغو کنترل‌شده پذیرفته شوند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-004",
+      "proposal": "تصویر لحظه‌ای موجودی دفتری",
+      "acceptance": "شروع شمارش، شناسه پروفایل، موجودی دفتری، نسخه پروفایل و هش دفتر کل را در snapshot تغییرناپذیر ثبت کند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-005",
+      "proposal": "عضویت نسخه‌دار ملزومات",
+      "acceptance": "فقط پروفایل‌های بسته‌بندی موجود و انتخاب‌شده در snapshot عضو شوند و افزودن عضو پس از شروع ممنوع باشد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-006",
+      "proposal": "مدیریت پروفایل غیرفعال",
+      "acceptance": "پروفایل غیرفعالِ حاضر در snapshot برای شمارش حفظ شود اما پروفایل غیرفعال تازه به نشست افزوده نشود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-007",
+      "proposal": "جلوگیری از نشست فعال هم‌پوشان",
+      "acceptance": "یک پروفایل بسته‌بندی هم‌زمان در بیش از یک نشست counting تا approval عضو نباشد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-008",
+      "proposal": "محدوده محل نگهداری محلی",
+      "acceptance": "برای هر عضو یک کد محل داخلی پاک‌سازی‌شده و حداکثر ۸۰ نویسه ثبت شود، بدون ادعای مکان‌یابی یا دستگاه.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-009",
+      "proposal": "تخصیص شمارشگر اول",
+      "acceptance": "هر عضو پیش از شمارش به کاربر دارای مجوز تخصیص یابد و شناسه بازیگر در تاریخچه ثبت شود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-010",
+      "proposal": "حالت شمارش کور واقعی",
+      "acceptance": "در شمارش اول، موجودی دفتری، اختلاف و شمارش دیگران تا ثبت قطعی شمارش از شمارشگر پنهان بماند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-011",
+      "proposal": "ثبت صریح صفر",
+      "acceptance": "مقدار صفر یک شمارش معتبر باشد و از فیلد خالی یا شمارش‌نشده به‌طور صریح تفکیک شود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-012",
+      "proposal": "اعتبارسنجی واحد صحیح",
+      "acceptance": "تعداد فیزیکی فقط عدد صحیح ۰ تا ۱٬۰۰۰٬۰۰۰ پذیرفته و عدد منفی، اعشاری یا خارج سقف رد شود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-013",
+      "proposal": "ثبت زمان و بازیگر شمارش اول",
+      "acceptance": "ثبت شمارش اول مقدار، کاربر، UTC، منبع رابط و revision عضو را نگهداری کند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-014",
+      "proposal": "قفل شمارش اول پس از ثبت",
+      "acceptance": "شمارش اول پس از ثبت بازنویسی نشود و اصلاح آن فقط با ایجاد نسخه جانشین مستدل ممکن باشد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-015",
+      "proposal": "ورود گروهی کنترل‌شده",
+      "acceptance": "کاربر بتواند چند شمارش تخصیص‌یافته را یکجا ثبت کند و پاسخ موفق/ناموفق هر ردیف مستقل و اتمیک باشد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-016",
+      "proposal": "نمایش اختلاف پس از ثبت",
+      "acceptance": "فقط پس از ثبت شمارش اول، اختلاف عددی و درصدی نسبت به snapshot برای همان عضو محاسبه و نمایش داده شود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-017",
+      "proposal": "آستانه شمارش دوم نسخه‌دار",
+      "acceptance": "آستانه مطلق و درصدی در snapshot نشست ثبت شود و عبور از هرکدام شمارش دوم را الزامی کند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-018",
+      "proposal": "درخواست دستی شمارش دوم",
+      "acceptance": "سرپرست بتواند حتی زیر آستانه با علت ۳ تا ۲۰۰ نویسه شمارش دوم را الزامی کند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-019",
+      "proposal": "تفکیک شمارشگر دوم",
+      "acceptance": "شمارش دوم برای مغایرت مشمول، فقط به کاربری غیر از شمارشگر اول تخصیص یابد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-020",
+      "proposal": "کوری شمارش دوم",
+      "acceptance": "شمارشگر دوم تا ثبت قطعی، مقدار دفتری، شمارش اول و اختلاف را نبیند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-021",
+      "proposal": "ثبت مستقل شمارش دوم",
+      "acceptance": "شمارش دوم مقدار، بازیگر، UTC و revision مستقل داشته و شمارش اول را تغییر ندهد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-022",
+      "proposal": "تشخیص توافق دو شمارش",
+      "acceptance": "برابری شمارش اول و دوم به‌صورت قطعی تشخیص داده و مقدار توافق‌شده را نامزد تسویه کند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-023",
+      "proposal": "پرچم اختلاف بین شمارشگران",
+      "acceptance": "نابرابری دو شمارش وضعیت نیازمند مغایرت‌گیری بسازد و هیچ مقدار را خودکار موجودی نهایی نکند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-024",
+      "proposal": "واژه‌نامه علت مغایرت",
+      "acceptance": "علت‌های محلی نسخه‌دار با کد، عنوان فارسی و وضعیت فعال مدیریت و کد ناشناخته رد شوند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-025",
+      "proposal": "یادداشت اجباری برای اختلاف",
+      "acceptance": "هر مقدار نهایی متفاوت از موجودی دفتری به علت کددار و یادداشت ۳ تا ۵۰۰ نویسه نیاز داشته باشد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-026",
+      "proposal": "تصمیم مغایرت‌گیری صریح",
+      "acceptance": "مغایرت‌گیر فقط first، second، recount یا مقدار دستی مستدل را انتخاب کند و انتخاب در تاریخچه بماند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-027",
+      "proposal": "محدودیت مقدار دستی",
+      "acceptance": "مقدار دستی نهایی فقط ۰ تا ۱٬۰۰۰٬۰۰۰ و با علت، یادداشت و مجوز اختصاصی پذیرفته شود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-028",
+      "proposal": "تفکیک مغایرت‌گیر از شمارشگر",
+      "acceptance": "برای عضو دارای اختلاف دو شمارش، مغایرت‌گیر با هر دو شمارشگر متفاوت باشد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-029",
+      "proposal": "تأییدکننده مستقل",
+      "acceptance": "تصویب عضو متفاوت از snapshot فقط توسط کاربری غیر از شمارشگران و مغایرت‌گیر انجام شود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-030",
+      "proposal": "تصویب دوم اختلاف بزرگ",
+      "acceptance": "اختلاف بالاتر از آستانه بحرانی نسخه‌دار به دو تأییدکننده متمایز نیاز داشته باشد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-031",
+      "proposal": "رد مستدل تأیید",
+      "acceptance": "تأییدکننده بتواند با علت عضو را به reconciliation برگرداند و تصمیم قبلی را بدون بازنویسی حفظ کند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-032",
+      "proposal": "تشخیص رانش دفتر کل",
+      "acceptance": "پیش از تصویب و ثبت، هش/مانده دفتر کل با snapshot مقایسه و هر تغییر میانی عضو را stale کند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-033",
+      "proposal": "بازمبناگذاری کنترل‌شده",
+      "acceptance": "عضو stale فقط با snapshot تازه، علت و تکرار شمارش لازم بازگشایی شود و snapshot قبلی بماند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-034",
+      "proposal": "محاسبه دقیق تعدیل",
+      "acceptance": "تعدیل هر عضو برابر مقدار نهایی مصوب منهای مانده معتبر فعلی محاسبه و علامت ورود/خروج صریح باشد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-035",
+      "proposal": "پیش‌نمایش قبل از ثبت",
+      "acceptance": "پیش از posting، جدول موجودی فعلی، مقدار مصوب، تعدیل و مانده بعدی را بدون تغییر داده نمایش دهد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-036",
+      "proposal": "ثبت اتمیک موجودی و دفتر کل",
+      "acceptance": "به‌روزرسانی مانده و درج رکورد دفتر کل برای هر عضو یا هر دو موفق شوند یا هیچ‌کدام اعمال نشوند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-037",
+      "proposal": "کلید یکتای ضد ثبت دوباره",
+      "acceptance": "هر تعدیل کلید idempotency مشتق از نشست/عضو/revision داشته و درخواست تکراری رکورد یا مانده جدید نسازد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-038",
+      "proposal": "بازیابی امن شکست ثبت",
+      "acceptance": "شکست میان عملیات، عضو را در حالت خطای قابل‌تکرار نگه دارد و مانده نیمه‌اعمال‌شده با بررسی دفتر کل اصلاح شود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-039",
+      "proposal": "ارجاع تغییرناپذیر دفتر کل",
+      "acceptance": "رکورد تعدیل شناسه نشست، عضو، snapshot، تصمیم و تصویب‌کنندگان را با مرجع غیرقابل‌ویرایش نگهداری کند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-040",
+      "proposal": "ثبت جزئی کنترل‌شده",
+      "acceptance": "ثبت اعضای آماده مجاز باشد، اعضای stale/ردشده دست‌نخورده بمانند و خلاصه موفق/مسدود دقیق ارائه شود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-041",
+      "proposal": "بستن فقط پس از تعیین تکلیف",
+      "acceptance": "نشست فقط وقتی posted شود که همه اعضا ثبت، بدون‌تغییر تأیید، یا با علت از دامنه خارج شده باشند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-042",
+      "proposal": "لغو امن نشست",
+      "acceptance": "لغو پیش از هر posting با علت ممکن باشد؛ پس از ثبت حتی یک عضو، لغو کل ممنوع و فقط تکمیل کنترل‌شده مجاز باشد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-043",
+      "proposal": "برد درگ‌ودراپ مراحل",
+      "acceptance": "کارت عضو بین assigned، counted، recount، reconciliation و approval فقط طبق گذار معتبر کشیده و پایدار شود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-044",
+      "proposal": "جایگزین کامل صفحه‌کلید",
+      "acceptance": "همه جابه‌جایی‌های مجاز برد با کنترل صفحه‌کلید انجام و نتیجه با aria-live اعلام شود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-045",
+      "proposal": "رابط RTL پاسخ‌گو",
+      "acceptance": "فرم شمارش کور، برد، پیش‌نمایش و جدول در عرض ۳۶۰ پیکسل بدون خروج افقی کارت و با فوکوس نمایان آزموده شوند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-046",
+      "proposal": "جستجو و فیلتر کم‌افشا",
+      "acceptance": "فیلتر بر اساس نشست، وضعیت، پروفایل و محل داخلی کار کند و هیچ داده مشتری یا سفارش را نمایش ندهد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-047",
+      "proposal": "CSV شمارش و مغایرت کم‌داده",
+      "acceptance": "CSV نسخه‌دار شامل شناسه نشست/پروفایل، دو شمارش، مقدار مصوب، اختلاف و وضعیت باشد و داده شخصی مشتری نداشته باشد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-048",
+      "proposal": "قالب CSV شمارش کور",
+      "acceptance": "قالب ورود آفلاین فقط شناسه عضو و ستون شمارش خالی داشته باشد؛ واردسازی ابتدا preview، خطای ردیفی و سپس تأیید دستی بخواهد.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-049",
+      "proposal": "امنیت، حریم خصوصی و سقف نگهداری",
+      "acceptance": "همه تغییرات nonce، capability و revision بخواهند؛ بازیگر حداقلی ثبت و سقف نشست/عضو/رویداد و پاک‌سازی زمان‌مند اعمال شود.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    },
+    {
+      "id": "R04-050",
+      "proposal": "ممیزی و محدودیت حقیقت فیزیکی",
+      "acceptance": "تاریخچه append-only ایجاد/تخصیص/شمارش/تصمیم/تأیید/ثبت را پوشش دهد و رابط صریحاً شمارش را ثبت دستی، نه اثبات دستگاه یا بیرونی، اعلام کند.",
+      "status": "planned",
+      "evidence": [],
+      "blocker": null
+    }
+  ]
+}
+

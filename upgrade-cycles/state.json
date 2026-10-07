@@ -2,22 +2,22 @@
   "schema": 1,
   "requested_rounds": 10,
   "completed_rounds": 3,
-  "active_round": null,
+  "active_round": 4,
   "baseline": "3.3.0",
-  "target": "3.6.0",
-  "status": "completed",
+  "target": "3.7.0",
+  "status": "proposals_registered",
   "proposal_count": 100,
-  "implementation_verified": 100,
-  "report": "ROUND-03.md",
+  "implementation_verified": 0,
+  "report": "ROUND-04.md",
   "no_mahex_api": true,
-  "implementation_code_count": 100,
+  "implementation_code_count": 0,
   "next_round": 4,
   "current_version": "3.6.0",
   "source_commit": "bb96df9a28349ed475998b41b100e3571b504039",
   "release": "https://github.com/anonyset/mahex-shipping-for-woocommerce/releases/tag/v3.6.0",
   "sha256": "3c798a40811fa7169119b2c3e1df85c98071eecbc712f3cf6679b779bb8913ff",
-  "items_report": "ROUND-03-items.json",
-  "evidence": "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37596224229",
+  "items_report": null,
+  "evidence": null,
   "rounds": [
     {
       "round": 1,
@@ -57,5 +57,5 @@
       "sha256": "3c798a40811fa7169119b2c3e1df85c98071eecbc712f3cf6679b779bb8913ff"
     }
   ],
-  "round_baseline": "3.5.0"
+  "round_baseline": "3.6.0"
 }
