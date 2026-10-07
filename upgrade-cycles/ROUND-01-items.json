@@ -1,0 +1,1314 @@
+{
+  "round": 1,
+  "version": "3.4.0",
+  "source_commit": "2173c0b2e7a57221d7c937202b440ef762b0d847",
+  "verification_scope": "هر معیار در کد بازبینی شد؛ آزمون‌های رگرسیون و جریان‌های اصلی نصب/مرورگر اجرا شدند. این داده ادعای آزمون فیزیکی یا ۱۰۰ آزمون مرورگر مستقل نیست.",
+  "evidence": {
+    "dispatch-regression": "https://github.com/anonyset/mahex-shipping-for-woocommerce/blob/2173c0b2e7a57221d7c937202b440ef762b0d847/tests/v34-dispatch-test.php",
+    "policy-regression": "https://github.com/anonyset/mahex-shipping-for-woocommerce/blob/2173c0b2e7a57221d7c937202b440ef762b0d847/tests/v34-policies-test.php",
+    "integration-main-flows": "https://github.com/anonyset/mahex-shipping-for-woocommerce/actions/runs/37569129245",
+    "source-review": "https://github.com/anonyset/mahex-shipping-for-woocommerce/tree/2173c0b2e7a57221d7c937202b440ef762b0d847/src/V34"
+  },
+  "items": [
+    {
+      "id": "O01",
+      "proposal": "پیش‌نمایش اصلاح نشانی سفارش‌های قدیمی",
+      "acceptance": "تفاوت قدیم/جدید برای هر فیلد بدون ذخیره نمایش داده شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O02",
+      "proposal": "اعمال فقط فیلدهای انتخاب‌شده اصلاح نشانی",
+      "acceptance": "لغو انتخاب فیلد، همان فیلد را دست‌نخورده نگه دارد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O03",
+      "proposal": "برگردانی اصلاح نشانی با محافظت تغییر همزمان",
+      "acceptance": "فقط در صورت برابر بودن نشانی فعلی با نتیجه اصلاح برگردد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O04",
+      "proposal": "حفظ منبع هر فیلد مقصد",
+      "acceptance": "فیلد ارسال یا صورتحساب به‌وضوح مشخص باشد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O05",
+      "proposal": "تشخیص مقصد ترکیبی ارسال/صورتحساب",
+      "acceptance": "وجود آدرس ارسال ناقص با داده صورتحساب هشدار مستقل دهد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O06",
+      "proposal": "نمای تفاوت تلفن ارسال و صورتحساب",
+      "acceptance": "دو موبایل معتبر متفاوت نیاز به تأیید گیرنده نشان دهد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O07",
+      "proposal": "تشخیص کنترل‌های جهت متن در نشانی تاریخی",
+      "acceptance": "کنترل نامرئی نشانی هشدار دهد و در پیشنهاد اصلاح حذف شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O08",
+      "proposal": "تشخیص حروف لاتین گیج‌کننده داخل کدپستی",
+      "acceptance": "کدپستی دارای حروف به حذف خودکار تبدیل نشود و نیاز به بررسی دهد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O09",
+      "proposal": "اثر انگشت نشانی برای تأیید گیرنده",
+      "acceptance": "تأیید نشانی پس از تغییر هر فیلد مقصد خودکار نامعتبر شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O10",
+      "proposal": "ثبت روش تأیید نشانی",
+      "acceptance": "تماس/پیام مشتری/حضوری و یادداشت ثبت شود؛ تأیید واقعی ادعا نشود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "ثبت تماس، پلمب، اسناد و تحویل، اظهار دستی اپراتور است؛ عملیات فیزیکی اثبات نشده است."
+    },
+    {
+      "id": "O11",
+      "proposal": "ثبت زمان و مسئول تأیید نشانی",
+      "acceptance": "نام مسئول و تاریخ تأیید در کارت موجود باشد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "ثبت تماس، پلمب، اسناد و تحویل، اظهار دستی اپراتور است؛ عملیات فیزیکی اثبات نشده است."
+    },
+    {
+      "id": "O12",
+      "proposal": "حفظ تاریخچه اصلاح فقط داخل سفارش",
+      "acceptance": "حداکثر ۲۰ رویداد شامل فیلد/قدیم/جدید نگهداری شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O13",
+      "proposal": "پیش‌نمایش توقف داخلی ارسال",
+      "acceptance": "دلیل توقف و اثر آن پیش از ذخیره دیده شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O14",
+      "proposal": "دسته‌های توقف ساخت‌یافته",
+      "acceptance": "آدرس/تماس/پرداخت/آسیب/درخواست مشتری/سایر تفکیک شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O15",
+      "proposal": "الزام توضیح توقف از نوع سایر",
+      "acceptance": "توقف سایر بدون متن رد شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O16",
+      "proposal": "آزادسازی توقف با دلیل اجباری",
+      "acceptance": "آزادسازی خالی رد شود و دلیل در تاریخچه بماند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O17",
+      "proposal": "مهلت بازبینی توقف داخلی",
+      "acceptance": "مهلت معتبر ISO ثبت و موارد سررسید نمایش داده شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O18",
+      "proposal": "توقف داخلی جلوی آماده‌سازی برد را بگیرد",
+      "acceptance": "انتقال به ready سفارش متوقف از UI قدیمی نیز رد شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O19",
+      "proposal": "اولویت اعزام مستقل از اولویت قوانین",
+      "acceptance": "normal/urgent/vip برای خود سفارش ذخیره شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O20",
+      "proposal": "دلیل برای اولویت غیرعادی",
+      "acceptance": "urgent/vip بدون دلیل رد شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O21",
+      "proposal": "قفسه موقت اعزام سفارش",
+      "acceptance": "شناسه محدود قفسه در متادیتای سفارش باقی بماند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O22",
+      "proposal": "تشخیص سفارش‌های هم‌قفسه",
+      "acceptance": "شمار واقعی سفارش‌های همان قفسه در همین صفحه نمایش داده شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O23",
+      "proposal": "دستور بسته‌بندی در سطح سفارش",
+      "acceptance": "متن داخلی مستقل از ویژگی محصول ثبت شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O24",
+      "proposal": "دستور تماس قبل از ارسال",
+      "acceptance": "متن تماس داخلی در کارت و برگه اعزام نمایش داده شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O25",
+      "proposal": "پرچم تحویل فقط به گیرنده",
+      "acceptance": "پرچم داخلی با معنی روشن بدون ادعای سرویس ماهکس ثبت شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "ثبت تماس، پلمب، اسناد و تحویل، اظهار دستی اپراتور است؛ عملیات فیزیکی اثبات نشده است."
+    },
+    {
+      "id": "O26",
+      "proposal": "پرچم جلوگیری از خم‌شدن",
+      "acceptance": "هشدار داخلی مستقل از شکننده محصول ثبت شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O27",
+      "proposal": "چک‌لیست بازبینی نشانی در سطح سفارش",
+      "acceptance": "تأیید دستی address_reviewed ثبت شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "ثبت تماس، پلمب، اسناد و تحویل، اظهار دستی اپراتور است؛ عملیات فیزیکی اثبات نشده است."
+    },
+    {
+      "id": "O28",
+      "proposal": "چک‌لیست بررسی اسناد همراه",
+      "acceptance": "تأیید دستی documents_checked ثبت شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "ثبت تماس، پلمب، اسناد و تحویل، اظهار دستی اپراتور است؛ عملیات فیزیکی اثبات نشده است."
+    },
+    {
+      "id": "O29",
+      "proposal": "چک‌لیست ثبت پلمب بسته",
+      "acceptance": "تأیید دستی seal_checked ثبت شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "ثبت تماس، پلمب، اسناد و تحویل، اظهار دستی اپراتور است؛ عملیات فیزیکی اثبات نشده است."
+    },
+    {
+      "id": "O30",
+      "proposal": "چک‌لیست برچسب‌خوانی دوم",
+      "acceptance": "تأیید دستی label_double_checked ثبت شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "ثبت تماس، پلمب، اسناد و تحویل، اظهار دستی اپراتور است؛ عملیات فیزیکی اثبات نشده است."
+    },
+    {
+      "id": "O31",
+      "proposal": "تأیید چک‌لیست به نشانی وابسته باشد",
+      "acceptance": "تغییر مقصد تیک بازبینی نشانی را باطل کند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O32",
+      "proposal": "نشان آمادگی قابل توضیح اعزام",
+      "acceptance": "چک‌های لازم و تعداد تکمیل، بدون تغییر وضعیت حمل نشان داده شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O33",
+      "proposal": "صف ویژه بازبینی تأییدنشده مقصد",
+      "acceptance": "فیلتر unverified فقط سفارش تأییدنشده فعلی نشان دهد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O34",
+      "proposal": "صف ویژه توقف سررسیدشده",
+      "acceptance": "فیلتر overdue_hold بر اساس مهلت UTC کار کند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O35",
+      "proposal": "صف ویژه اصلاح نشانی قابل اعمال",
+      "acceptance": "فیلتر fixable فقط دارای diff واقعی نشان دهد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O36",
+      "proposal": "صف ویژه چک‌لیست ناقص اعزام",
+      "acceptance": "فیلتر checklist فقط دارای چک ناتمام نشان دهد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O37",
+      "proposal": "چینش چندمعیاره اعزام",
+      "acceptance": "اولویت/توقف سررسید/سن/شناسه مرتب شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O38",
+      "proposal": "نگهداری تعداد انتخاب در فیلترها",
+      "acceptance": "انتخاب سفارش مخفی حذف شود و شمار دقیق باشد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O39",
+      "proposal": "پیش‌نمایش گروهی اصلاح نشانی",
+      "acceptance": "حداکثر ۵۰ سفارش بدون تغییر ذخیره diff نشان دهد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O40",
+      "proposal": "اعمال گروهی دقیق همان پیش‌نمایش",
+      "acceptance": "توکن کاربر و اثرانگشت سفارش از اعمال داده تازه‌نشده جلوگیری کند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O41",
+      "proposal": "نتیجه جداگانه موفق/ناموفق گروهی",
+      "acceptance": "خطای یک سفارش بقیه موفق‌ها را پنهان نکند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O42",
+      "proposal": "توکن یک‌بارمصرف گروهی کوتاه‌عمر",
+      "acceptance": "ارسال دوباره یا توکن منقضی رد شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O43",
+      "proposal": "برگه کار اعزام بدون مبلغ مالی",
+      "acceptance": "برگه داخلی فقط مقصد/دستور/توقف/چک‌ها داشته باشد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "ثبت تماس، پلمب، اسناد و تحویل، اظهار دستی اپراتور است؛ عملیات فیزیکی اثبات نشده است."
+    },
+    {
+      "id": "O44",
+      "proposal": "چاپ برگه فقط برای انتخاب‌های مجاز",
+      "acceptance": "برگه صرفاً سفارش‌های دارای مجوز عملیاتی کاربر نشان دهد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "ثبت تماس، پلمب، اسناد و تحویل، اظهار دستی اپراتور است؛ عملیات فیزیکی اثبات نشده است."
+    },
+    {
+      "id": "O45",
+      "proposal": "جابجایی بصری کارت میان قفسه‌ها",
+      "acceptance": "درگ کارت، پیش‌نمایش قفسه ایجاد کند؛ ذخیره پس از تأیید",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O46",
+      "proposal": "مسیر صفحه‌کلید معادل جابجایی قفسه",
+      "acceptance": "دکمه قفسه، همان preview/apply درگ را اجرا کند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O47",
+      "proposal": "اعلان زنده نتیجه در دسترس‌پذیری",
+      "acceptance": "success/error در aria-live فارسی اعلام شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O48",
+      "proposal": "کارگاه کارت‌های اعزام موبایل",
+      "acceptance": "عرض ۳۶۰px بدون خروج کارت از صفحه قابل استفاده باشد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O49",
+      "proposal": "دروازه ضد همزمانی اصلاح و تأیید",
+      "acceptance": "revision/lock/lease هنگام ذخیره رعایت شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "O50",
+      "proposal": "پاک‌سازی داده کارگاه در درخواست حریم خصوصی",
+      "acceptance": "متادیتای جدید از صادرکننده/پاک‌کننده سفارش پشتیبانی شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "dispatch-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M01",
+      "proposal": "آماده‌سازی دقیقه‌ای مستقل از روز حمل",
+      "acceptance": "۱۲۰ دقیقه کار از ۱۱:۳۰ با استراحت ۱۲ تا ۱۳ در ۱۴:۳۰ پایان می‌یابد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M02",
+      "proposal": "شروع متفاوت شیفت هر روز هفته",
+      "acceptance": "شیفت چهارشنبه ۱۰ تا ۱۱ از ساعت ۱۰ پذیرش دارد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M03",
+      "proposal": "پایان متفاوت شیفت هر روز هفته",
+      "acceptance": "۶۰ دقیقه مانده شیفت چهارشنبه به پنجشنبه منتقل می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M04",
+      "proposal": "حذف زمان استراحت از آماده‌سازی",
+      "acceptance": "دقیقه‌های بازه استراحت در daily_minutes شمرده نمی‌شوند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M05",
+      "proposal": "انتقال مانده آماده‌سازی به شیفت بعد",
+      "acceptance": "کار بیشتر از بازه نخست روز بعد ادامه می‌یابد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M06",
+      "proposal": "شروع زودهنگام استثنایی یک تاریخ",
+      "acceptance": "استثنای ۶ صبح، سفارش ۶ صبح را همان روز می‌پذیرد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M07",
+      "proposal": "پایان دیرهنگام استثنایی یک تاریخ",
+      "acceptance": "استثنای پایان ۲۰، سفارش ساعت ۱۷ را به فردا نمی‌برد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M08",
+      "proposal": "بستن شیفت در تاریخ خاص",
+      "acceptance": "مقدار closed روز را برای کار آماده‌سازی بسته می‌کند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M09",
+      "proposal": "بازگشایی روز تعطیل با شیفت استثنایی",
+      "acceptance": "شیفت تاریخ بر holidays اولویت دارد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M10",
+      "proposal": "آماده‌سازی چندروزه با صورت ریز روزها",
+      "acceptance": "daily_minutes مصرف هر روز را جدا ثبت می‌کند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M11",
+      "proposal": "ثبت زمان دقیق پایان آماده‌سازی",
+      "acceptance": "completed مقدار ISO با دقیقه صحیح دارد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M12",
+      "proposal": "ثبت تعهد ثابت از زمان واقعی سفارش",
+      "acceptance": "promise با تاریخ ایجاد WC_Order تولید و ذخیره می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M13",
+      "proposal": "ثبت مقصد ثابت همراه تعهد",
+      "acceptance": "province و city در promise ثبت می‌شوند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M14",
+      "proposal": "اثر انگشت سیاست همراه تعهد",
+      "acceptance": "policy_hash طول ۶۴ دارد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M15",
+      "proposal": "هشدار تغییر سیاست پس از ثبت تعهد",
+      "acceptance": "تفاوت fingerprint فعلی و ثابت هشدار می‌دهد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M16",
+      "proposal": "نگهداری نسخه‌های قبلی تعهد",
+      "acceptance": "اصلاح قبلی در promise_history تا ۵۰ نسخه حفظ می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M17",
+      "proposal": "اصلاح دستی مهلت با دلیل",
+      "acceptance": "override بدون note رد می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M18",
+      "proposal": "رد اصلاح مهلت قبل از ایجاد سفارش",
+      "acceptance": "override پیش از created_at رد می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M19",
+      "proposal": "توقف ساعت تعهد با زمان شروع",
+      "acceptance": "hold زمان paused_at را ذخیره می‌کند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M20",
+      "proposal": "ادامه ساعت تعهد و تمدید به اندازه توقف",
+      "acceptance": "resume بعد از ۳۶۰۰ ثانیه مهلت را ۳۶۰۰ ثانیه می‌افزاید",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M21",
+      "proposal": "جمع زمان توقف سفارش",
+      "acceptance": "pause_seconds بین توقف‌های متعدد جمع می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M22",
+      "proposal": "حفظ مهلت اصلی پس از اصلاح",
+      "acceptance": "original_deadline پس از override و resume ثابت می‌ماند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M23",
+      "proposal": "برآورد مجدد مستقل از تعهد ثابت",
+      "acceptance": "forecast جای promise را نمی‌گیرد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M24",
+      "proposal": "نمایش شروع بازه پذیرش مؤثر",
+      "acceptance": "accepted_at شروع واقعی شیفت قابل کار را دارد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M25",
+      "proposal": "نمایش دقیقه و پایان آماده‌سازی",
+      "acceptance": "صفحه minutes و completed را نمایش می‌دهد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M26",
+      "proposal": "پرونده ساختاریافته آسیب و اختلال سفارش",
+      "acceptance": "open نوع معتبر و شناسه یکتا را ثبت می‌کند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M27",
+      "proposal": "شدت چهارسطحی پرونده",
+      "acceptance": "low/medium/high/critical ثبت می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M28",
+      "proposal": "پذیرش صریح رسیدگی پرونده",
+      "acceptance": "ack فقط پرونده open را acknowledged می‌کند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M29",
+      "proposal": "ثبت زمان پذیرش پرونده",
+      "acceptance": "ack_at زمان واقعی عملیات است",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M30",
+      "proposal": "بستن صریح پرونده پس از رسیدگی",
+      "acceptance": "resolve پرونده را closed می‌کند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M31",
+      "proposal": "نتیجه الزامی بستن پرونده",
+      "acceptance": "resolve بدون نتیجه با سیاست پیش‌فرض رد می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M32",
+      "proposal": "بازگشایی پرونده با دلیل",
+      "acceptance": "reopen فقط از closed و با note ممکن است",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M33",
+      "proposal": "سپردن پرونده به مسئول مجاز",
+      "acceptance": "assign فقط کاربر دارای مجوز عملیات را می‌پذیرد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M34",
+      "proposal": "مهلت مستقل رسیدگی پرونده",
+      "acceptance": "due تاریخ محلی فرم را به epoch تبدیل و تا ۹۰ روز اعتبارسنجی می‌کند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M35",
+      "proposal": "نشانگر پرونده گذشته از مهلت",
+      "acceptance": "due گذشته و پرونده بسته‌نشده نشانگر معوق دارند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M36",
+      "proposal": "سن پرونده به ساعت",
+      "acceptance": "اختلاف اکنون و created_at به ساعت نمایش داده می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M37",
+      "proposal": "زمان سپری‌شده تا پذیرش",
+      "acceptance": "اختلاف ack_at و created_at نمایش داده می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M38",
+      "proposal": "زمان سپری‌شده تا حل",
+      "acceptance": "اختلاف resolved_at و created_at نمایش داده می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M39",
+      "proposal": "شمار پرونده بحرانی حل‌نشده",
+      "acceptance": "summary critical تنها برای بسته‌نشده‌ها می‌شمارد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M40",
+      "proposal": "شمار همه پرونده‌های باز",
+      "acceptance": "summary open فقط بسته‌نشده‌ها را می‌شمارد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M41",
+      "proposal": "ثبت علت ریشه‌ای پرونده",
+      "acceptance": "root_cause مستقل ثبت و نمایش می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M42",
+      "proposal": "ثبت اقدام اصلاحی پرونده",
+      "acceptance": "corrective مستقل ثبت و نمایش می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M43",
+      "proposal": "ثبت اقدام پیشگیرانه پرونده",
+      "acceptance": "preventive مستقل ثبت و نمایش می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M44",
+      "proposal": "ثبت نتیجه تماس با مشتری",
+      "acceptance": "contact مستقل ثبت و نمایش می‌شود؛ پیام خودکار ارسال نمی‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "ثبت تماس، پلمب، اسناد و تحویل، اظهار دستی اپراتور است؛ عملیات فیزیکی اثبات نشده است."
+    },
+    {
+      "id": "M45",
+      "proposal": "طبقه‌بندی نتیجه رسیدگی",
+      "acceptance": "resolution مستقل ثبت و نمایش می‌شود",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M46",
+      "proposal": "ثبت هزینه زیان پرونده با مجوز مالی",
+      "acceptance": "cost عدد محدود است و مجوز finance لازم دارد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M47",
+      "proposal": "ثبت مبلغ بازیافت با مجوز مالی",
+      "acceptance": "recovery عدد محدود است و مجوز finance لازم دارد",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M48",
+      "proposal": "گزارش خالص زیان پرونده‌ها",
+      "acceptance": "summary net برابر loss منهای recovery است",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M49",
+      "proposal": "جست‌وجوی پرونده در سفارش انتخابی",
+      "acceptance": "ورودی جست‌وجو کارت‌های نامرتبط را پنهان می‌کند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    },
+    {
+      "id": "M50",
+      "proposal": "دریافت خصوصی پرونده بدون افشای مبلغ به اپراتور",
+      "acceptance": "export مجوز، nonce و سفارش را بررسی و مبلغ را برای اپراتور غیرمالی حذف می‌کند",
+      "status": "implemented_reviewed_software",
+      "evidence": [
+        "policy-regression",
+        "integration-main-flows",
+        "source-review"
+      ],
+      "blocker": null,
+      "limitation": "قابلیت محلی فروشگاه؛ بدون وضعیت یا تعهد آنلاین شرکت حمل."
+    }
+  ]
+}
