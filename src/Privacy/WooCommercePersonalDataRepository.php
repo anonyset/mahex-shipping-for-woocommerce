@@ -13,6 +13,7 @@ final class WooCommercePersonalDataRepository implements PersonalDataRepository 
 		foreach ( $orders as $order ) {
             foreach (['_hm_mahex_v35_handover'=>'Local manifest membership and custody record','_hm_mahex_v35_quality'=>'Order quality review record','_hm_mahex_v34_dispatch'=>'Dispatch review record','_hm_mahex_v34_service_case'=>'Local service promise/incident record','_hm_mahex_v33_return'=>'Return/claim record','_hm_mahex_v33_station'=>'Packing/handover record','_hm_mahex_v33_sms_consent'=>'SMS consent'] as $key=>$label) {
                 $value=$order->get_meta($key,true);
+                if ($key === '_hm_mahex_v35_handover' && is_array($value) && $value && class_exists(\HoseinMomeni\MahexWoo\V35\LocalHandover::class)) $value = \HoseinMomeni\MahexWoo\V35\LocalHandover::privacy($order);
                 if ($value!=='' && $value!==[]) $data[]=array('name'=>$label.' #'.$order->get_id(),'value'=>wp_json_encode($value,JSON_UNESCAPED_UNICODE));
             }
 			$shipments = $order->get_meta( OrderShipmentStore::MULTI_META, true );

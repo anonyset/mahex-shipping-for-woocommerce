@@ -50,9 +50,10 @@ jobs:
           wp core install --path="$MAHEX_WP_ROOT" --url="$MAHEX_BASE_URL" --title='Mahex isolated integration' --admin_user=mahex-admin --admin_password=mahex-local-test-password --admin_email=admin@example.test --skip-email
           wp plugin install woocommerce --version=11.1.2 --activate --path="$MAHEX_WP_ROOT"
           wp option update woocommerce_custom_orders_table_enabled '${{ matrix.hpos }}' --path="$MAHEX_WP_ROOT"
-          mkdir -p "$MAHEX_WP_ROOT/wp-content/plugins/mahex-shipping-for-woocommerce"
-          rsync -a ./ "$MAHEX_WP_ROOT/wp-content/plugins/mahex-shipping-for-woocommerce/" --exclude '.git/' --exclude '.github/' --exclude 'node_modules/'
-          wp plugin activate mahex-shipping-for-woocommerce --path="$MAHEX_WP_ROOT"
+          mkdir -p /tmp/mahex-candidate/mahex-shipping-for-woocommerce
+          rsync -a ./ /tmp/mahex-candidate/mahex-shipping-for-woocommerce/ --exclude '.git/' --exclude '.github/' --exclude 'node_modules/' --exclude 'build/' --exclude 'docs/' --exclude 'tests/' --exclude '*.zip' --exclude 'update.json'
+          (cd /tmp/mahex-candidate && zip -qr /tmp/mahex-candidate.zip mahex-shipping-for-woocommerce)
+          wp plugin install /tmp/mahex-candidate.zip --activate --path="$MAHEX_WP_ROOT"
           wp eval-file tests/integration/seed.php --path="$MAHEX_WP_ROOT"
           wp eval-file tests/integration/backend.php --path="$MAHEX_WP_ROOT"
           wp eval-file tests/integration/v34-backend.php --path="$MAHEX_WP_ROOT"
