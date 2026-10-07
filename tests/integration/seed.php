@@ -11,3 +11,8 @@ $uid=wp_insert_user(['user_login'=>'mahex-print-fixture','user_pass'=>'mahex-loc
 $role=get_role('mahex_print_only');$caps=$role->capabilities;unset($caps[HoseinMomeni\MahexWoo\V33\Access::PRINT_DOCS]);$caps[HoseinMomeni\MahexWoo\V33\Access::OPERATIONS]=true;add_role('mahex_ops_fixture','Operations fixture',$caps);
 $opsUid=wp_insert_user(['user_login'=>'mahex-ops-fixture','user_pass'=>'mahex-local-ops-test','user_email'=>'ops@example.test','role'=>'mahex_ops_fixture']);if(is_wp_error($opsUid))throw new RuntimeException($opsUid->get_error_message());
 $f=['orders'=>$orders,'product'=>$p->get_id(),'print_user'=>$uid,'ops_user'=>$opsUid,'hpos'=>get_option('woocommerce_custom_orders_table_enabled'),'wp_version'=>$GLOBALS['wp_version'],'wc_version'=>WC_VERSION];file_put_contents(getenv('MAHEX_FIXTURES'),wp_json_encode($f));echo wp_json_encode($f).PHP_EOL;
+
+// Separate data-quality fixture avoids changing earlier scan/stock tests.
+$qualityProduct=new WC_Product_Simple();$qualityProduct->set_name('کالای ممیزی بدون SKU');$qualityProduct->set_regular_price('10000');$qualityProduct->set_weight('.3');$qualityProduct->set_length('4');$qualityProduct->set_width('4');$qualityProduct->set_height('4');$qualityProduct->save();
+$qualityOrder=wc_create_order();$qualityOrder->add_product($qualityProduct,1);$qualityOrder->set_address(['first_name'=>'ممیزی','last_name'=>'آزمایشی','city'=>'قم','state'=>'QOM','country'=>'IR','phone'=>'09120000000','email'=>'quality@example.test'],'billing');$qualityOrder->calculate_totals();$qualityOrder->set_status('processing');$qualityOrder->save();
+$f['quality_order']=$qualityOrder->get_id();$f['quality_product']=$qualityProduct->get_id();file_put_contents(getenv('MAHEX_FIXTURES'),wp_json_encode($f));

@@ -10,3 +10,7 @@ echo 'Post-browser V34 address, bin, verification, frozen promise and resolved i
 
 $policy=HoseinMomeni\MahexWoo\V34\ServicePolicies::policy();if($policy['effort_minutes']!==90||$policy['weekly_shifts'][3]!==['10:00','17:00']||$policy['date_shifts']['2026-10-09']!==['06:00','20:00']||!in_array(['15:00','15:30'],$policy['breaks'],true))throw new RuntimeException('Structured calendar editor did not persist typed intervals');
 echo 'Structured calendar editor persisted effort, weekly shift, exception date and added break'.PHP_EOL;
+
+$quality=wc_get_order($f['quality_order']);$quality->read_meta_data(true);$qs=HoseinMomeni\MahexWoo\V35\OrderQuality::scan($quality,true);if($qs['summary']['confirmed']!==1)throw new RuntimeException('V35 browser quality review did not persist');
+$journal=json_decode(file_get_contents(getenv('MAHEX_REPORT_DIR').'/v35-browser.json'),true);$group=HoseinMomeni\MahexWoo\V35\LocalHandover::get($journal['handover_group']);if($group['state']!=='closed'||$group['order']!==array_reverse($f['handover_orders'])||$group['totals']['received_parcels']!==2)throw new RuntimeException('V35 browser drag and receipts did not persist');foreach($f['handover_orders'] as $oid){$o=wc_get_order($oid);$o->read_meta_data(true);if(HoseinMomeni\MahexWoo\V35\LocalHandover::meta($o)['refs'][$group['id']]['state']!=='closed')throw new RuntimeException('V35 browser membership did not persist via actual datastore');}
+echo 'V35 post-browser actual datastore confirmed evidence review, native reorder, sealed group, receipts and closure'.PHP_EOL;

@@ -7,451 +7,652 @@
       "id": "R2-O01",
       "proposal": "ایجاد مانیفست محلی با کد مستقل",
       "acceptance": "هر دفتر گروهی شناسه تصادفی و کد MH35 مجزا داشته باشد",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O02",
       "proposal": "عنوان گروه اعزام",
       "acceptance": "عنوان ۳ تا ۱۲۰ نویسه ذخیره و در فهرست دیده شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O03",
       "proposal": "مبدا تحویل گروه",
       "acceptance": "نام مبدا لازم باشد و مستقل از نشانی مشتری ثبت شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O04",
       "proposal": "مقصد عملیاتی گروه",
       "acceptance": "مقصد گروه یا محل تحویل ۳ تا ۱۲۰ نویسه ذخیره شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O05",
       "proposal": "پنجره زمانی گروه",
       "acceptance": "زمان محلی شروع و پایان معتبر و پایان بعد شروع ثبت شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O06",
       "proposal": "نوع مسیر گروه",
       "acceptance": "نوع داخلی شعبه، راننده یا جمع‌آوری دستی از فهرست بسته پذیرفته شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O07",
       "proposal": "شماره خودرو اختیاری گروه",
       "acceptance": "شماره یا شناسه خودرو بدون ادعای تایید بیرونی ثبت شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O08",
       "proposal": "ظرفیت شمارشی گروه",
       "acceptance": "ظرفیت ۱ تا ۲۰۰ بسته تعریف شود و تجاوز رد شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O09",
       "proposal": "عضویت سفارش در مانیفست",
       "acceptance": "افزودن سفارش موجود ووکامرس در وضعیت پیش‌نویس ذخیره شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O10",
       "proposal": "انحصار عضویت فعال",
       "acceptance": "یک سفارش همزمان در دو گروه باز عضو نشود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O11",
       "proposal": "حذف عضو پیش از پلمب دفتر",
       "acceptance": "حذف تنها در پیش‌نویس و با دلیل ثبت شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O12",
       "proposal": "خواندن شمار بسته واقعی",
       "acceptance": "تعداد بسته از طرح بسته‌بندی موجود خوانده شود و طرح ناموجود افزودن را مسدود کند",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O13",
       "proposal": "جمع وزن واقعی گروه",
       "acceptance": "وزن اندازه‌گیری‌شده بسته‌ها از ایستگاه جمع شود؛ داده ناقص مشخص شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O14",
       "proposal": "جمع بسته گروه",
       "acceptance": "عدد کل برابر مجموع بسته اعضای واقعی باشد",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O15",
       "proposal": "ثبت اثر انگشت محموله عضو",
       "acceptance": "نشانی و طرح بسته و وزن در زمان عضویت هش شوند",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O16",
       "proposal": "گزارش تغییر محموله عضو",
       "acceptance": "تغییر سفارش بعد عضویت پیش از پلمب هشدار اختلاف بدهد",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O17",
       "proposal": "بازثبت تایید شده تصویر محموله",
       "acceptance": "به‌روزرسانی تصویر عضو فقط پیش‌نویس و با دلیل ممکن شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O18",
       "proposal": "مسدودسازی پلمب گروه خالی",
       "acceptance": "دفتر بی‌عضو پلمب نشود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O19",
       "proposal": "مسدودسازی پلمب داده قدیمی",
       "acceptance": "هر عضو تغییرکرده پلمب تمام گروه را مسدود کند",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O20",
       "proposal": "مسدودسازی پلمب توقف اعزام",
       "acceptance": "توقف اعزام عضو پلمب دفتر را رد کند",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O21",
       "proposal": "شماره پلمب گروه",
       "acceptance": "کد پلمب دستی ۳ تا ۴۰ نویسه برای پلمب دفتر لازم باشد",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O22",
       "proposal": "نسخه بسته گروه",
       "acceptance": "پلمب با نسخه و هش مرتب اعضا ذخیره شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O23",
       "proposal": "قفل عضویت گروه پلمب شده",
       "acceptance": "افزودن حذف و بازثبت بعد پلمب رد شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O24",
       "proposal": "بازکردن دفتر با دلیل",
       "acceptance": "پیش از خروج و با دلیل لازم به پیش‌نویس برگردد و پلمب قبلی در تاریخچه بماند",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O25",
       "proposal": "اعزام دستی گروه",
       "acceptance": "فقط گروه پلمب شده با نام تحویل‌گیرنده و مرجع دستی اعزام شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O26",
       "proposal": "ثبت نگهدارنده اولیه گروه",
       "acceptance": "نگهدارنده اولیه همراه شناسه کاربر ثبت‌کننده در خروج ثبت شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O27",
       "proposal": "انتقال دستی نگهداری گروه",
       "acceptance": "در حالت اعزام شده انتقال از نگهدارنده فعلی به شخص متفاوت ثبت شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O28",
       "proposal": "زنجیره مبدا و مقصد نگهداری",
       "acceptance": "هر انتقال نام قبلی و جدید و محل و زمان ثبت داشته باشد",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O29",
       "proposal": "رد انتقال نگهداری بدون علت",
       "acceptance": "یادداشت انتقال لازم و طول محدود باشد",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O30",
       "proposal": "ثبت رسید عضو",
       "acceptance": "هر عضو اعزام شده مستقل با نام پذیرنده و مرجع دستی دریافت علامت بخورد",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O31",
       "proposal": "ثبت مغایرت شمار بسته",
       "acceptance": "شمار پذیرفته شده متفاوت از انتظار مغایرت بسازد",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O32",
       "proposal": "طبقه بندی آسیب تحویل",
       "acceptance": "سلامت سالم، آسیب بسته، کسری یا نپذیرفته ثبت شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O33",
       "proposal": "توضیح اجباری مغایرت",
       "acceptance": "کسری آسیب و نپذیرفتن بدون توضیح رد شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O34",
       "proposal": "تفکیک نپذیرفته از دریافت",
       "acceptance": "عضو نپذیرفته در شمار دریافت نهایی منظور نشود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O35",
       "proposal": "اصلاح رسید با دلیل",
       "acceptance": "رسید در دفتر اعزام شده با دلیل و تاریخچه نسخه قبلی اصلاح شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O36",
       "proposal": "بستن دفتر فقط پس از بررسی اعضا",
       "acceptance": "همه اعضا باید نتیجه دریافت یا رد داشته باشند",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O37",
       "proposal": "بستن دفتر با مغایرت آگاهانه",
       "acceptance": "دفتر دارای مغایرت فقط با توضیح جمع‌بندی بسته شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O38",
       "proposal": "لغو دفتر پیش از خروج",
       "acceptance": "پیش‌نویس یا پلمب با دلیل لغو و عضویت فعال آزاد شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O39",
       "proposal": "آرشیو دفتر بسته",
       "acceptance": "حالت بسته تغییر عملیات را رد و فقط خواندن ممکن کند",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O40",
       "proposal": "ردیابی گروه در سفارش واقعی",
       "acceptance": "شناسه و وضعیت گروه در متای CRUD هر عضو ذخیره شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O41",
       "proposal": "حذف مالی از خروجی گروه",
       "acceptance": "JSON و برگه گروه هیچ مبلغ سفارش یا دفتر مالی نداشته باشند",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O42",
       "proposal": "خروجی خصوصی نسخه دار",
       "acceptance": "خروجی JSON شامل نسخه طرح و هش گروه با مجوز اعضا باشد",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O43",
       "proposal": "برگه قابل چاپ گروه",
       "acceptance": "برگه RTL شامل بسته وزن پلمب نگهدارنده و نتیجه عضو باشد",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O44",
       "proposal": "فهرست قابل جستجوی گروه ها",
       "acceptance": "کد عنوان و مقصد در فهرست محلی قابل جستجو باشند",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O45",
       "proposal": "فیلتر مرحله تحویل گروه",
       "acceptance": "فهرست بر اساس پیش‌نویس پلمب اعزام بسته لغو فیلتر شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O46",
       "proposal": "چینش عضو با کشیدن و رهاسازی",
       "acceptance": "اعضای پیش‌نویس با درگ ترتیب پایدار بگیرند",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O47",
       "proposal": "چینش عضو بدون ماوس",
       "acceptance": "دکمه بالا و پایین همان ترتیب پایدار را برای کیبورد اعمال کند",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O48",
       "proposal": "حفاظت نسخه گروه در ویرایش موازی",
       "acceptance": "نسخه قدیمی گروه ذخیره نشود و قفل گروه و اعضا استفاده شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O49",
       "proposal": "دسترسی مجدد به همه اعضا",
       "acceptance": "خواندن و تغییر گروه برای کاربر فاقد دسترسی یکی از اعضا رد شود",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     },
     {
       "id": "R2-O50",
       "proposal": "گزارش قابل بررسی زنجیره محلی",
       "acceptance": "هر رویداد گروه عامل زمان و نوع داشته و رابط aria-live و کوچک‌نمایش قابل استفاده باشد",
-      "status": "proposed",
-      "evidence": [],
-      "blocker": null,
+      "status": "implemented_pending_integration",
+      "evidence": [
+        "src/V35/LocalHandover.php",
+        "assets/admin/v35-handover.js",
+        "tests/v35-handover-test.php"
+      ],
+      "blocker": "آزمون نصب واقعی HPOS/کلاسیک و مرورگر مشترک در انتظار اجرا",
       "limitation": "ثبت محلی فروشگاه؛ تحویل فیزیکی، اصالت پلمب و دریافت شرکت حمل آزمون یا تایید نمی‌شود."
     }
-  ]
+  ],
+  "verification_scope": "هر ۵۰ معیار نرم‌افزاری در کد پیاده شد؛ رگرسیون محلی پاس شده و آزمون نصب/مرورگر مشترک هنوز در انتظار اجرا است. تحویل فیزیکی و اصالت رسید تایید نمی‌شود."
 }
