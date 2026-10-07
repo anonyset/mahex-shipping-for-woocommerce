@@ -119,7 +119,18 @@ final class ProCenter {
 	private static function csvSafe( mixed $v ): string { $v=(string)$v; return preg_match('/^[=+\-@]/',$v) ? "'".$v : $v; }
 
 	public static function bulkPrint(): void { self::guard('hm_mahex_bulk_print_labels'); $ids=isset($_POST['order_ids'])&&is_array($_POST['order_ids'])?array_values(array_unique(array_filter(array_map('absint',wp_unslash($_POST['order_ids']))))):array(); if(!$ids) wp_die('هیچ سفارشی انتخاب نشده است.'); $layout=isset($_POST['layout'])&&'thermal'===sanitize_key(wp_unslash($_POST['layout']))?'thermal':'a4'; $factory=new OrderWaybillFactory(); $docs=array(); foreach(array_slice($ids,0,100) as $id){$order=wc_get_order($id); if($order&&current_user_can('edit_shop_order',$id))$docs[]=$factory->from_order($order);} nocache_headers(); header('Content-Type: text/html; charset=utf-8'); echo (new BulkLabelRenderer())->render($docs,$layout); exit; }
-	public static function saveActualCost(): void { self::guard('hm_mahex_save_actual_cost'); $id=isset($_POST['order_id'])?absint($_POST['order_id']):0; $order=wc_get_order($id); if(!$order||!\HoseinMomeni\MahexWoo\V33\Access::can('finance',$id)) wp_die('دسترسی غیرمجاز'); $cost=isset($_POST['actual_cost'])&&is_numeric($_POST['actual_cost'])?max(0,(float)$_POST['actual_cost']):0; $order->update_meta_data('_hm_mahex_actual_carrier_cost',$cost); $order->save(); wp_safe_redirect($order->get_edit_order_url()); exit; }
+	public static function saveActualCost(): void {
+        $id=absint($_POST['order_id']??0);
+        \HoseinMomeni\MahexWoo\V33\Support::auth('hm_mahex_save_actual_cost','finance',$id);
+        try { $cost=\HoseinMomeni\MahexWoo\V33\Support::number(\HoseinMomeni\MahexWoo\V33\Support::input('actual_cost')); }
+        catch (\Throwable $e) { wp_die(esc_html($e->getMessage())); }
+        $lock=new \HoseinMomeni\MahexWoo\Shipments\OptionOperationLock();
+        if(!$lock->acquire($id))wp_die('سفارش در حال ویرایش است.');
+        try {$order=wc_get_order($id);if(!$order)throw new \RuntimeException('سفارش پیدا نشد.');$order->read_meta_data(true);$order->update_meta_data('_hm_mahex_actual_carrier_cost',$cost);$order->save_meta_data();}
+        catch (\Throwable $e) { $error=$e->getMessage(); }
+        finally {$lock->release($id);}
+        if(isset($error))wp_die(esc_html($error));wp_safe_redirect($order->get_edit_order_url());exit;
+    }
 
 	private static function advancedSimulation(): ?array {
 		if ( empty( $_POST['hm_mahex_pro_sim_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['hm_mahex_pro_sim_nonce'] ) ), 'hm_mahex_pro_sim' ) ) return null;
